@@ -3634,26 +3634,22 @@ body {
   color: black;
   color: gray; }
 
+.nv-container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
 .nv-header {
   background-color: #8eb3ce;
   height: 175px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .nv-header_logo {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0px;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  min-width: initial; }
-  @media screen and (min-width: 40em) {
-    .nv-header_logo {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+  max-width: 570px;
+  -ms-flex-item-align: center;
+      align-self: center; }

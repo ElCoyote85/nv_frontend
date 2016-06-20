@@ -12,14 +12,28 @@ body {
 
 
 .nv-container {
-
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nv-header {
   background-color: #8eb3ce;
   height: 175px;
-  @include flex-grid-row($width:1200px)
+  text-align: center;
+  //@include flex-grid-row($width:1200px);
+  display: flex;
+  justify-content: center;
+
+}
+.nv-header_logo-link {
+  //display: block;
 }
 .nv-header_logo {
-  @include flex-grid-column()
+  max-width: 570px;
+  align-self: center;
+
+  //width: 70%;
+  //@include flex-grid-column(6 of 12)
+  //@include flex-grid-column-align(middle)
+  //@include flex-align(center, middle);
 }
