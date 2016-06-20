@@ -1,0 +1,25 @@
+@import "theme/_common";
+@import '~foundation-sites/scss/foundation';
+//@import 'foundation.scss';
+
+@include foundation-everything(true);
+
+body {
+  //background-color: red;
+  color: black;
+  color: gray;
+}
+
+
+.nv-container {
+
+}
+
+.nv-header {
+  background-color: #8eb3ce;
+  height: 175px;
+  @include flex-grid-row($width:1200px)
+}
+.nv-header_logo {
+  @include flex-grid-column()
+}
