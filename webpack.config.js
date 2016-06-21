@@ -9,7 +9,8 @@ module.exports = {
     output: {
         path: __dirname,
         filename: './public/js/bundle.js',
-        publicPath: '../'
+        publicPath: '../',
+        sourceMapFilename: '[name].map'
     },
     devtool: 'eval',
     resolve: {
@@ -28,7 +29,7 @@ module.exports = {
                 include: /scss/,
                 // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
-                loader: ExtractPlugin.extract('style', 'css?root=public/css!sass')
+                loader: ExtractPlugin.extract('style', 'css?root=public/css&sourceMap!sass?sourceMap')
                 // loader: 'style!css!postcss?browsers=last 3 versions!resolve-url!sass'
             },
             {

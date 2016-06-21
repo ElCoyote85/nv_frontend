@@ -71,13 +71,13 @@ $buttonHeight: 215px;
 
 .nv-nav_button-title {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #2e2e2e;
   @include breakpoint(medium down) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   @include breakpoint(small down) {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -153,18 +153,31 @@ $centerBlockColor: #dde4ee;
   padding-top: 34px;
 }
 .nv-calendar_info {
-  padding-right: 30px;
-  text-transform: uppercase;
+  padding-right: 40px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 19px;
+    height: 100%;
+    background-image: url("../public/imgs/calendar/cal-arrow.png");
+    background-repeat: no-repeat;
+  }
 }
 .nv-calendar_info-title {
   font-size: 1.7rem;
   color: #52697b;
+  text-transform: uppercase;
 }
 .nv-calendar_info-desc {
+  line-height: 1.1;
   font-size: 1rem;
+  text-transform: lowercase;
   color: #52697b;
-  &:after {
-    content: "";
-
-  }
+}
+.nv-calendar-city-input {
+  margin-top: 15px;
+  border: none;
 }

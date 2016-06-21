@@ -376,7 +376,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Tahoma, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -1211,7 +1211,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Tahoma, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: inherit;
@@ -3541,14 +3541,14 @@ body {
 
 .nv-nav_button-title {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #2e2e2e; }
   @media screen and (max-width: 63.9375em) {
     .nv-nav_button-title {
-      font-size: 1.1rem; } }
+      font-size: 1.2rem; } }
   @media screen and (max-width: 39.9375em) {
     .nv-nav_button-title {
-      font-size: 0.65rem; } }
+      font-size: 0.75rem; } }
 
 .nv-nav_button-info {
   text-align: center;
@@ -3634,15 +3634,29 @@ body {
   padding-top: 34px; }
 
 .nv-calendar_info {
-  padding-right: 30px;
-  text-transform: uppercase; }
+  padding-right: 40px;
+  position: relative; }
+  .nv-calendar_info:after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 19px;
+    height: 100%;
+    background-image: url(../../public/imgs/calendar/cal-arrow.png);
+    background-repeat: no-repeat; }
 
 .nv-calendar_info-title {
   font-size: 1.7rem;
-  color: #52697b; }
+  color: #52697b;
+  text-transform: uppercase; }
 
 .nv-calendar_info-desc {
+  line-height: 1.1;
   font-size: 1rem;
+  text-transform: lowercase;
   color: #52697b; }
-  .nv-calendar_info-desc:after {
-    content: ""; }
+
+.nv-calendar-city-input {
+  margin-top: 15px;
+  border: none; }
