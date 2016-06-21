@@ -8,7 +8,8 @@ module.exports = {
     entry: './entry.js',
     output: {
         path: __dirname,
-        filename: './public/js/bundle.js'
+        filename: './public/js/bundle.js',
+        publicPath: '../'
     },
     devtool: 'eval',
     resolve: {
@@ -25,18 +26,28 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 include: /scss/,
-                loader: ExtractPlugin.extract('style', 'css!postcss?browsers=last 3 versions!sass')
-            }
-            ,
+                // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass')
+                // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
+                loader: ExtractPlugin.extract('style', 'css?root=public/css!sass')
+                // loader: 'style!css!postcss?browsers=last 3 versions!resolve-url!sass'
+            },
             {
                 test: /\.js$/,
                 include: /scripts/,
                 loader: 'babel?presets[]=es2015'
+            },
+            {
+                test: /\.(jpg|png)$/,
+                // loader: 'file?name=[path][name].[ext]',
+                // include: 'public',
+                loader: 'file?emitFile=false&name=../[path][name].[ext]'
+                // include: PATHS.images
             }
+
         ]
     },
     plugins: [
-        new ExtractPlugin("./public/css/app.css")
+        new ExtractPlugin("./public/css/app.css", {publicPath: './public'})
     ],
     postcss: function () {
         return [precss, autoprefixer];
@@ -50,5 +61,9 @@ module.exports = {
             progress: true,
             // contentBase: 'public'
         }
+    },
+    resolveUrlLoader: {
+        // absolute: 'public'
+        root: 'public/css'
     }
 };
