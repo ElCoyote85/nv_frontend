@@ -149,9 +149,22 @@ $centerBlockColor: #dde4ee;
 
 /* NAVYSTAVKE CALENDAR*/
 
+.nv-calendar {
+  padding-top: 34px;
+}
 .nv-calendar_info {
   padding-right: 30px;
+  text-transform: uppercase;
 }
 .nv-calendar_info-title {
+  font-size: 1.7rem;
+  color: #52697b;
+}
+.nv-calendar_info-desc {
+  font-size: 1rem;
+  color: #52697b;
+  &:after {
+    content: "";
 
+  }
 }

@@ -26,7 +26,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 include: /scss/,
-                // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass')
+                // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
                 loader: ExtractPlugin.extract('style', 'css?root=public/css!sass')
                 // loader: 'style!css!postcss?browsers=last 3 versions!resolve-url!sass'
