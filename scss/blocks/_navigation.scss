@@ -1,0 +1,80 @@
+/* NAVYSTAVKE NAVIGATION */
+
+$buttonHeight: 215px;
+
+.nv-nav {
+  height: $buttonHeight;
+}
+
+.nv-nav--button {
+  height: $buttonHeight;
+  @include grid-column(1 of 5, 0);
+  background-repeat: no-repeat;
+  position: relative;
+  display: block;
+}
+
+.nv-nav--button-text {
+  //@include absolute-center;
+  @include horizontal-center;
+  text-transform: uppercase;
+}
+
+.nv-nav--button-text__top-offset {
+  margin-top: 100px;
+}
+
+.nv-nav--button-title {
+  text-align: center;
+  font-size: 1.35rem;
+  color: #2e2e2e;
+  @include breakpoint(medium down) {
+    font-size: 1.2rem;
+  }
+  @include breakpoint(small down) {
+    font-size: 0.75rem;
+  }
+}
+
+.nv-nav--button-info {
+  text-align: center;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: $secondary-color;
+  @include breakpoint(medium down) {
+    font-size: .65rem;
+  }
+  @include breakpoint(small down) {
+    font-size: 0.55rem;
+  }
+}
+
+.nv-nav--button-picture {
+
+}
+
+.nv-nav--button__with-picture-1 {
+  background-image: url(../public/imgs/buttons/1.png);
+  background-color: #ededf7;
+}
+.nv-nav--button__with-picture-2 {
+  background-image: url(../public/imgs/buttons/2.png);
+  background-color: #f0f0f8;
+}
+.nv-nav--button__with-picture-3 {
+  background-image: url(../public/imgs/buttons/3.png);
+  background-color: #f3f3fb;
+}
+.nv-nav--button__with-picture-4 {
+  background-image: url(../public/imgs/buttons/4.png);
+  background-color: #f7f6fc;
+}
+.nv-nav--button__with-picture-5 {
+  background-image: url(../public/imgs/buttons/5.png);
+  background-color: #f7f6fc;
+}
+.nv-nav--button__search {
+  height: 30px;
+  width: 145px;
+  border: none;
+}

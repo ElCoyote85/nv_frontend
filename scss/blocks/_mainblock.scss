@@ -1,0 +1,28 @@
+/* MAIN BLOCK */
+$contentHeight: 610px;
+$sideBlocksColor: #8cb1cc;
+$centerBlockColor: #dde4ee;
+
+body {
+  height: 2000px;
+}
+
+.nv-main {
+  height: 610px;
+  overflow: hidden;
+}
+.nv-calendar {
+  @include grid-column(1 of 5, $gutter: 50px);
+  height: $contentHeight;
+  background-color: $sideBlocksColor;
+}
+.nv-main-content {
+  @include grid-column(3 of 5);
+  height: $contentHeight;
+  background-color: $centerBlockColor;
+}
+.nv-participants {
+  @include grid-column(1 of 5, $gutter: 0px);
+  height: $contentHeight;
+  background-color: $sideBlocksColor;
+}

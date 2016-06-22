@@ -1,0 +1,51 @@
+/* VISITORS SEARCH LEFT BLOCK*/
+
+$mainTopHeight: 120px;
+$foundItem: 60px;
+
+.nv-participants-search {
+  height: $mainTopHeight;
+  padding-top: 32px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+//.nv-participants-search--input-block {
+//  height: $mainTopHeight;
+//}
+.nv-participants-search--input {
+  border: none;
+  text-align: center;
+  height: 35px;
+}
+
+.nv-participants-found {
+
+}
+
+.nv-participants-found--item {
+  height: $foundItem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  &:nth-child(odd) {
+    background-color: #729fc0;
+  }
+}
+.nv-participants-found--item--name {
+  color: white;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+.nv-participants-found--item--company {
+  color: #5d7181;
+  font-size: 0.7rem;
+  padding: 0 5px;
+  overflow: hidden;
+}
+.nv-participants-found--item--photo {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  overflow: hidden;
+}

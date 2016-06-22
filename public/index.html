@@ -9,55 +9,131 @@
 
 <div class="nv-container nv-container__shadow">
     <header class="nv-header">
-        <a href="#" class="nv-header_logo-link"><img class="nv-header_logo" src="imgs/logo-navystavke.png" alt=""></a>
+        <a href="#" class="nv-header--logo-link"><img class="nv-header--logo" src="imgs/logo-navystavke.png" alt=""></a>
     </header>
     <nav class="nv-nav">
-        <a href="#" class="nv-nav_button nv-nav_button__with-picture-1">
-            <div class="nv-nav_button-text nv-nav_button-text__top-offset">
-                <div class="nv-nav_button-title">Выставки</div>
-                <div class="nv-nav_button-info">Online</div>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-1">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Выставки</div>
+                <div class="nv-nav--button-info">Online</div>
             </div>
         </a>
-        <a href="#" class="nv-nav_button nv-nav_button__with-picture-2">
-            <div class="nv-nav_button-text nv-nav_button-text__top-offset">
-                <div class="nv-nav_button-title">О нас</div>
-                <div class="nv-nav_button-info">Информация</div>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-2">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">О нас</div>
+                <div class="nv-nav--button-info">Информация</div>
             </div>
         </a>
-        <a href="#" class="nv-nav_button nv-nav_button__with-picture-3">
-            <div class="nv-nav_button-text nv-nav_button-text__top-offset">
-                <div class="nv-nav_button-title">Участникам</div>
-                <div class="nv-nav_button-info">Компании и услуги</div>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-3">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Участникам</div>
+                <div class="nv-nav--button-info">Компании и услуги</div>
             </div>
         </a>
-        <a href="#" class="nv-nav_button nv-nav_button__with-picture-4">
-            <div class="nv-nav_button-text nv-nav_button-text__top-offset">
-                <div class="nv-nav_button-title">Посетителям</div>
-                <div class="nv-nav_button-info">Возможности</div>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-4">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Посетителям</div>
+                <div class="nv-nav--button-info">Возможности</div>
             </div>
         </a>
-        <div class="nv-nav_button nv-nav_button__with-picture-5">
-            <div class="nv-nav_button-text nv-nav_button-text__top-offset">
-                <div class="nv-nav_button-title">Поиск </div>
-                <input type="text" class="nv-nav_button__search" placeholder="">
+        <div class="nv-nav--button nv-nav--button__with-picture-5">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Поиск </div>
+                <input type="text" class="nv-nav--button__search" placeholder="">
             </div>
         </div>
     </nav>
     <main class="nv-main">
-        <div class="nv-calendar">
-            <div class="nv-calendar_info">
-                <div class="nv-calendar_info-title">Календарь</div>
-                <div class="nv-calendar_info-desc">Выставок <span class="float-right">2016</span></div>
+        <aside class="nv-calendar">
+            <div class="nv-calendar--info">
+                <div class="nv-calendar--info--title">Календарь</div>
+                <div class="nv-calendar--info--desc">Выставок <span class="float-right">2016</span></div>
             </div>
-            <div class="nv-calendar-city">
-                <input class="nv-calendar-city-input" type="text" placeholder="МОСКВА">
+            <div class="nv-calendar--city">
+                <input class="nv-calendar--city--input" type="text" placeholder="МОСКВА">
             </div>
-            <div class="nv-calendar-date">
+            <div class="nv-calendar--date">
+                <div class="nv-calendar--date--day-and-month">
+                    <div class="nv-calendar--date--day-and-month--day">26</div>
+                    <div class="nv-calendar--date--day-and-month--month">февраля</div>
+                </div>
+                <div class="nv-calendar--date--weekday-and-time">
+                    <div class="nv-calendar--date--weekday-and-time--weekday">понедельник</div>
+                    <div class="nv-calendar--date--weekday-and-time--time">14:30</div>
+                </div>
             </div>
-        </div>
+        </aside>
         <div class="nv-main-content"></div>
-        <div class="nv-visitors"></div>
+        <aside class="nv-participants">
+            <div class="nv-participants-search">
+                <input type="text" class="nv-participants-search--input" placeholder="ПОИСК">
+            </div>
+            <div class="nv-participants-found">
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user1.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user2.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user3.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user4.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user5.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user6.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user1.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user2.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user3.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user4.png">
+                </div>
+                <div class="nv-participants-found--item">
+                    <div class="nv-participants-found--item--name">Люся Мардюкова</div>
+                    <div class="nv-participants-found--item--company">Компания «Компания»</div>
+                    <img class="nv-participants-found--item--photo" src="images/user1.png">
+                </div>
+            </div>
+        </aside>
     </main>
+    <section class="nv-visitors-list">
+        <div class="nv-visitors-list--top">
+            <div class="nv-visitors-list--top--desc">Посетители сети виртуальных выставок <span class="nv-font-blue">14842</span></div>
+            <div class="nv-visitors-list--top--became-visitor">Стань посетителем</div>
+            <div class="nv-visitors-list--top--became-participant">Стань участником</div>
+        </div>
+    </section>
     <footer class="nv-footer"></footer>
 </div>
 

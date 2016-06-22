@@ -3500,96 +3500,100 @@ body {
     .nv-header {
       height: 100px; } }
 
-.nv-header_logo-link {
+.nv-header--logo-link {
   display: block;
   width: 100%;
   height: 100%;
   position: relative; }
 
-.nv-header_logo {
+.nv-header--logo {
   max-width: 570px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
   @media screen and (max-width: 63.9375em) {
-    .nv-header_logo {
+    .nv-header--logo {
       max-width: 300px; } }
 
 /* NAVYSTAVKE NAVIGATION */
 .nv-nav {
   height: 215px; }
 
-.nv-nav_button {
+.nv-nav--button {
   height: 215px;
   width: 20%;
   float: left;
   background-repeat: no-repeat;
   position: relative;
   display: block; }
-  .nv-nav_button:last-child:not(:first-child) {
+  .nv-nav--button:last-child:not(:first-child) {
     float: right; }
 
-.nv-nav_button-text {
+.nv-nav--button-text {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-transform: uppercase; }
 
-.nv-nav_button-text__top-offset {
+.nv-nav--button-text__top-offset {
   margin-top: 100px; }
 
-.nv-nav_button-title {
+.nv-nav--button-title {
   text-align: center;
   font-size: 1.35rem;
   color: #2e2e2e; }
   @media screen and (max-width: 63.9375em) {
-    .nv-nav_button-title {
+    .nv-nav--button-title {
       font-size: 1.2rem; } }
   @media screen and (max-width: 39.9375em) {
-    .nv-nav_button-title {
+    .nv-nav--button-title {
       font-size: 0.75rem; } }
 
-.nv-nav_button-info {
+.nv-nav--button-info {
   text-align: center;
   font-size: 0.75rem;
   white-space: nowrap;
   color: #777; }
   @media screen and (max-width: 63.9375em) {
-    .nv-nav_button-info {
+    .nv-nav--button-info {
       font-size: .65rem; } }
   @media screen and (max-width: 39.9375em) {
-    .nv-nav_button-info {
+    .nv-nav--button-info {
       font-size: 0.55rem; } }
 
-.nv-nav_button__with-picture-1 {
+.nv-nav--button__with-picture-1 {
   background-image: url(../../public/imgs/buttons/1.png);
   background-color: #ededf7; }
 
-.nv-nav_button__with-picture-2 {
+.nv-nav--button__with-picture-2 {
   background-image: url(../../public/imgs/buttons/2.png);
   background-color: #f0f0f8; }
 
-.nv-nav_button__with-picture-3 {
+.nv-nav--button__with-picture-3 {
   background-image: url(../../public/imgs/buttons/3.png);
   background-color: #f3f3fb; }
 
-.nv-nav_button__with-picture-4 {
+.nv-nav--button__with-picture-4 {
   background-image: url(../../public/imgs/buttons/4.png);
   background-color: #f7f6fc; }
 
-.nv-nav_button__with-picture-5 {
+.nv-nav--button__with-picture-5 {
   background-image: url(../../public/imgs/buttons/5.png);
   background-color: #f7f6fc; }
 
-.nv-nav_button__search {
+.nv-nav--button__search {
   height: 30px;
   width: 145px;
   border: none; }
 
 /* MAIN BLOCK */
+body {
+  height: 2000px; }
+
 .nv-main {
-  height: 610px; }
+  height: 610px;
+  overflow: hidden; }
 
 .nv-calendar {
   width: 20%;
@@ -3615,48 +3619,113 @@ body {
   .nv-main-content:last-child:not(:first-child) {
     float: right; }
 
-.nv-visitors {
+.nv-participants {
   width: 20%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
   height: 610px;
   background-color: #8cb1cc; }
-  @media screen and (min-width: 40em) {
-    .nv-visitors {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  .nv-visitors:last-child:not(:first-child) {
+  .nv-participants:last-child:not(:first-child) {
     float: right; }
 
 /* NAVYSTAVKE CALENDAR*/
 .nv-calendar {
-  padding-top: 34px; }
+  padding-top: 30px; }
 
-.nv-calendar_info {
+.nv-calendar--info {
   padding-right: 40px;
   position: relative; }
-  .nv-calendar_info:after {
+  .nv-calendar--info:after {
+    /* CALENDAR ARROW */
     content: "";
     position: absolute;
     right: 0px;
     top: 0;
     width: 19px;
     height: 100%;
-    background-image: url(../../public/imgs/calendar/cal-arrow.png);
-    background-repeat: no-repeat; }
+    background-image: url(../../public/imgs/calendar/cal-arrow2.png);
+    background-repeat: no-repeat;
+    opacity: 0.7; }
 
-.nv-calendar_info-title {
-  font-size: 1.7rem;
+.nv-calendar--info--title {
+  font-size: 1.6rem;
   color: #52697b;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 0.85; }
 
-.nv-calendar_info-desc {
+.nv-calendar--info--desc {
+  font-size: 0.9rem;
   line-height: 1.1;
-  font-size: 1rem;
   text-transform: lowercase;
   color: #52697b; }
 
-.nv-calendar-city-input {
+.nv-calendar--city--input {
   margin-top: 15px;
   border: none; }
+
+.nv-calendar--date {
+  margin-top: 30px; }
+
+.nv-calendar--date--day-and-month {
+  text-align: center; }
+
+.nv-calendar--date--day-and-month--day {
+  font-size: 3.1rem;
+  color: #d57883;
+  line-height: 0.8; }
+
+.nv-calendar--date--day-and-month--month {
+  font-size: 2rem;
+  color: #52697b;
+  text-transform: lowercase;
+  line-height: 0.9; }
+
+.nv-calendar--date--weekday-and-time {
+  text-align: center;
+  padding-top: 15px; }
+
+.nv-calendar--date--weekday-and-time--weekday {
+  font-size: 1.5rem;
+  color: #688499;
+  line-height: 0.5; }
+
+.nv-calendar--date--weekday-and-time--time {
+  font-size: 2rem;
+  color: white; }
+
+/* VISITORS SEARCH LEFT BLOCK*/
+.nv-participants-search {
+  height: 120px;
+  padding-top: 32px;
+  padding-left: 30px;
+  padding-right: 30px; }
+
+.nv-participants-search--input {
+  border: none;
+  text-align: center;
+  height: 35px; }
+
+.nv-participants-found--item {
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 10px; }
+  .nv-participants-found--item:nth-child(odd) {
+    background-color: #729fc0; }
+
+.nv-participants-found--item--name {
+  color: white;
+  font-size: 0.8rem;
+  overflow: hidden; }
+
+.nv-participants-found--item--company {
+  color: #5d7181;
+  font-size: 0.7rem;
+  padding: 0 5px;
+  overflow: hidden; }
+
+.nv-participants-found--item--photo {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  overflow: hidden; }

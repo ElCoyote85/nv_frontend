@@ -29,13 +29,13 @@ body {
   text-align: center;
 
 }
-.nv-header_logo-link {
+.nv-header--logo-link {
   display: block;
   width: 100%;
   height: 100%;
   position: relative;
 }
-.nv-header_logo {
+.nv-header--logo {
   @include breakpoint(medium down) {
     max-width: 300px;
   }
@@ -43,141 +43,11 @@ body {
   @include absolute-center;
 }
 
-/* NAVYSTAVKE NAVIGATION */
 
-$buttonHeight: 215px;
+@import "blocks/navigation";
 
-.nv-nav {
-  height: $buttonHeight;
-}
+@import "blocks/mainblock";
 
-.nv-nav_button {
-  height: $buttonHeight;
-  @include grid-column(1 of 5, 0);
-  background-repeat: no-repeat;
-  position: relative;
-  display: block;
-}
+@import "blocks/calendar";
 
-.nv-nav_button-text {
-  //@include absolute-center;
-  @include horizontal-center;
-  text-transform: uppercase;
-}
-
-.nv-nav_button-text__top-offset {
-  margin-top: 100px;
-}
-
-.nv-nav_button-title {
-  text-align: center;
-  font-size: 1.35rem;
-  color: #2e2e2e;
-  @include breakpoint(medium down) {
-    font-size: 1.2rem;
-  }
-  @include breakpoint(small down) {
-    font-size: 0.75rem;
-  }
-}
-
-.nv-nav_button-info {
-  text-align: center;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  color: $secondary-color;
-  @include breakpoint(medium down) {
-    font-size: .65rem;
-  }
-  @include breakpoint(small down) {
-    font-size: 0.55rem;
-  }
-}
-
-.nv-nav_button-picture {
-
-}
-
-.nv-nav_button__with-picture-1 {
-  background-image: url(../public/imgs/buttons/1.png);
-  background-color: #ededf7;
-}
-.nv-nav_button__with-picture-2 {
-  background-image: url(../public/imgs/buttons/2.png);
-  background-color: #f0f0f8;
-}
-.nv-nav_button__with-picture-3 {
-  background-image: url(../public/imgs/buttons/3.png);
-  background-color: #f3f3fb;
-}
-.nv-nav_button__with-picture-4 {
-  background-image: url(../public/imgs/buttons/4.png);
-  background-color: #f7f6fc;
-}
-.nv-nav_button__with-picture-5 {
-  background-image: url(../public/imgs/buttons/5.png);
-  background-color: #f7f6fc;
-}
-.nv-nav_button__search {
-  height: 30px;
-  width: 145px;
-  border: none;
-}
-/* MAIN BLOCK */
-$contentHeight: 610px;
-$sideBlocksColor: #8cb1cc;
-$centerBlockColor: #dde4ee;
-
-.nv-main {
-  height: 610px;
-}
-.nv-calendar {
-  @include grid-column(1 of 5, $gutter: 50px);
-  height: $contentHeight;
-  background-color: $sideBlocksColor;
-}
-.nv-main-content {
-  @include grid-column(3 of 5);
-  height: $contentHeight;
-  background-color: $centerBlockColor;
-}
-.nv-visitors {
-  @include grid-column(1 of 5);
-  height: $contentHeight;
-  background-color: $sideBlocksColor;
-}
-
-/* NAVYSTAVKE CALENDAR*/
-
-.nv-calendar {
-  padding-top: 34px;
-}
-.nv-calendar_info {
-  padding-right: 40px;
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    right: 0px;
-    top: 0;
-    width: 19px;
-    height: 100%;
-    background-image: url("../public/imgs/calendar/cal-arrow.png");
-    background-repeat: no-repeat;
-  }
-}
-.nv-calendar_info-title {
-  font-size: 1.7rem;
-  color: #52697b;
-  text-transform: uppercase;
-}
-.nv-calendar_info-desc {
-  line-height: 1.1;
-  font-size: 1rem;
-  text-transform: lowercase;
-  color: #52697b;
-}
-.nv-calendar-city-input {
-  margin-top: 15px;
-  border: none;
-}
+@import "blocks/_participants-search";

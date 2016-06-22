@@ -1,0 +1,82 @@
+/* NAVYSTAVKE CALENDAR*/
+
+.nv-calendar {
+  padding-top: 30px;
+}
+.nv-calendar--info {
+  padding-right: 40px;
+  position: relative;
+  &:after {
+    /* CALENDAR ARROW */
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 19px;
+    height: 100%;
+    background-image: url("../public/imgs/calendar/cal-arrow2.png");
+    background-repeat: no-repeat;
+    opacity: 0.7;
+  }
+}
+.nv-calendar--info--title {
+  font-size: 1.6rem;
+  color: #52697b;
+  text-transform: uppercase;
+  line-height: 0.85;
+  //margin-left: -1px;
+}
+.nv-calendar--info--desc {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: #52697b;
+}
+.nv-calendar--city--input {
+  margin-top: 15px;
+  border: none;
+}
+
+
+.nv-calendar--date {
+  //@include grid-row(1);
+  margin-top: 30px;
+}
+
+.nv-calendar--date--day-and-month {
+  //@include grid-column(1, $gutter: 0);
+  //float: left;
+  text-align: center;
+}
+
+.nv-calendar--date--day-and-month--day {
+  font-size: 3.1rem;
+  color: #d57883;
+  //text-align: center;
+  line-height: 0.8;
+}
+
+.nv-calendar--date--day-and-month--month {
+  font-size: 2rem;
+  color: #52697b;
+  text-transform: lowercase;
+  line-height: 0.9;
+  //text-align: center;
+}
+
+.nv-calendar--date--weekday-and-time {
+  //@include grid-column(1, $gutter: 0);
+  //@include
+  //float: right;
+  text-align: center;
+  padding-top: 15px;
+}
+.nv-calendar--date--weekday-and-time--weekday {
+  font-size: 1.5rem;
+  color: #688499;
+  line-height: 0.5;
+}
+.nv-calendar--date--weekday-and-time--time {
+  font-size: 2rem;
+  color: white;
+}
