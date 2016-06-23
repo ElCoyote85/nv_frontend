@@ -8,4 +8,5 @@ require('./scss/app.scss');
 var $ = require('jquery.js');
 window.jQuery = $;
 
-require('foundation.core.js');
+require('foundation.core');
+require('owl.carousel');

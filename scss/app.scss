@@ -1,5 +1,6 @@
-@import "theme/_common";
+@import "theme/common";
 @import '~foundation-sites/scss/foundation';
+@import "~owl.carousel/dist/assets/owl.carousel.css";
 //@import 'foundation.scss';
 
 @include foundation-everything(false);
@@ -50,4 +51,10 @@ body {
 
 @import "blocks/calendar";
 
-@import "blocks/_participants-search";
+@import "blocks/participants-search";
+
+@import "blocks/visitors-list";
+
+@import "blocks/sponsors";
+
+@import "blocks/footer";

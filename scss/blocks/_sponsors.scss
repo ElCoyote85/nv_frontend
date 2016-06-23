@@ -1,0 +1,66 @@
+.nv-sponsors {
+  height: 152px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  position: relative;
+
+  @mixin nvSponsorsGradientLR {
+    $leftBckg: #8db2cd;
+    $rightBckg: #d2d6d7 ;
+    $topBckg: #111 ;
+    $bottomBckg: #d2d6d7 ;
+    background-image: linear-gradient(to right, $leftBckg, $rightBckg);
+    //background-color: linear-gradient(to bottom, black, rgba(white, 0) 10%);
+  }
+  @mixin nvSponorsGradientTB {
+    $topBckg: #333;
+    $bottomBckg: #d2d6d7;
+    background-image: linear-gradient(to bottom, rgba($topBckg, 0.4), rgba(white, 0) 50%);
+  }
+  @include nvSponsorsGradientLR;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    @include nvSponorsGradientTB
+  }
+}
+
+@mixin nvSponsorsArrows {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.nv-sponsors--arrow-left {
+  @include nvSponsorsArrows;
+  @include grid-column(1 of 12);
+  text-align: center;
+  //& > img {
+  //  //@include absolute-center;
+  //  @include vertical-center;
+  //}
+}
+.nv-sponsors--arrow-right {
+  @include nvSponsorsArrows;
+  @include grid-column(1 of 12);
+  text-align: center;
+}
+.owl-carousel__nv-sponsors {
+  @include grid-column(10 of 12);
+  //@include vertical-center;
+}
+
+.nv-sponsors--sponsor {
+  //height: 80px;
+  //width: 33%;
+  //text-align: center;
+  & > img {
+    height: 80px !important;
+    width: auto !important;
+    margin: 0 auto;
+  }
+}

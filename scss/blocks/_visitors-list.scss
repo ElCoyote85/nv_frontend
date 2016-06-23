@@ -1,35 +1,116 @@
-$participantsTopHeight: 35px;
+$participantsTopHeight: 75px;
+$transition: 0.2s;
+
 
 .nv-visitors-list {
-
+  background-color: #f6f6ff;
 }
 
 .nv-visitors-list--top {
-
+  height: $participantsTopHeight;;
 }
 
 .nv-visitors-list--top--desc {
-  @include grid-column(40%);
+  @mixin nv-visitors-list {
+    $backColor: #f6f6ff;
+    //background-color: $backColor;
+    background-image: linear-gradient(to bottom, desaturate(darken($backColor, 10%), 80%) 7%, $backColor 40%, $backColor);
+  }
+  @include nv-visitors-list;
+
+  @include grid-column(42%);
+  @include breakpoint(medium down) {
+    @include grid-column(1 of 1);
+  }
+  font-size: 18px;
   height: $participantsTopHeight;
+
+  position: relative;
+  & > * {
+    @include absolute-center;
+    white-space: nowrap;
+  }
+}
+
+.__nv-text-blue {
+  color: #89c1ec;
 }
 
 .nv-visitors-list--top--became-visitor {
-  @include grid-column(30%);
-  background-color: #6997b9;
+  $bckgColor: #e6b942;
+  //@include grid-column(3 of 10);
+  @include grid-column(29%);
+  @include breakpoint(medium down) {
+    @include grid-column(1 of 2);
+  }
+  font-size: 19px;
+  text-transform: uppercase;
+  background-color: $bckgColor;
   height: $participantsTopHeight;
+  transition: $transition;
+
+  position: relative;
+  & > * {
+    @include absolute-center;
+    white-space: nowrap;
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+  }
+  &:hover {
+    background-color: lighten($bckgColor, 5%);
+    transition: $transition;
+  }
 }
 
 .nv-visitors-list--top--became-participant {
-  @include grid-column(30%);
-  background-color: #6997b9;
+  $bckgColor: #6997b9;
+  //@include grid-column(3 of 10);
+  @include grid-column(29%);
+  @include breakpoint(medium down) {
+    @include grid-column(1 of 2);
+  }
+  color: white;
+  font-size: 19px;
+  text-transform: uppercase;
+  background-color: $bckgColor;
   height: $participantsTopHeight;
+  transition: $transition;
+
+  position: relative;
+  & > * {
+    @include absolute-center;
+    white-space: nowrap;
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+  }
+  &:hover {
+    background-color: lighten($bckgColor, 5%);
+    transition: $transition;
+  }
 }
 
 .nv-visitors-list--people {
-
+  @include grid-row(20);
+  @include breakpoint(medium down) {
+    //@include grid-row(10);
+  }
+  margin: 10px;
+  margin-top: 0;
 }
 
 .nv-visitors-list--people--person {
-  width: 50px;
-  height: 50px;
+  @include grid-column(1, $gutter: 6px);
+  @include breakpoint(medium down) {
+    @include grid-column(2, $gutter: 3px);
+  }
+  //width: 100%;
+  margin-bottom: 6px;
+  //width: 50px;
+  //height: 50px;
 }

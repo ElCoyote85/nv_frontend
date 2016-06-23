@@ -12,7 +12,7 @@ module.exports = {
         publicPath: '../',
         sourceMapFilename: '[name].map'
     },
-    devtool: 'eval',
+    // devtool: 'eval',
     resolve: {
         modulesDirectories: [
             'node_modules',
@@ -48,7 +48,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractPlugin("./public/css/app.css", {publicPath: './public'})
+        new ExtractPlugin("./public/css/app.css")
     ],
     postcss: function () {
         return [precss, autoprefixer];
@@ -65,6 +65,6 @@ module.exports = {
     },
     resolveUrlLoader: {
         // absolute: 'public'
-        root: 'public/css'
+        // root: 'public/css'
     }
 };
