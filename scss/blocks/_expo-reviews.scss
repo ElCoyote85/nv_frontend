@@ -1,5 +1,5 @@
 .nv-expo-reviews {
-
+  @include grid-column(1 of 1);
 }
 
 .nv-expo-reviews--header {
@@ -7,15 +7,22 @@
 }
 
 .nv-expo-reviews--review {
-
+  @include grid-row(10);
 }
 
 .nv-expo-reviews--review--link {
+  @include grid-column(1);
+}
 
+.nv-expo-reviews--review--content {
+  @include grid-column(6);
+}
+
+.nv-expo-reviews--review--image {
+  @include grid-column(3);
 }
 
 .nv-expo-reviews--review--title {
-
 }
 
 .nv-expo-reviews--review--date {
