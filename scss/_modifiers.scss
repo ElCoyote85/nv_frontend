@@ -1,0 +1,24 @@
+.__nv-text-blue {
+  color: #89c1ec;
+}
+
+.__nv-text-white {
+  color: #fff;
+}
+
+//@for $i from 0.5 through 2 {
+$i: 0.4;
+@while( $i <= 1.9) {
+  $i: $i + 0.1;
+  $sizeText: $i*10;
+  //@if $i < 0.99 {
+  //  $sizeText: 0-#{$i*10};
+  //}
+  //@else {
+  //  $xTen: $i*10;
+  //  $sizeText: #{floor($xTen) % 10}-#{$xTen - ($xTen % 10)};
+  //}
+  .__nv-text-size-#{$sizeText}rem {
+    font-size: $i+rem;
+  }
+}

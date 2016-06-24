@@ -1,4 +1,5 @@
 @import "theme/common";
+@import "modifiers";
 @import '~foundation-sites/scss/foundation';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 //@import 'foundation.scss';
@@ -58,3 +59,5 @@ body {
 @import "blocks/sponsors";
 
 @import "blocks/footer";
+
+@import "blocks/expo-reviews";
