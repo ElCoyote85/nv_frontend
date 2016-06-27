@@ -10,3 +10,6 @@ window.jQuery = $;
 
 require('foundation.core');
 require('owl.carousel');
+
+require('jquery-mousewheel')
+require('malihu-custom-scrollbar-plugin')($);

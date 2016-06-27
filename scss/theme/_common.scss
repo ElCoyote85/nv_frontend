@@ -1,1 +1,11 @@
 $body-font-family: Tahoma, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+
+@mixin nv-link-button($bckgColor: #caddea, $borderColor: #b9c7d3, $textColor: #97a8b4) {
+  padding: 6px 10px;
+  margin: 5px;
+  color: $textColor;
+  border: 1px solid  $borderColor;
+  background-color: $bckgColor;
+  display: inline-block !important;
+}

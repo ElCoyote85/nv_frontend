@@ -65,20 +65,59 @@
             </div>
         </aside>
         <div class="nv-main-content">
-            <div class="nv-expo-reviews">
+            <div class="nv-expo-reviews--header">Обзоры выставок</div>
+            <div class="nv-expo-reviews ">
                 <div class="nv-expo-reviews--review">
                     <div class="nv-expo-reviews--review--link">
                         <a href="#!">обзор</a>
                     </div>
                     <div class="nv-expo-reviews--review--content">
-                        MosBuild 2016
-                        MosBuild 2016
-                        рейтинг НаВыставке.ru:
-                        тематика выставки:Промышленные выставки, Строительство и недвижимость, Технологии и оборудование, Товары народного потребленияместо проведения:Центральный выставочный комплекс «Экспоцентр»даты проведения:5-8 апреля
+                        <div class="nv-expo-reviews--review--title">MosBuild 2016</div>
+                        <div class="nv-expo-reviews--review--theme">тематика выставки:</div>
+                        Промышленные выставки, Строительство и недвижимость, Технологии и оборудование, Товары народного потребления
+                        <div class="nv-expo-reviews--review--location">место проведения:</div>
+                        Центральный выставочный комплекс «Экспоцентр»даты проведения:5-8 апреля
                     </div>
                     <div class="nv-expo-reviews--review--image">
+                        <a href="#!"><img src="images/reviews/review1.jpg" alt=""></a>
+                        <a href="#!" class="nv-expo-reviews--review--ticket-link">Билет</a>
                     </div>
                 </div>
+
+                <div class="nv-expo-reviews--review">
+                    <div class="nv-expo-reviews--review--link">
+                        <a href="#!">обзор</a>
+                    </div>
+                    <div class="nv-expo-reviews--review--content">
+                        <div class="nv-expo-reviews--review--title">СВЯЗЬ. Информационные и коммуникационные технологии – 2016</div>
+                        <div class="nv-expo-reviews--review--theme">тематика выставки:</div>
+                        Промышленные выставки, Строительство и недвижимость, Технологии и оборудование, Товары народного потребления
+                        <div class="nv-expo-reviews--review--location">место проведения:</div>
+                        Центральный выставочный комплекс «Экспоцентр»даты проведения:5-8 апреля
+                    </div>
+                    <div class="nv-expo-reviews--review--image">
+                        <a href="#!"><img src="images/reviews/review2.jpg" alt=""></a>
+                        <a href="#!" class="nv-expo-reviews--review--ticket-link">Билет</a>
+                    </div>
+                </div>
+
+                <div class="nv-expo-reviews--review">
+                    <div class="nv-expo-reviews--review--link">
+                        <a href="#!">обзор</a>
+                    </div>
+                    <div class="nv-expo-reviews--review--content">
+                        <div class="nv-expo-reviews--review--title">MosBuild 2016</div>
+                        <div class="nv-expo-reviews--review--theme">тематика выставки:</div>
+                        Промышленные выставки, Строительство и недвижимость, Технологии и оборудование, Товары народного потребления
+                        <div class="nv-expo-reviews--review--location">место проведения:</div>
+                        Центральный выставочный комплекс «Экспоцентр»даты проведения:5-8 апреля
+                    </div>
+                    <div class="nv-expo-reviews--review--image">
+                        <a href="#!"><img src="images/reviews/review3.jpg" alt=""></a>
+                        <a href="#!" class="nv-expo-reviews--review--ticket-link">Билет</a>
+                    </div>
+                </div>
+
             </div>
         </div>
         <aside class="nv-participants">
@@ -298,6 +337,16 @@
             owl.trigger('next.owl.carousel');
         })
 
+
+        /* CUSTOM SCROLLBAR */
+        jQuery('.nv-expo-reviews').mCustomScrollbar({
+            theme: 'rounded-dots',
+            mouseWheel: {
+                enable: true,
+                axis: 'y',
+                scrollAmount: 100
+            }
+        });
     });
 </script>
 </body>

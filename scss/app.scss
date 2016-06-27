@@ -2,6 +2,8 @@
 @import "modifiers";
 @import '~foundation-sites/scss/foundation';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
+@import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
+
 //@import 'foundation.scss';
 
 @include foundation-everything(false);
