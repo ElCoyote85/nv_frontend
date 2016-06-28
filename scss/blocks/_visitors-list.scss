@@ -21,6 +21,7 @@ $transition: 0.2s;
   @include grid-column(42%);
   @include breakpoint(medium down) {
     @include grid-column(1 of 1);
+    font-size: 1rem;
   }
   font-size: 18px;
   height: $participantsTopHeight;
@@ -38,6 +39,7 @@ $transition: 0.2s;
   @include grid-column(29%);
   @include breakpoint(medium down) {
     @include grid-column(1 of 2);
+    font-size: 1rem;
   }
   font-size: 19px;
   text-transform: uppercase;
@@ -67,6 +69,7 @@ $transition: 0.2s;
   @include grid-column(29%);
   @include breakpoint(medium down) {
     @include grid-column(1 of 2);
+    font-size: 1rem;
   }
   color: white;
   font-size: 19px;
