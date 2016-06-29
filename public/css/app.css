@@ -5719,6 +5719,7 @@ body {
 .nv-expo-reviews--header {
   text-transform: uppercase;
   margin-right: 40px;
+  margin-left: 0.9rem;
   position: relative;
   padding: 35px 25px;
   font-size: 1.3rem; }

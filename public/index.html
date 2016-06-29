@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<div class="nv-container nv-container__shadow">
+<div class="nv-container nv-container__shadow" data-sticky-container>
     <header class="nv-header">
         <a href="#" class="nv-header--logo-link"><img class="nv-header--logo" src="imgs/logo-navystavke.png" alt=""></a>
     </header>
-    <nav class="nv-nav">
+    <nav class="nv-nav sticky" data-sticky>
         <a href="#" class="nv-nav--button nv-nav--button__with-picture-1">
             <div class="nv-nav--button-text nv-nav--button-text__top-offset">
                 <div class="nv-nav--button-title">Выставки</div>
@@ -311,6 +311,8 @@
 <script src="js/bundle.js"></script>
 <script>
     jQuery(function () {
+        jQuery(document).foundation();
+
         var owl = jQuery('.owl-carousel').owlCarousel({
             autoplay: true,
             autoplayTimeout: 5000,

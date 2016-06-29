@@ -12,7 +12,7 @@ module.exports = {
         publicPath: '../',
         sourceMapFilename: '[name].map'
     },
-    // devtool: 'eval',
+    devtool: 'eval',
     resolve: {
         modulesDirectories: [
             'node_modules',
