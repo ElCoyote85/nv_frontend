@@ -12,7 +12,7 @@
     <header class="nv-header">
         <a href="#" class="nv-header--logo-link"><img class="nv-header--logo" src="imgs/logo-navystavke.png" alt=""></a>
     </header>
-    <nav class="nv-nav sticky" data-sticky>
+    <nav class="nv-nav" >
         <a href="#" class="nv-nav--button nv-nav--button__with-picture-1">
             <div class="nv-nav--button-text nv-nav--button-text__top-offset">
                 <div class="nv-nav--button-title">Выставки</div>
@@ -46,12 +46,12 @@
     </nav>
     <main class="nv-main">
         <aside class="nv-calendar">
-            <div class="nv-calendar--info">
+            <a class="nv-calendar--info" href="#!">
                 <div class="nv-calendar--info--title">Календарь</div>
                 <div class="nv-calendar--info--desc">Выставок <span class="float-right">2016</span></div>
-            </div>
+            </a>
             <div class="nv-calendar--city">
-                <input class="nv-calendar--city--input" type="text" placeholder="МОСКВА">
+                <input class="nv-calendar--city--input" type="text" placeholder="МОСКВА"/>
             </div>
             <div class="nv-calendar--date">
                 <div class="nv-calendar--date--day-and-month">
@@ -64,7 +64,26 @@
                 </div>
             </div>
         </aside>
+
         <div class="nv-main-content">
+            <div class="nv-calendar-container">
+                <div class="nv-calendar-events">
+                    <span class="nv-calendar-events--month">Июнь</span>
+                    <div class="nv-calendar-events--days">
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                        <div class="nv-calendar-events--days-day"></div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="nv-expo-reviews--header">Обзоры выставок</div>
             <div class="nv-expo-reviews ">
                 <div class="nv-expo-reviews--review">
@@ -310,46 +329,7 @@
 
 <script src="js/bundle.js"></script>
 <script>
-    jQuery(function () {
-        jQuery(document).foundation();
 
-        var owl = jQuery('.owl-carousel').owlCarousel({
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplaySpeed: 2000,
-            items: 2,
-            margin: 70,
-            loop: true,
-            autoWidth: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                640: {
-                    items: 4
-                }
-            }
-        });
-
-        jQuery('.nv-sponsors--arrow-left').click(function () {
-            owl.trigger('prev.owl.carousel');
-        })
-        jQuery('.nv-sponsors--arrow-right').click(function () {
-            owl.trigger('next.owl.carousel');
-        })
-
-
-        /* CUSTOM SCROLLBAR */
-        jQuery('.nv-expo-reviews').mCustomScrollbar({
-            theme: 'rounded-dots',
-            mouseWheel: {
-                enable: true,
-                axis: 'y',
-                scrollAmount: 100
-            }
-        });
-    });
 </script>
 </body>
 </html>

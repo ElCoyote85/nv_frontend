@@ -5220,7 +5220,8 @@ body {
 
 .nv-calendar--info {
   padding-right: 40px;
-  position: relative; }
+  position: relative;
+  display: block; }
   .nv-calendar--info:after {
     /* CALENDAR ARROW */
     content: "";
@@ -5278,6 +5279,32 @@ body {
 .nv-calendar--date--weekday-and-time--time {
   font-size: 2rem;
   color: white; }
+
+.nv-calendar-container {
+  margin: 0 -0.9375rem; }
+
+.nv-calendar-events {
+  position: relative;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to right, #8cb1cc, #7597b0);
+  height: 610px; }
+
+.nv-calendar-events--month {
+  display: inline;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  position: absolute; }
+
+.nv-calendar-events--days {
+  width: 100%;
+  height: 100%; }
+  .nv-calendar-events--days .nv-calendar-events--days-day {
+    min-width: 20px; }
 
 /* VISITORS SEARCH LEFT BLOCK*/
 .nv-participants-search {
