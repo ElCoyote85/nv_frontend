@@ -5,9 +5,15 @@
 @import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 @import "custom-scrollbar";
 
+@import '~react-event-calendar/style.css';
+
 //@import 'foundation.scss';
 
+
+// TODO Оптимизировать стили
 @include foundation-everything(false);
+//@include foundation-grid;
+//@include foundation-typography;
 
 body {
   //background-color: red;

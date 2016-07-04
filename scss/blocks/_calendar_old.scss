@@ -1,0 +1,222 @@
+/* NAVYSTAVKE CALENDAR*/
+
+.nv-calendar {
+  padding-top: 30px;
+}
+.nv-calendar--info {
+  padding-right: 40px;
+  position: relative;
+  display: block;
+  &:after {
+    /* CALENDAR ARROW */
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 19px;
+    height: 100%;
+    background-image: url("../public/imgs/calendar/cal-arrow2.png");
+    background-repeat: no-repeat;
+    opacity: 0.7;
+  }
+}
+.nv-calendar--info--title {
+  font-size: 1.6rem;
+  color: #52697b;
+  text-transform: uppercase;
+  line-height: 0.85;
+  //margin-left: -1px;
+}
+.nv-calendar--info--desc {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: #52697b;
+}
+.nv-calendar--city--input {
+  margin-top: 15px;
+  border: none;
+}
+
+
+.nv-calendar--date {
+  //@include grid-row(1);
+  margin-top: 30px;
+}
+
+.nv-calendar--date--day-and-month {
+  //@include grid-column(1, $gutter: 0);
+  //float: left;
+  text-align: center;
+}
+
+.nv-calendar--date--day-and-month--day {
+  font-size: 3.1rem;
+  color: #d57883;
+  //text-align: center;
+  line-height: 0.8;
+}
+
+.nv-calendar--date--day-and-month--month {
+  font-size: 2rem;
+  color: #52697b;
+  text-transform: lowercase;
+  line-height: 0.9;
+  //text-align: center;
+}
+
+.nv-calendar--date--weekday-and-time {
+  //@include grid-column(1, $gutter: 0);
+  //@include
+  //float: right;
+  text-align: center;
+  padding-top: 15px;
+}
+.nv-calendar--date--weekday-and-time--weekday {
+  font-size: 1.5rem;
+  color: #688499;
+  line-height: 0.5;
+}
+.nv-calendar--date--weekday-and-time--time {
+  font-size: 2rem;
+  color: white;
+}
+
+
+
+
+.nv-calendar-container {
+  //margin: 0 -0.9375rem;
+  height: 100%;
+  @include grid-col(4 of 5, $gutter: 0);
+}
+
+.nv-calendar-events {
+  position: relative;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to right, $sideBlocksColor, #7597b0);
+  //height: 610px;
+  height: 100%;
+}
+
+.nv-calendar-events--month {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  //position: absolute;
+}
+
+.nv-calendar-events--days {
+  //min-width: 40px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .nv-calendar-events--days-day {
+    display: inline-block;
+    height: inherit;
+    width: 250px;
+    //min-height: 550px;
+    height: 545px;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: normal;
+    margin: 0 -1px;
+
+    &.__empty {
+      color: white;
+      width: 50px;
+
+
+      .nv-calendar-events--days-day--header {
+        background-color: #f2f2f2;
+        color: #202020;
+      }
+
+      .nv-calendar-events--days-day--expos {
+        color: #202020;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .nv-calendar-events--days-day--no-expo {
+          display: block;
+          transform: rotate(-90deg) translateX(-210px);
+          white-space: nowrap ;
+          color: #a0a0a0;
+        }
+        .nv-calendar-events--days-day--expo {
+          display: none;
+        }
+      }
+    }
+
+
+    .nv-calendar-events--days-day--header {
+      //height:  65px;
+      width: 100%;
+      padding: 10px 0;
+      white-space: normal;
+      color: white;
+      .nv-calendar-events--days-day--header-day {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      .nv-calendar-events--days-day--header-weekday {
+        text-align: center;
+        font-size: 1.1rem;
+        //font-weight: 600;
+      }
+      .nv-calendar-events--days-day--header-weekday__full {
+      }
+
+    }
+
+    .nv-calendar-events--days-day--no-expo {
+      display: none;
+    }
+
+    .nv-calendar-events--days-day--expos {
+      overflow-y: scroll;
+      height: 460px;
+      margin-right: -20px;
+      padding-right: 3px;
+    }
+
+    .nv-calendar-events--days-day--expo {
+      width: 100%;
+      background-color: #f5f5f7;
+      padding: 5px;
+      margin: 3px 0;
+      font-size: 0.85rem;
+
+      border-radius: 3px;
+
+      &:nth-child(odd) {
+        background-color: lighten(#f5f5f7, 5%);
+      }
+
+      .nv-calendar-events--days-day--expo-title {
+        display: block;
+        text-align: center;
+      }
+      .nv-calendar-events--days-day--expo-dates {
+        text-align: right;
+        font-size: 1rem;
+        opacity: 0.8;
+        font-style: initial;
+        color: darkgrey;
+      }
+
+    }
+
+  }
+}

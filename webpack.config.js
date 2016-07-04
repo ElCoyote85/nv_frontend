@@ -27,7 +27,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 include: /scss/,
                 // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
@@ -51,9 +51,9 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
+            $: 'jquery.min.js',
+            jQuery: 'jquery.min.js',
+            'window.jQuery': 'jquery.min.js',
             React: 'react',
             render: 'react-dom'
         }),

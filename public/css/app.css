@@ -1426,7 +1426,94 @@ yx-axis
 	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
 	
 	/* ---------------------------------------- */
-@charset "UTF-8";
+$borderRadius: .3rem;
+$margin: .5rem ;
+$padding: .25rem .5rem;
+$eventColor: #3b91ad;
+$eventFontSize: 14px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.flexContainer {
+    max-width: 100%;
+    width: 100%;
+    border-top: 1px solid $eventColor;
+    border-left: 1px solid $eventColor;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flexColumn {
+    display: flex;
+    width: 14.2857142857%;
+    border-bottom: 1px solid $eventColor;
+    border-right: 1px solid $eventColor;
+    flex: 0 1 auto;
+    justify-content: center;
+}
+
+.day.inactive {
+    background-color: #f8f8f8;
+    color: #ccc;
+}
+
+.day.today {
+    background-color: #fcf8e3;
+}
+
+.day .inner-grid {
+    width: 100%;
+    position:relative;
+}
+
+.day .event-slot {
+    position: relative;
+    margin: $margin 0;
+    min-height: 28px;
+    font-size: $eventFontSize;
+}
+
+.day .event-slot.event {
+    background: #3b91ad;
+    color: #3b91ad;
+    white-space: nowrap;
+    text-indent: -10000px;
+    cursor: pointer;
+} 
+
+.day .event-slot .event-title {
+    position: absolute;
+    top:($eventFontSize/2)/2;
+    left:$margin;
+    z-index: 100;
+    color: #fff;
+    z-index:1;
+    overflow:visible;
+    text-indent: 0;
+}
+
+.day .event.event-first-day {
+    margin-left: $margin;
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+}
+
+.day .event.event-last-day {
+    margin-right: $margin;
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+}  
+
+.day .date {
+    padding: $padding;
+    text-align: right;
+}   @charset "UTF-8";
 .__nv-text-blue {
   color: #89c1ec; }
 
@@ -5286,93 +5373,6 @@ body {
   float: left; }
   .nv-calendar-container:last-child:not(:first-child) {
     float: right; }
-
-.nv-calendar-events {
-  position: relative;
-  left: 0;
-  top: 0;
-  background-image: linear-gradient(to right, #8cb1cc, #7597b0);
-  height: 100%; }
-
-.nv-calendar-events--month {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
-  text-transform: uppercase;
-  color: white;
-  font-size: 1.2rem;
-  margin: 20px 0; }
-
-.nv-calendar-events--days {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  white-space: nowrap; }
-  .nv-calendar-events--days .nv-calendar-events--days-day {
-    display: inline-block;
-    height: inherit;
-    width: 250px;
-    height: 545px;
-    vertical-align: top;
-    overflow: hidden;
-    white-space: normal;
-    margin: 0 -1px; }
-    .nv-calendar-events--days .nv-calendar-events--days-day.__empty {
-      color: white;
-      width: 50px; }
-      .nv-calendar-events--days .nv-calendar-events--days-day.__empty .nv-calendar-events--days-day--header {
-        background-color: #f2f2f2;
-        color: #202020; }
-      .nv-calendar-events--days .nv-calendar-events--days-day.__empty .nv-calendar-events--days-day--expos {
-        color: #202020;
-        background-color: white;
-        height: 100%;
-        width: 100%;
-        overflow: hidden; }
-        .nv-calendar-events--days .nv-calendar-events--days-day.__empty .nv-calendar-events--days-day--expos .nv-calendar-events--days-day--no-expo {
-          display: block;
-          transform: rotate(-90deg) translateX(-210px);
-          white-space: nowrap;
-          color: #a0a0a0; }
-        .nv-calendar-events--days .nv-calendar-events--days-day.__empty .nv-calendar-events--days-day--expos .nv-calendar-events--days-day--expo {
-          display: none; }
-    .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--header {
-      width: 100%;
-      padding: 10px 0;
-      white-space: normal;
-      color: white; }
-      .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--header .nv-calendar-events--days-day--header-day {
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: 600; }
-      .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--header .nv-calendar-events--days-day--header-weekday {
-        text-align: center;
-        font-size: 1.1rem; }
-    .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--no-expo {
-      display: none; }
-    .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--expos {
-      overflow-y: scroll;
-      height: 460px;
-      margin-right: -20px;
-      padding-right: 3px; }
-    .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--expo {
-      width: 100%;
-      background-color: #f5f5f7;
-      padding: 5px;
-      margin: 3px 0;
-      font-size: 0.85rem;
-      border-radius: 3px; }
-      .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--expo:nth-child(odd) {
-        background-color: white; }
-      .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--expo .nv-calendar-events--days-day--expo-title {
-        display: block;
-        text-align: center; }
-      .nv-calendar-events--days .nv-calendar-events--days-day .nv-calendar-events--days-day--expo .nv-calendar-events--days-day--expo-dates {
-        text-align: right;
-        font-size: 1rem;
-        opacity: 0.8;
-        font-style: initial;
-        color: darkgrey; }
 
 /* VISITORS SEARCH LEFT BLOCK*/
 .nv-participants-search {

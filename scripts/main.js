@@ -1,3 +1,7 @@
+import React from 'react'
+import {render} from 'react-dom'
+import Calendar from "calendar/Calendar";
+
 $(function () {
     $(document).foundation();
 
@@ -38,8 +42,14 @@ $(function () {
         }
     });
 
-    /* CALLING CALENDAR */
-    $('.nv-calendar--info').click(function (e) {
-        
-    });
+
 });
+
+/* CALLING CALENDAR */
+// let calendarIsOpen = false;
+// $('.nv-calendar--info').click(function (e) {
+//     // if
+//     render(<Calendar/>, $('.nv-calendar-container')[0]);
+//     // render(<Calendar/>, $('.nv-calendar-container')[0]);
+//     /**/
+// });
