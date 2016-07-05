@@ -10,6 +10,8 @@ body {
 .nv-main {
   height: 610px;
   overflow: hidden;
+  position: relative;
+  @include grid-row(5);
 }
 .nv-calendar {
   @include grid-column(1 of 5, $gutter: 50px);

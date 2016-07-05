@@ -5267,7 +5267,16 @@ body {
 
 .nv-main {
   height: 610px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .nv-main::before, .nv-main::after {
+    content: ' ';
+    display: table; }
+  .nv-main::after {
+    clear: both; }
 
 .nv-calendar {
   width: 20%;
@@ -5370,9 +5379,22 @@ body {
 .nv-calendar-container {
   height: 100%;
   width: 80%;
-  float: left; }
+  float: left;
+  position: relative;
+  left: 20%;
+  position: absolute !important;
+  overflow: hidden; }
   .nv-calendar-container:last-child:not(:first-child) {
     float: right; }
+
+.nv-calendar-events {
+  position: relative;
+  pointer-events: all;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 100;
+  left: -95%; }
 
 /* VISITORS SEARCH LEFT BLOCK*/
 .nv-participants-search {

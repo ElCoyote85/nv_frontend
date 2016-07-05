@@ -92,5 +92,18 @@
   //margin: 0 -0.9375rem;
   height: 100%;
   @include grid-col(4 of 5, $gutter: 0);
+  @include grid-col-pos(1);
+  position: absolute !important;
+  overflow: hidden;
 }
 
+.nv-calendar-events {
+  position: relative;
+  pointer-events: all;
+  //display: none;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 100;
+  left: -95%;
+}

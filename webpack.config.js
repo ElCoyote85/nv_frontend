@@ -19,7 +19,7 @@ module.exports = {
             'node_modules',
             'node_modules/foundation-sites/js',
             'node_modules/foundation-sites/scss',
-            'node_modules/jquery/dist',
+            // 'node_modules/jquery/dist',
             'scripts'
         ],
         extensions: [ '', '.js', '.jsx']
@@ -51,11 +51,11 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: 'jquery.min.js',
-            jQuery: 'jquery.min.js',
-            'window.jQuery': 'jquery.min.js',
-            React: 'react',
-            render: 'react-dom'
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            // React: 'react',
+            // render: 'react-dom'
         }),
         new ExtractPlugin("./public/css/app.css"),
         // new webpack.optimize.UglifyJsPlugin()

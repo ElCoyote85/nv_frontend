@@ -1,18 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Spring, presets} from 'react-motion';
+import {Motion, spring, presets} from 'react-motion';
 
 import EventCalendar from  'react-event-calendar';
 
 
-
-class Mycomp extends React.Component {
-    render() {
-        return (
-            <h3>{this.props.text}</h3>
-        );
-    }
-}
 
 
 export default class Calendar extends React.Component {
@@ -21,6 +13,50 @@ export default class Calendar extends React.Component {
         super(props);
     }
 
+    componentWillMount() {
+        this.openCalendar();
+    }
+
+    componentWillUpdate() {
+        console.log('dekdjekdje');
+    }
+
+    componentWillReceiveProps  () {
+        // this.closeCalendar();
+
+    }
+
+    closeCalendar() {
+        this.setState(
+            {
+                style: {
+                    start: {
+                        left: 0,
+                        width: 100
+                    },
+                    stop: {
+                        left: -100,
+                        width: 30
+                    }
+                }
+            }
+        );
+    }
+
+    openCalendar() {
+        this.state = {
+            style: {
+                start: {
+                    left: -100,
+                    width: 30
+                },
+                stop: {
+                    left: 0,
+                    width: 100
+                }
+            }
+        };
+    }
 
 
     render() {
@@ -41,10 +77,30 @@ export default class Calendar extends React.Component {
         //         data: 'you can add what ever random data you may want to use later',
         //     },
         // ];
-        return (
-            <div></div>
-                
 
+        this.props.calIsOpen ? this.closeCalendar() : this.openCalendar();
+        console.log('Update');
+
+        return (
+            <Motion
+                defaultStyle={this.state.style.start}
+                style={{
+                    left: spring(this.state.style.stop.left, {stiffness: 100, damping: 10}),
+                    width: spring(this.state.style.stop.width, {stiffness: 100, damping: 10}),
+                 }}>
+
+                {
+                    val => {
+                        let newStyle = {
+                            display: 'block',
+                            left: `${val.left}%`,
+                        };
+                        return (<div className="nv-calendar-events" style={newStyle}>
+
+                        </div>)
+                    }
+                }
+            </Motion>
         );
     }
 }

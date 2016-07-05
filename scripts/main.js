@@ -1,6 +1,3 @@
-import React from 'react'
-import {render} from 'react-dom'
-import Calendar from "calendar/Calendar";
 
 $(function () {
     $(document).foundation();
@@ -38,12 +35,15 @@ $(function () {
         mouseWheel: {
             enable: true,
             axis: 'y',
-            scrollAmount: 100
+            scrollAmount: 60
         }
     });
 
 
 });
+
+
+
 
 /* CALLING CALENDAR */
 // let calendarIsOpen = false;
