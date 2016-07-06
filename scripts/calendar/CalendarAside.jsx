@@ -9,14 +9,14 @@ export default class CalendarAside extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            calIsOpen: false,
+            isOpen: false,
             calendarIsMounted: false
         }
     }
 
     componentWillMount() {
         // this.setState({
-        //     calIsOpen: false
+        //     isOpen: false
         // });
     }
 
@@ -25,62 +25,50 @@ export default class CalendarAside extends React.Component {
     }
 
     clickHandler(e) {
-        // this.state.calIsOpen ? this.setState({calIsOpen: false}) : this.setState({calIsOpen: true});
 
-        if(!this.state.calendarIsMounted) {
-            this.setState({calendarIsMounted: true, calIsOpen: this.state.calIsOpen});
-            render(
-                <Calendar calIsOpen={this.state.calIsOpen} ref="Cal"/>,
-                $('.nv-calendar-container')[0]
-            );
-        }
+        this.setState({isOpen: !this.state.isOpen, calendarIsMounted: true});
+
 
         // render(
-        //     <Calendar calIsOpen={this.state.calIsOpen} />,
+        //     <Calendar isOpen={this.state.isOpen} calendarIsMounted={this.state.calendarIsMounted} />,
         //     $('.nv-calendar-container')[0]
         // );
-
-        if(!this.state.calIsOpen ) {
-
-            this.setState({calIsOpen: true});
-            console.log(this.refs);
-            this.refs.Cal.closeCalendar();
-
-        } else {
-            this.setState({calIsOpen: false});
-            console.log('false');
-
-            // render(
-            //     <Calendar calIsOpen={this.state.calIsOpen} />,
-            //     $('.nv-calendar-container')[0]
-            // );
-        }
     }
 
     render() {
-        return (
-                <div className="nv-calendar">
-                    <a className="nv-calendar--info" href="#!" onClick={this.clickHandler.bind(this)} >
-                        <div className="nv-calendar--info--title">Календарь</div>
-                        <div className="nv-calendar--info--desc">Выставок <span className="float-right">2016</span></div>
+        // var styleArrow = {transform: 'scaleX(1)'};
+        // this.state.isOpen ? styleArrow = {transform: 'scaleX(-1)'};
 
-                    </a>
-                    <div className="nv-calendar--city">
-                        <input className="nv-calendar--city--input" type="text" placeholder="МОСКВА"/>
-                    </div>
-                    <div className="nv-calendar--date">
-                        <div className="nv-calendar--date--day-and-month">
-                            <div className="nv-calendar--date--day-and-month--day">26</div>
-                            <div className="nv-calendar--date--day-and-month--month">февраля</div>
+        return (
+                <div>
+                    <aside className="nv-calendar-aside">
+                        <div className="nv-calendar">
+                            <a className="nv-calendar--info" href="#!" onClick={this.clickHandler.bind(this)}>
+                                <div className="nv-calendar--info--title">Календарь</div>
+                                <div className="nv-calendar--info--desc">Выставок <span className="float-right">2016</span></div>
+                            </a>
+                            <div className="nv-calendar--city">
+                                <input className="nv-calendar--city--input" type="text" placeholder="МОСКВА"/>
+                            </div>
+                            <div className="nv-calendar--date">
+                                <div className="nv-calendar--date--day-and-month">
+                                    <div className="nv-calendar--date--day-and-month--day">26</div>
+                                    <div className="nv-calendar--date--day-and-month--month">февраля</div>
+                                </div>
+                                <div className="nv-calendar--date--weekday-and-time">
+                                    <div className="nv-calendar--date--weekday-and-time--weekday">понедельник</div>
+                                    <div className="nv-calendar--date--weekday-and-time--time">14:30</div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="nv-calendar--date--weekday-and-time">
-                            <div className="nv-calendar--date--weekday-and-time--weekday">понедельник</div>
-                            <div className="nv-calendar--date--weekday-and-time--time">14:30</div>
-                        </div>
+                    </aside>
+
+                    <div className="nv-calendar-container">
+                        <Calendar calendarIsMounted={this.state.calendarIsMounted} isOpen={this.state.isOpen}/>
                     </div>
                 </div>
         );
     }
 }
 
-render(<CalendarAside/>, $('.nv-calendar-aside')[0]);
+render(<CalendarAside/>, $('.nv-calendar-block')[0]);

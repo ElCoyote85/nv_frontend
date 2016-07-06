@@ -103,7 +103,24 @@
   //display: none;
   height: 100%;
   width: 100%;
-  background-color: red;
+  //background-color: red;
   z-index: 100;
   left: -95%;
+}
+.nv-calendar-events-row {
+  background-color: white;
+  &:nth-child(even) {
+    background-color: darken(white, 1%);
+  }
+}
+
+.nv-calendar-events-row--event {
+  background-color: green;
+  .nv-calendar-events-row--event-header {
+    display: block;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    text-align: left;
+  }
 }
