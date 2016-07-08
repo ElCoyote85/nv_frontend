@@ -5393,21 +5393,39 @@ body {
   height: 100%;
   width: 100%;
   z-index: 100;
-  left: -95%; }
+  left: -95%;
+  overflow: hidden; }
 
 .nv-calendar-events-row {
-  background-color: white; }
+  background-color: white;
+  white-space: nowrap;
+  z-index: 10; }
   .nv-calendar-events-row:nth-child(even) {
     background-color: #fcfcfc; }
 
 .nv-calendar-events-row--event {
-  background-color: green; }
+  background-color: #8db2cd;
+  display: inline-block;
+  overflow: hidden; }
   .nv-calendar-events-row--event .nv-calendar-events-row--event-header {
     display: block;
     width: 100%;
     height: 40px;
     vertical-align: middle;
-    text-align: left; }
+    text-align: left;
+    color: white;
+    margin-top: 7px;
+    margin-left: 10px; }
+
+.nv-calendar-events--column {
+  height: 100%;
+  border-right: 1px solid darkgray;
+  border-left: 1px solid darkgray;
+  z-index: 5; }
+  .nv-calendar-events--column:first-child {
+    border-left: none; }
+  .nv-calendar-events--column:last-child {
+    border-right: none; }
 
 /* VISITORS SEARCH LEFT BLOCK*/
 .nv-participants-search {

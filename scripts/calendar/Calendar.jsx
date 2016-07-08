@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Motion, spring, presets} from 'react-motion';
 
-import * as moment from 'moment';
+import moment from 'moment';
 import 'moment/locale/ru';
 
 // import EventCalendar from  'react-event-calendar';
@@ -22,8 +22,23 @@ const expos = [
     },
     {
         start: '2016-07-16',
-        stop: '2016-07-06',
+        stop: '2016-07-18',
         title: 'Third expo and some long expo description'
+    },
+    {
+        start: '2016-07-07',
+        stop: '2016-07-11',
+        title: 'Четвертая выставка'
+    },
+    {
+        start: '2016-07-06',
+        stop: '2016-07-12',
+        title: 'Fifth '
+    },
+    {
+        start: '2016-07-15',
+        stop: '2016-07-19',
+        title: 'Шестая выставка '
     },
 
 ]
@@ -37,6 +52,7 @@ export default class Calendar extends React.Component {
         // this.state.isOpen = false;
         this.stepLength = 48;
         // this.rowHeight = 40;
+        this.rows = [];
     }
 
     componentDidMount() {
@@ -46,41 +62,53 @@ export default class Calendar extends React.Component {
     makeMatrix() {
         let rows = [];
 
-        insertIntoRow = function (event, expoIndex) {
-            rows.forEach(function (row, rowIndex) {
-                var currentRowIndex = 0;
-                row.forEach(function (rowEvent, eventIndex) {
-                    if(!moment(event.start).isBetween(rowEvent.start, rowEvent.stop)) {
-                        rows[currentRowIndex].push(expos.splice(expoIndex, 1)[0]);
-                    } else {
-                        currentRowIndex++;
-                        insertIntoRow(event, expoIndex);
-                    }
-                });
-            })
+        expos.forEach(function (eventValue) {
+            insertToRow(0, eventValue);
+        });
+
+        return rows;
+
+        function insertToRow(rowNumber, eventValue) {
+            var nextRow = false;
+
+            if(rows[rowNumber] === undefined) {
+                rows[rowNumber] = [];
+                rows[rowNumber].push(eventValue);
+            } else {
+                for(let i=0; i <= rows[rowNumber].length - 1; i++ ) {
+                    rowHasEvent(rows[rowNumber][i], eventValue) ? nextRow = true : nextRow = false;
+                    if(nextRow) break;
+                }
+                // rows[rowNumber].forEach(function (rowEventValue) {
+                //     rowHasEvent(rowEventValue, eventValue) ? nextRow = true : nextRow = false;
+                // });
+                nextRow ? insertToRow(rowNumber + 1, eventValue) : rows[rowNumber].push(eventValue);
+            }
         }
 
-        expos.forEach(function (event, i, arr) {
-            if(rows[0] === undefined) {
-                rows[0] = [];
-                rows[0].push(expos.splice(i, 1)[0]);
+        function rowHasEvent(rowsEvent, eventsEvent) {
+            // debugger;
+            if(moment(eventsEvent.start).isBetween(rowsEvent.start, rowsEvent.stop, null, '[]') ||
+                moment(eventsEvent.stop).isBetween(rowsEvent.start, rowsEvent.stop, null, '[]') ||
+                moment(rowsEvent.stop).isBetween(eventsEvent.start, eventsEvent.stop, null, '[]') ||
+                moment(rowsEvent.start).isBetween(eventsEvent.start, eventsEvent.stop, null, '[]')
+            ) {
+                return true;
             } else {
-                insertIntoRow(event, i);
+                return false;
             }
-        })
-
+        }
     }
 
-    rowHasSlot(rowEvents = [], event) {
-        // rowEvents
-    }
 
     componentWillMount() {
+        this.rows = this.makeMatrix();
+        console.log(this.rows);
     }
 
     componentWillReceiveProps() {
         this.props.isOpen ? this.closeCalendar() : this.openCalendar();
-        console.log('Update');
+        // console.log('Update');
     }
 
     closeCalendar() {
@@ -120,24 +148,12 @@ export default class Calendar extends React.Component {
 
     render() {
         // var stepLength = this.props.stepLength;
-        var stepLength = 48;
-        const events = [
-            {
-                start: '2016-07-20',
-                end: '2016-07-02',
-                eventClasses: 'optionalEvent',
-                title: 'test event',
-                description: 'This is a test description of an event',
-            },
-            {
-                start: '2016-06-15',
-                end: '2016-06-25',
-                title: 'test event',
-                description: 'This is a test description of an event',
-                data: 'you can add what ever random data you may want to use later',
-            },
-        ];
-
+        debugger;
+        let columnsNumber = moment(expos[expos.length - 1].stop).diff(expos[0].start, 'days');
+        console.log(columnsNumber) ;
+        var rows = this.rows.map(function (rowItem, index) {
+           return <Row row={rowItem} firstDate={this.rows[0][0].start} key={index}  />
+        }, this);
 
         // this.props.calIsOpen ? this.closeCalendar() : this.openCalendar();
         if(!this.props.calendarIsMounted) return(<div></div>);
@@ -160,10 +176,7 @@ export default class Calendar extends React.Component {
                         };
                         return (
                             <div className="nv-calendar-events" style={newStyle}>
-                                <Row/>
-                                <Row/>
-                                <Row/>
-                                <Row/>
+                                {rows}
                             </div>
                         )
                     }
