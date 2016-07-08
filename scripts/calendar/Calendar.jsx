@@ -148,7 +148,6 @@ export default class Calendar extends React.Component {
 
     render() {
         // var stepLength = this.props.stepLength;
-        debugger;
         let columnsNumber = moment(expos[expos.length - 1].stop).diff(expos[0].start, 'days');
         console.log(columnsNumber) ;
         var rows = this.rows.map(function (rowItem, index) {
