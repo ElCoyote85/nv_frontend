@@ -2,6 +2,9 @@ import React from 'react';
 import {render, unmountComponentAtNode} from 'react-dom';
 import Calendar from './Calendar';
 
+import moment from 'moment';
+import 'moment/locale/ru';
+
 // import {Motion, spring} from 'react-motion';
 import {Motion, presets, spring} from 'react-motion';
 
@@ -18,26 +21,37 @@ export default class CalendarAside extends React.Component {
         // this.setState({
         //     isOpen: false
         // });
+        let now = moment();
+        this.state.now = now;
+        this.updateTime();
     }
 
     componentDidMount() {
 
     }
 
+    updateTime() {
+        let now = this.state.now,
+            that = this;
+        that.state.currentTime = moment().format('HH:mm');
+        // setInterval(function () {
+        //     that.state.currentTime = moment().format('HH:mm:ss');
+        //     that.forceUpdate();
+        // }, 10000);
+    }
+
     clickHandler(e) {
-
         this.setState({isOpen: !this.state.isOpen, calendarIsMounted: true});
+    }
 
+    clickCallback() {
 
-        // render(
-        //     <Calendar isOpen={this.state.isOpen} calendarIsMounted={this.state.calendarIsMounted} />,
-        //     $('.nv-calendar-container')[0]
-        // );
     }
 
     render() {
-        // var styleArrow = {transform: 'scaleX(1)'};
-        // this.state.isOpen ? styleArrow = {transform: 'scaleX(-1)'};
+
+        let now = this.state.now;
+        console.log(this.state.isOpen);
 
         return (
                 <div>
@@ -45,19 +59,19 @@ export default class CalendarAside extends React.Component {
                         <div className="nv-calendar">
                             <a className="nv-calendar--info" href="#!" onClick={this.clickHandler.bind(this)}>
                                 <div className="nv-calendar--info--title">Календарь</div>
-                                <div className="nv-calendar--info--desc">Выставок <span className="float-right">2016</span></div>
+                                <div className="nv-calendar--info--desc">Выставок <span className="float-right">{now.format('YYYY')}</span></div>
                             </a>
                             <div className="nv-calendar--city">
                                 <input className="nv-calendar--city--input" type="text" placeholder="МОСКВА"/>
                             </div>
                             <div className="nv-calendar--date">
                                 <div className="nv-calendar--date--day-and-month">
-                                    <div className="nv-calendar--date--day-and-month--day">26</div>
-                                    <div className="nv-calendar--date--day-and-month--month">февраля</div>
+                                    <div className="nv-calendar--date--day-and-month--day">{now.format('DD')}</div>
+                                    <div className="nv-calendar--date--day-and-month--month">{now.format('D MMMM').split(' ')[1]}</div>
                                 </div>
                                 <div className="nv-calendar--date--weekday-and-time">
-                                    <div className="nv-calendar--date--weekday-and-time--weekday">понедельник</div>
-                                    <div className="nv-calendar--date--weekday-and-time--time">14:30</div>
+                                    <div className="nv-calendar--date--weekday-and-time--weekday">{now.format('dddd')}</div>
+                                    <div className="nv-calendar--date--weekday-and-time--time">{this.state.currentTime}</div>
                                 </div>
                             </div>
                         </div>

@@ -22,6 +22,7 @@
     "precss": "^1.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-draggable": "^2.1.2",
     "react-event-calendar": "^0.3.0",
     "react-motion": "^0.4.4",
     "resolve-url-loader": "^1.4.3",

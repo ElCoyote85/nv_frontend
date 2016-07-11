@@ -23,6 +23,7 @@ export default class Row extends React.Component {
     render() {
         let style = {
             height: '40px',
+            width: `${this.props.width}px`
         };
         let events = this.events;
         return (
