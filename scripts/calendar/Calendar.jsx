@@ -155,7 +155,7 @@ export default class Calendar extends React.Component {
                 width: `${48 * val.length}px`,
             };
             days = days.concat(val);
-            return <div className="nv-calendar-events--month" style={style}>{val[0]['monthName']}</div>;
+            return <div className="nv-calendar-events--month" style={style} key={id}>{val[0]['monthName']}</div>;
         });
 
         let daysBlocks = days.map(function (val, id) {
@@ -163,7 +163,7 @@ export default class Calendar extends React.Component {
                 width: `${48}px`
             };
 
-            return <div className="nv-calendar-events--day" style={style}>
+            return <div className="nv-calendar-events--day" style={style} key={id}>
                 <span className="nv-calendar-events--day-number">{val['day']}</span>
                 <span className="nv-calendar-events--day-weekday">{val['weekDay']}</span>
             </div>;
@@ -180,12 +180,13 @@ export default class Calendar extends React.Component {
 
         return (
             <Motion
+                key={'none'}
+
                 defaultStyle={this.state.style.start}
                 style={{
                     left: spring(this.state.style.stop.left, {stiffness: 100, damping: 10}),
                     width: spring(this.state.style.stop.width, {stiffness: 100, damping: 10}),
                  }}>
-
                 {
                     val => {
                         let newStyle = {

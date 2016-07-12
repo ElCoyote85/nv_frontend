@@ -23,4 +23,6 @@ malihu($);
 
 import 'main';
 
+import './visitors/Visitors';
 import './calendar/CalendarAside';
+
