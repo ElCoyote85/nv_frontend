@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .block {
+            position: absolute;
+            width: 100px;
+            /*overflow: hidden;*/
+            background-color: #3b91ad;
+            left: 400px;
+            top: 300px;
+            padding: 10px;
+            padding-right: 2px;
+            z-index: 0;
+        }
+        .block > a {
+            width: 100%;
+            height: 100%;
+            /*background-color: #1ccacd;*/
+            white-space: nowrap;
+            color: white;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .block::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -600px;
+            background-color: #3adb76;
+            width: 600px;
+            height: 600px;
+        }
+        .block::before {
+            position: absolute;
+            content: "";
+            background-image: linear-gradient(to right, transparent, #3b91ad);
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+<div class="block"><a href="#!">Some test text test text</a></div>
+</body>
+</html>
