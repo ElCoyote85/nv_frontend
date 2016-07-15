@@ -27,17 +27,11 @@ export default class Event extends React.Component {
         this.state.isOpen = !this.state.isOpen;
         this.setState(this.state);
         console.log(this.state.isOpen );
-        // this.forceUpdate();
-        // if(this.state.isOpen) {
-        //     this.state.readmoreStyle = {height: 0}
-        // } else {
-        //     this.state.readmoreStyle = {height: 300}
-        // }
     }
 
     getImage() {
         if( this.state.isOpen) {
-            return <div style={{textAlign: 'center'}}><img style={{width: '100px'}} src="http://static.navystavke.ru/expos/bigger/12504.png"/></div>
+            return <div style={{textAlign: 'center'}}><img style={{width: '100px'}} src={this.props.event.imageUrl}/></div>
         }
     }
     
@@ -58,9 +52,9 @@ export default class Event extends React.Component {
         var  readmoreStyle = {start: {height: 0}, stop: {height: 0}};
         if(this.state.isOpen) {
             readmoreStyle.start = {height: 40};
-            readmoreStyle.stop = {height: 300};
+            readmoreStyle.stop = {height: 350};
         } else {
-            readmoreStyle.start = {height: 300};
+            readmoreStyle.start = {height: 350};
             readmoreStyle.stop = {height: 40};
         }
 
@@ -75,24 +69,30 @@ export default class Event extends React.Component {
 
                 {val => {
                     let newStyle = {
-                        width: `${this.length * 48}px`,
+                        // width: `${this.length * 48}px`,
                         left: `${this.offset * 48}px`,
                         right: 0,
                         // backgroundColor: 'white',
                         height: `${val.height}px`
                     };
                     return <div className="nv-calendar-events-row--event" style={newStyle}>
-                        <a className="nv-calendar-events-row--event-header" href="#!" style={{display: 'block'}} title={event.title} onClick={this.clickHandler.bind(this)}>
+                        <a className="nv-calendar-events-row--event-header" href="#!" style={{display: 'block',width: `${this.length * 48}px`}} title={event.title} onClick={this.clickHandler.bind(this)}>
                             {event.title}
                         </a>
+
                                 <div className="nv-calendar-events-row--event-body">
                                     {this.getImage()}
-
+                                    <h6 style={{textAlign:'center', paddingTop:'10px'}}>{event.title}</h6>
+                                    <div className="nv-calendar-events-row--event-body--dates">
+                                        С {moment(event.start).format('D MMMM')} по {moment(event.stop).format('DD MMMM YYYY')} года
+                                    </div>
+                                    <p className="nv-calendar-events-row--event-city">{event.city}</p>
+                                    <p className="nv-calendar-events-row--event-venue">{event.venue}</p>
+                                    <p className="nv-calendar-events-row--event-venue-section">{event.venueSection}</p>
+                                    <p className="nv-calendar-events-row--event-event-price">{event.entryPrice}</p>
                                     <p className="nv-calendar-events-row--event-description">{event.description}</p>
-                                    <a href="">{event.website}</a>
+                                    <a href={event.website} target="_blank">{event.website}</a>
                                 </div>
-
-
                     </div>
                 }}
             </Motion>

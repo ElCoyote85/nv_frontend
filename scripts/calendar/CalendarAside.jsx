@@ -42,6 +42,17 @@ export default class CalendarAside extends React.Component {
 
     clickHandler(e) {
         this.setState({isOpen: !this.state.isOpen, calendarIsMounted: true});
+        if(this.state.isOpen) {
+            this.arrow
+        }
+    }
+
+    getArrow() {
+        if(!this.state.isOpen) {
+            return <span className="nv-calendar--info--arrow" style={{transform: "none"}}></span>;
+        } else {
+            return <span className="nv-calendar--info--arrow" style={{transform: "scaleX(-1)"}}></span>;
+        }
     }
 
     clickCallback() {
@@ -51,7 +62,6 @@ export default class CalendarAside extends React.Component {
     render() {
 
         let now = this.state.now;
-        console.log(this.state.isOpen);
 
         return (
                 <div>
@@ -60,7 +70,9 @@ export default class CalendarAside extends React.Component {
                             <a className="nv-calendar--info" href="#!" onClick={this.clickHandler.bind(this)}>
                                 <div className="nv-calendar--info--title">Календарь</div>
                                 <div className="nv-calendar--info--desc">Выставок <span className="float-right">{now.format('YYYY')}</span></div>
+                                {this.getArrow()}
                             </a>
+                            
                             <div className="nv-calendar--city">
                                 <input className="nv-calendar--city--input" type="text" placeholder="МОСКВА"/>
                             </div>

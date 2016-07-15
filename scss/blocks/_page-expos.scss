@@ -1,0 +1,77 @@
+.nv-main__page-expos {
+  background-color: #8cb1cc;
+  //@include grid-layout()
+  //@include grid-row(4, $gutter: 25);
+  height: 610px;
+  @include breakpoint(medium down) {
+    height: 1170px;
+  }
+}
+
+.nv-expos {
+  margin-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @include breakpoint(medium down) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nv-expo {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    @include grid-column(1 of 4, 35px);
+    .nv-expo-item {
+      display: block;
+      $expoSmallRadius: 10px;
+      $expoLargeRadius: 20px;
+      height: 170px;
+      background-color: #6d94b1;
+      border-radius: $expoSmallRadius $expoSmallRadius $expoLargeRadius $expoLargeRadius;
+      position: relative;
+      .title {
+        text-transform: uppercase;
+        @include horizontal-center;
+        bottom: 9px;
+        color: white;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        @include breakpoint(medium down) {
+          text-align: center;
+          font-size: 0.8rem;
+          bottom: 1px;
+          white-space: normal;
+        }
+      }
+      img {
+        margin-top: -8%;
+        position: relative;
+        @include absolute-center;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 77%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-color: #a2c0da;
+        border-radius: $expoSmallRadius;
+      }
+
+      transition: 0.2s;
+      &:hover {
+        transition: 0.3s ;
+        box-shadow: 0px 4px 7px 2px rgba(32, 28, 22, 0.3);
+        transform: translateY(-5px);
+        z-index: 100;
+      }
+
+    }
+    @include breakpoint(medium down) {
+      @include grid-column(1 of 2, 25px);
+    }
+  }
+}

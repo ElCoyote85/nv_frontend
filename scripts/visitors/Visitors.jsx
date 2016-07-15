@@ -5,12 +5,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import {NV_PROPS} from 'nv_props';
+
 export default class Visitors extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            visitors: []
-        };
         this.visitors = [];
     }
 
@@ -28,7 +27,8 @@ export default class Visitors extends React.Component {
 
     getVisitors() {
         let that = this;
-        $.ajax('http://ex:82/json/index/visitors', {
+        // $.ajax('http://ex:82/json/index/visitors', {
+        $.ajax(`http://${NV_PROPS.MAINHOST}/json/index/visitors`, {
             method: 'GET',
             crossDomain: true,
             xhrFields: {
@@ -49,7 +49,7 @@ export default class Visitors extends React.Component {
             that.forceUpdate();
         })
         .fail(function (xhr) {
-            visitors = [];
+            that.visitors = [];
             console.log(xhr);
         })
     }

@@ -21,8 +21,9 @@ malihu($);
 // var $ = require('jquery');
 // require('malihu-custom-scrollbar-plugin')($);
 
+
 import 'main';
 
-import './visitors/Visitors';
+// import './visitors/Visitors';
 import './calendar/CalendarAside';
 

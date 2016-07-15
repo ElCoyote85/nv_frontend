@@ -8,9 +8,9 @@ var path = require("path"),
 module.exports = {
     entry: './scripts/entry.js',
     output: {
-        path: __dirname,
-        filename: './public/js/bundle.js',
-        publicPath: '../',
+        path: 'public',
+        filename: 'js/bundle.js',
+        publicPath: 'http://static.navystavke.ru/newassets/',
         sourceMapFilename: '[name].map'
     },
     devtool: 'eval',
@@ -31,7 +31,7 @@ module.exports = {
                 include: /scss/,
                 // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
-                loader: ExtractPlugin.extract('style', 'css?root=public/css&sourceMap!sass?sourceMap')
+                loader: ExtractPlugin.extract('style', 'css?root=./css&sourceMap!sass?sourceMap')
             },
 
             {
@@ -44,22 +44,23 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png)$/,
-                loader: 'file?emitFile=false&name=../[path][name].[ext]'
+                loader: 'file?emitFile=false&name=[path][name].[ext]'
             }
 
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            mangle: false,
-            compress: {
-                warnings: false
-            },
-            output: {
-                comments: false
-            }
-        }),
+        // new CleanPlugin('public'),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: false,
+        //     mangle: false,
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     output: {
+        //         comments: false
+        //     }
+        // }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -67,7 +68,7 @@ module.exports = {
             // React: 'react',
             // render: 'react-dom'
         }),
-        new ExtractPlugin("./public/css/app.css"),
+        new ExtractPlugin("./css/app.css"),
         // new webpack.optimize.UglifyJsPlugin()
     ],
     postcss: function () {
