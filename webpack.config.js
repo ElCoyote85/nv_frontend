@@ -6,10 +6,16 @@ var path = require("path"),
     ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './scripts/entry.js',
+    // entry: './scripts/entry.js',
+    entry: {
+        common: './scripts/entry-foundation.js',
+        scroll: './scripts/entry-scroll.js',
+        calendar: './scripts/entry-calendar.js',
+        sponsors: './scripts/entry-sponsors.js'
+    },
     output: {
         path: 'public',
-        filename: 'js/bundle.js',
+        filename: 'js/[name].js',
         publicPath: 'http://static.navystavke.ru/newassets/',
         sourceMapFilename: '[name].map'
     },

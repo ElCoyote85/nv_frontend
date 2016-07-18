@@ -14,7 +14,7 @@ $transition: 0.2s;
   @mixin nv-visitors-list {
     $backColor: #f6f6ff;
     //background-color: $backColor;
-    background-image: linear-gradient(to bottom, desaturate(darken($backColor, 10%), 80%) 7%, $backColor 40%, $backColor);
+    background-image: linear-gradient(to bottom, desaturate(darken($backColor, 25%), 85%) 7%, $backColor 40%, $backColor);
   }
   @include nv-visitors-list;
 
@@ -23,7 +23,7 @@ $transition: 0.2s;
     @include grid-column(1 of 1);
     font-size: 1rem;
   }
-  font-size: 18px;
+  font-size: 1.25rem;
   height: $participantsTopHeight;
 
   position: relative;
@@ -41,7 +41,7 @@ $transition: 0.2s;
     @include grid-column(1 of 2);
     font-size: 1rem;
   }
-  font-size: 19px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   background-color: $bckgColor;
   height: $participantsTopHeight;
@@ -72,7 +72,7 @@ $transition: 0.2s;
     font-size: 1rem;
   }
   color: white;
-  font-size: 19px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   background-color: $bckgColor;
   height: $participantsTopHeight;

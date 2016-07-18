@@ -1,5 +1,6 @@
 .nv-footer {
   height: 225px;
+  clear: both;
   @include breakpoint(medium down) {
     height: 365px;
   }
