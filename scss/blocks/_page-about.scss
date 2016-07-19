@@ -1,0 +1,126 @@
+.nv-main__page-about {
+  height: 625px;
+  padding: 20px;
+  background-color: #8cb1cc;
+
+  @include breakpoint(large down) {
+    height: 800px;
+  }
+
+  @include breakpoint(medium down) {
+    height: 1360px;
+  }
+}
+
+.nv-about {
+  .nv-about-hands {
+    @include grid-column(45 of 100);
+    @include breakpoint(medium down) {
+      @include grid-column(1 of 1);
+    }
+
+    margin: 20px auto;
+    text-align: center;
+
+    img {
+      margin: 0 auto;
+      margin-top: 30px;
+      @include breakpoint(medium down) {
+        margin-left: 7px;
+      }
+    }
+
+    .nv-about-hands--link {
+      background-color: #e6b942;
+      color: black;
+      text-align: center;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 17px;
+    }
+  }
+  .nv-about-descr {
+    @include grid-column(55 of 100);
+    @include breakpoint(medium down) {
+      @include grid-column(1 of 1);
+    }
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .nv-about-descr--line1 {
+      font-size: 1.2rem;
+      color: #5b7b94;
+      text-transform: uppercase;
+      text-align: justify;
+      margin-bottom: -30px;
+      //text-align-last: justify;
+      @include breakpoint(medium down) {
+        text-align: center;
+      }
+      @include textAlignForLast;
+    }
+    .nv-about-descr--line2 {
+      font-size: 2.5rem;
+      color: #436179;
+      text-transform: uppercase;
+      text-align: justify;
+      margin-bottom: -50px;
+      @include breakpoint(medium down) {
+        text-align: center;
+      }
+      @include textAlignForLast;
+    }
+    .nv-about-descr--text  {
+      color: white;
+      p {
+        line-height: 1.4;
+      }
+    }
+    .nv-about-descr--line3 {
+      font-size: 1.3rem;
+      color: #5b7b94;
+      margin-top: 3px;
+      text-transform: uppercase;
+      text-align: justify;
+      margin-bottom: -30px;
+      @include breakpoint(medium down) {
+        text-align: center;
+      }
+      @include textAlignForLast;
+    }
+
+    .nv-about-descr--directions {
+      margin-top: 23px;
+      @include breakpoint(medium down) {
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+
+      .nv-about-descr--direction {
+        @include grid-column(1 of 3);
+        @include grid-col-collapse ;
+        @include breakpoint(medium down) {
+          //@include grid-column(1 of 1);
+          margin-bottom: 10px;
+        }
+        img {
+          margin: 0 auto;
+          display: block;
+          @include breakpoint(medium down) {
+            //@include grid-col(1 of 4)
+          }
+        }
+        .nv-about-descr--direction-text {
+          margin-top: 13px;
+          text-align: center;
+          line-height: 1;
+          font-size: 0.8rem;
+          display: inline-block;
+          @include breakpoint(medium down) {
+            //@include grid-col(3 of 4)
+          }
+        }
+      }
+    }
+  }
+}

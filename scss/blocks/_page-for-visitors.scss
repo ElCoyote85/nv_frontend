@@ -1,4 +1,4 @@
-.nv-main__page-for-participants {
+.nv-main__page-for-visitors {
   background-color: #8cb1cc;
   //@include grid-layout()
   //@include grid-row(4, $gutter: 25);
@@ -11,24 +11,26 @@
   }
 }
 
-.for-participants--descr {
+.for-visitors--descr {
   @include grid-column(7 of 10);
   color: white;
   @include breakpoint(medium down) {
     @include grid-column(1 of 1);
   }
-  .for-participants--descr-title {
+  .for-visitors--descr-title {
     text-transform: uppercase;
     //font-size: 1.3rem;
   }
-  .for-participants--descr-text {
+  .for-visitors--descr-text {
     margin-top: 20px;
     font-size: 1.1rem;
     line-height: 1.3;
+    color: #58788f;
+    font-weight: 600;
   }
 }
 
-.for-participants--main-image{
+.for-visitors--main-image{
   @include grid-column(1 of 1);
   margin-top: -50px;
   text-align: center;
@@ -40,21 +42,21 @@
   }
 }
 
-.for-participants--main-cloud-left{
+.for-visitors--main-cloud-left{
   position: absolute;
   left: 4%;
   bottom: 60px;
   width: 19%;
 }
 
-.for-participants--main-cloud-right{
+.for-visitors--main-cloud-right{
   position: absolute;
   bottom: 50px;
   right: 0;
   width: 22%;
 }
 
-.for-participants--socials {
+.for-visitors--socials {
   position: absolute;
   left: 50px;
   bottom: 10px;
@@ -80,7 +82,7 @@
   }
 }
 
-.nv-visitors-list--top--desc__for-participants {
+.nv-visitors-list--top--desc__for-visitors {
   font-size: 1.43rem;
 
   @include breakpoint(medium down) {

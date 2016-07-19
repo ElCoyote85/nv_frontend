@@ -5,7 +5,7 @@
 @import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 @import "custom-scrollbar";
 
-@import '~react-event-calendar/style.css';
+@import "mixins/text";
 
 //@import 'foundation.scss';
 
@@ -70,7 +70,6 @@ body {
 @import "blocks/footer";
 
 @import "blocks/expo-reviews";
-
 @import "blocks/page-expos";
-
-@import "blocks/page-for-participants";
+@import "blocks/page-for-visitors";
+@import "blocks/page-about";
