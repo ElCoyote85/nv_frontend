@@ -1,0 +1,78 @@
+.nv-main__page-review {
+  height: inherit;
+  background-color: #d4dbe4;
+}
+
+.nv-page-review {
+  padding: 30px 10%;
+}
+
+.nv-page-review--header {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #414040;
+  text-shadow: 1px 1px 1px #aaa;
+}
+.nv-page-review--dates {
+  font-size: 1.3rem;
+  color: red;
+  text-align: center;
+}
+
+.nv-page-review--descr-key {
+  color: #0a0a0a;
+}
+.nv-page-review--descr-value {
+  a{
+    color: red;
+    &.nv-text-gray {
+      color: $secondary-color;
+    }
+  }
+}
+
+.nv-page-review--text {
+  padding-top: 30px;
+  img {
+    margin: 10px auto;
+    display: block;
+    margin-top: 30px;
+  }
+  figure {
+    @include breakpoint(640px down) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  figcaption {
+    text-align: center;
+  }
+}
+
+.nv-review-rating {
+  text-align: center;
+  img {
+    display: inline-block;
+  }
+  .nv-review-rating--caption {
+    padding-top: 22px;
+  }
+}
+
+.nv-review-viewed {
+  background-color: #e99323;
+  width: 100%;
+  padding: 20px;
+  margin: 30px 0;
+  color: #0a0a0a;
+  font-size: 1.2rem;
+  @include grid-row(10);
+  //text-align: center;
+  .nv-review-viewed--who {
+    @include grid-column(8);
+  }
+  .nv-review-viewed--count {
+    @include grid-column(2);
+    text-align: right;
+  }
+}

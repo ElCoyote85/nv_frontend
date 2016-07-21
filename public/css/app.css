@@ -6719,3 +6719,88 @@ body {
         line-height: 1;
         font-size: 0.8rem;
         display: inline-block; }
+
+.nv-main__page-review {
+  height: inherit;
+  background-color: #d4dbe4; }
+
+.nv-page-review {
+  padding: 30px 10%; }
+
+.nv-page-review--header {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #414040;
+  text-shadow: 1px 1px 1px #aaa; }
+
+.nv-page-review--dates {
+  font-size: 1.3rem;
+  color: red;
+  text-align: center; }
+
+.nv-page-review--descr-key {
+  color: #0a0a0a; }
+
+.nv-page-review--descr-value a {
+  color: red; }
+  .nv-page-review--descr-value a.nv-text-gray {
+    color: #777; }
+
+.nv-page-review--text {
+  padding-top: 30px; }
+  .nv-page-review--text img {
+    margin: 10px auto;
+    display: block;
+    margin-top: 30px; }
+  @media screen and (max-width: 40em) {
+    .nv-page-review--text figure {
+      margin-left: 20px;
+      margin-right: 20px; } }
+  .nv-page-review--text figcaption {
+    text-align: center; }
+
+.nv-review-rating {
+  text-align: center; }
+  .nv-review-rating img {
+    display: inline-block; }
+  .nv-review-rating .nv-review-rating--caption {
+    padding-top: 22px; }
+
+.nv-review-viewed {
+  background-color: #e99323;
+  width: 100%;
+  padding: 20px;
+  margin: 30px 0;
+  color: #0a0a0a;
+  font-size: 1.2rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .nv-review-viewed::before, .nv-review-viewed::after {
+    content: ' ';
+    display: table; }
+  .nv-review-viewed::after {
+    clear: both; }
+  .nv-review-viewed .nv-review-viewed--who {
+    width: 80%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 40em) {
+      .nv-review-viewed .nv-review-viewed--who {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .nv-review-viewed .nv-review-viewed--who:last-child:not(:first-child) {
+      float: right; }
+  .nv-review-viewed .nv-review-viewed--count {
+    width: 20%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    text-align: right; }
+    @media screen and (min-width: 40em) {
+      .nv-review-viewed .nv-review-viewed--count {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .nv-review-viewed .nv-review-viewed--count:last-child:not(:first-child) {
+      float: right; }
