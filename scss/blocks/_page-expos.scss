@@ -2,17 +2,14 @@
   background-color: #8cb1cc;
   //@include grid-layout()
   //@include grid-row(4, $gutter: 25);
-  height: 610px;
-  @include breakpoint(medium down) {
-    height: 1170px;
-  }
+  height: inherit;
+  padding-bottom: 30px;
 }
 
 .nv-expos {
   margin-top: 30px;
   padding-left: 50px;
   padding-right: 50px;
-
   @include breakpoint(medium down) {
     padding-left: 0;
     padding-right: 0;

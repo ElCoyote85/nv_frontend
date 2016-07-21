@@ -45,7 +45,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {'use strict';\n\n// require('foundation.scss')\n\n/*  STYLES  */\n\n__webpack_require__(293);\n\n/*  SCRIPTS  */\nvar $ = __webpack_require__(2);\n__webpack_provided_window_dot_jQuery = $;\n\n__webpack_require__(307);\n__webpack_require__(308);\n__webpack_require__(309);\n__webpack_require__(310);\n\n$(function () {\n    $(document).foundation();\n});\n/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))\n\n/*****************\n ** WEBPACK FOOTER\n ** ./scripts/entry-foundation.js\n ** module id = 0\n ** module chunks = 1\n **/\n//# sourceURL=webpack:///./scripts/entry-foundation.js?");
+	eval("/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {'use strict';\n\n// require('foundation.scss')\n\n/*  STYLES  */\n\n__webpack_require__(293);\n\n/*  SCRIPTS  */\nvar $ = __webpack_require__(2);\n__webpack_provided_window_dot_jQuery = $;\n\n__webpack_require__(307);\n__webpack_require__(308);\n__webpack_require__(309);\n__webpack_require__(310);\n// require('foundation.equalizer');\n\n$(function () {\n    $(document).foundation();\n});\n/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))\n\n/*****************\n ** WEBPACK FOOTER\n ** ./scripts/entry-foundation.js\n ** module id = 0\n ** module chunks = 1\n **/\n//# sourceURL=webpack:///./scripts/entry-foundation.js?");
 
 /***/ },
 

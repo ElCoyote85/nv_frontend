@@ -2,7 +2,7 @@
   background-color: #8cb1cc;
   //@include grid-layout()
   //@include grid-row(4, $gutter: 25);
-  height: 840px ;
+  height: inherit;
 
   padding: 50px 20px;
   position: relative;
@@ -96,6 +96,10 @@
   padding-bottom: 35px;
   @include grid-column(1 of 1);
 
+  .nv-facilities-row {
+    @include grid-row(3);
+
+
   .nv-facilities--item {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -115,5 +119,5 @@
       @include grid-column(9 of 12);
     }
   }
-
+  }
 }

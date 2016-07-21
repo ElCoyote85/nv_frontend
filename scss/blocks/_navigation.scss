@@ -12,6 +12,18 @@ $buttonHeight: 215px;
   background-repeat: no-repeat;
   position: relative;
   display: block;
+  &:after {
+    position: absolute;
+    content: '. . .';
+    color: red;
+    text-align: center;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    bottom: 33px;
+    font-size: 1rem;
+    letter-spacing: -0.1rem;
+  }
 }
 
 .nv-nav--button-text {
@@ -37,6 +49,7 @@ $buttonHeight: 215px;
 }
 
 .nv-nav--button-info {
+  margin-top: 20px;
   text-align: center;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -81,6 +94,9 @@ $buttonHeight: 215px;
 
 .nv-nav--button__active {
   background-color: #8cb1cc;
+  &:after {
+    content: '';
+  }
 }
 
 .nv-nav-back-arrow {

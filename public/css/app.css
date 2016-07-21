@@ -5116,6 +5116,17 @@ body {
   display: block; }
   .nv-nav--button:last-child:not(:first-child) {
     float: right; }
+  .nv-nav--button:after {
+    position: absolute;
+    content: '. . .';
+    color: red;
+    text-align: center;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    bottom: 33px;
+    font-size: 1rem;
+    letter-spacing: -0.1rem; }
 
 .nv-nav--button-text {
   position: absolute;
@@ -5138,6 +5149,7 @@ body {
       font-size: 0.75rem; } }
 
 .nv-nav--button-info {
+  margin-top: 20px;
   text-align: center;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -5176,6 +5188,8 @@ body {
 
 .nv-nav--button__active {
   background-color: #8cb1cc; }
+  .nv-nav--button__active:after {
+    content: ''; }
 
 .nv-nav-back-arrow {
   margin-top: -20px;
@@ -6038,10 +6052,8 @@ body {
 
 .nv-main__page-expos {
   background-color: #8cb1cc;
-  height: 610px; }
-  @media screen and (max-width: 63.9375em) {
-    .nv-main__page-expos {
-      height: 1170px; } }
+  height: inherit;
+  padding-bottom: 30px; }
 
 .nv-expos {
   margin-top: 30px;
@@ -6116,7 +6128,7 @@ body {
 
 .nv-main__page-for-visitors {
   background-color: #8cb1cc;
-  height: 840px;
+  height: inherit;
   padding: 50px 20px;
   position: relative; }
   @media screen and (max-width: 63.9375em) {
@@ -6252,68 +6264,318 @@ body {
       padding-right: 0.9375rem; } }
   .nv-facilities:last-child:not(:first-child) {
     float: right; }
-  .nv-facilities .nv-facilities--item {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 33.33333%;
+  .nv-facilities .nv-facilities-row {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto; }
+    .nv-facilities .nv-facilities-row::before, .nv-facilities .nv-facilities-row::after {
+      content: ' ';
+      display: table; }
+    .nv-facilities .nv-facilities-row::after {
+      clear: both; }
+    .nv-facilities .nv-facilities-row .nv-facilities--item {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 33.33333%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; }
+      @media screen and (min-width: 40em) {
+        .nv-facilities .nv-facilities-row .nv-facilities--item {
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem; } }
+      .nv-facilities .nv-facilities-row .nv-facilities--item:last-child:not(:first-child) {
+        float: right; }
+      @media screen and (max-width: 63.9375em) {
+        .nv-facilities .nv-facilities-row .nv-facilities--item {
+          width: 100%;
+          float: left;
+          padding-left: 0.625rem;
+          padding-right: 0.625rem; } }
+  @media screen and (max-width: 63.9375em) and (min-width: 40em) {
+    .nv-facilities .nv-facilities-row .nv-facilities--item {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+      @media screen and (max-width: 63.9375em) {
+          .nv-facilities .nv-facilities-row .nv-facilities--item:last-child:not(:first-child) {
+            float: right; } }
+      .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-image {
+        text-align: center;
+        width: 25%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; }
+        @media screen and (min-width: 40em) {
+          .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-image {
+            padding-left: 0.9375rem;
+            padding-right: 0.9375rem; } }
+        .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-image:last-child:not(:first-child) {
+          float: right; }
+        .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-image img {
+          max-height: 65px; }
+      .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-text {
+        width: 75%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; }
+        @media screen and (min-width: 40em) {
+          .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-text {
+            padding-left: 0.9375rem;
+            padding-right: 0.9375rem; } }
+        .nv-facilities .nv-facilities-row .nv-facilities--item .nv-facilities--item-text:last-child:not(:first-child) {
+          float: right; }
+
+.nv-main__page-for-participants {
+  height: inherit;
+  padding: 50px 30px;
+  background-color: #8cb1cc; }
+
+.nv-for-participants-facilities .nv-for-participants-facilities-row {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .nv-for-participants-facilities .nv-for-participants-facilities-row::before, .nv-for-participants-facilities .nv-for-participants-facilities-row::after {
+    content: ' ';
+    display: table; }
+  .nv-for-participants-facilities .nv-for-participants-facilities-row::after {
+    clear: both; }
+  .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item {
+    width: 50%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem; }
     @media screen and (min-width: 40em) {
-      .nv-facilities .nv-facilities--item {
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .nv-facilities .nv-facilities--item:last-child:not(:first-child) {
+    .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item:last-child:not(:first-child) {
       float: right; }
     @media screen and (max-width: 63.9375em) {
-      .nv-facilities .nv-facilities--item {
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item {
         width: 100%;
         float: left;
         padding-left: 0.625rem;
         padding-right: 0.625rem; } }
   @media screen and (max-width: 63.9375em) and (min-width: 40em) {
-    .nv-facilities .nv-facilities--item {
+    .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
     @media screen and (max-width: 63.9375em) {
-        .nv-facilities .nv-facilities--item:last-child:not(:first-child) {
+        .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item:last-child:not(:first-child) {
           float: right; } }
-    .nv-facilities .nv-facilities--item .nv-facilities--item-image {
+    .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item img {
+      width: 40%;
+      float: left; }
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item img:last-child:not(:first-child) {
+        float: right; }
+      @media screen and (max-width: 40em) {
+        .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item img {
+          width: 100%;
+          float: left; }
+          .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item img:last-child:not(:first-child) {
+            float: right; } }
+    .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr {
+      width: 60%;
+      float: left;
+      text-align: right;
+      position: relative; }
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr:last-child:not(:first-child) {
+        float: right; }
+      @media screen and (max-width: 40em) {
+        .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr {
+          width: 100%;
+          float: left;
+          text-align: center; }
+          .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr:last-child:not(:first-child) {
+            float: right; } }
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr h5 {
+        font-size: 1rem;
+        color: white;
+        position: absolute;
+        width: 150%;
+        right: 0;
+        top: 0; }
+        @media screen and (max-width: 40em) {
+          .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr h5 {
+            width: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+            width: 100%; }
+            .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr h5:last-child:not(:first-child) {
+              float: right; } }
+      .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr ul {
+        margin-top: 30px; }
+        .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr ul li {
+          list-style: none;
+          color: white;
+          margin-right: 20px;
+          font-size: 0.9rem;
+          line-height: 1.1;
+          margin-bottom: 10px;
+          position: relative;
+          margin-left: 0; }
+          @media screen and (max-width: 40em) {
+            .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr ul li {
+              text-align: right;
+              margin-left: 0 !important;
+              float: none !important;
+              position: relative;
+              right: 30px; } }
+          .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr ul li:after {
+            content: '';
+            position: absolute;
+            right: -35px;
+            top: 5%;
+            background-image: url(http://static.navystavke.ru/newassets/imgs/icons/v.png);
+            width: 80px;
+            height: 60px;
+            background-size: 25px;
+            background-repeat: no-repeat;
+            background-position-x: 55px; }
+
+.nv-for-participants-section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-color: #d9e0ea;
+  text-transform: uppercase;
+  padding: 20px; }
+
+.nv-conditions {
+  background-color: #e6b942;
+  padding: 20px 5px; }
+  .nv-conditions .nv-conditions-descr {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto; }
+    .nv-conditions .nv-conditions-descr::before, .nv-conditions .nv-conditions-descr::after {
+      content: ' ';
+      display: table; }
+    .nv-conditions .nv-conditions-descr::after {
+      clear: both; }
+    .nv-conditions .nv-conditions-descr .nv-conditions-descr--item {
       text-align: center;
-      width: 25%;
+      width: 28%;
       float: left;
       padding-left: 0.625rem;
       padding-right: 0.625rem; }
+      .nv-conditions .nv-conditions-descr .nv-conditions-descr--item img {
+        height: 200px; }
+        @media screen and (max-width: 63.9375em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--item img {
+            height: 120px; } }
+        @media screen and (max-width: 40em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--item img {
+            height: 200px;
+            margin-bottom: 20px; } }
       @media screen and (min-width: 40em) {
-        .nv-facilities .nv-facilities--item .nv-facilities--item-image {
+        .nv-conditions .nv-conditions-descr .nv-conditions-descr--item {
           padding-left: 0.9375rem;
           padding-right: 0.9375rem; } }
-      .nv-facilities .nv-facilities--item .nv-facilities--item-image:last-child:not(:first-child) {
+      .nv-conditions .nv-conditions-descr .nv-conditions-descr--item:last-child:not(:first-child) {
         float: right; }
-      .nv-facilities .nv-facilities--item .nv-facilities--item-image img {
-        max-height: 65px; }
-    .nv-facilities .nv-facilities--item .nv-facilities--item-text {
-      width: 75%;
+      .nv-conditions .nv-conditions-descr .nv-conditions-descr--item .nv-conditions-descr--item-text {
+        color: black;
+        font-size: 1.4rem;
+        text-transform: uppercase; }
+        @media screen and (max-width: 63.9375em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--item .nv-conditions-descr--item-text {
+            font-size: 1.2rem; } }
+      @media screen and (max-width: 40em) {
+        .nv-conditions .nv-conditions-descr .nv-conditions-descr--item {
+          width: 100%;
+          float: left;
+          padding-left: 0.625rem;
+          padding-right: 0.625rem; } }
+  @media screen and (max-width: 40em) and (min-width: 40em) {
+    .nv-conditions .nv-conditions-descr .nv-conditions-descr--item {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+      @media screen and (max-width: 40em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--item:last-child:not(:first-child) {
+            float: right; } }
+    .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow {
+      width: 8%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem; }
+      padding-right: 0.625rem;
+      position: relative;
+      padding-top: 50px;
+      text-align: center; }
       @media screen and (min-width: 40em) {
-        .nv-facilities .nv-facilities--item .nv-facilities--item-text {
+        .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow {
           padding-left: 0.9375rem;
           padding-right: 0.9375rem; } }
-      .nv-facilities .nv-facilities--item .nv-facilities--item-text:last-child:not(:first-child) {
+      .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow:last-child:not(:first-child) {
         float: right; }
+      @media screen and (max-width: 40em) {
+        .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow {
+          width: 100%;
+          float: left;
+          padding-left: 0.625rem;
+          padding-right: 0.625rem; } }
+  @media screen and (max-width: 40em) and (min-width: 40em) {
+    .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+      @media screen and (max-width: 40em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow:last-child:not(:first-child) {
+            float: right; } }
+      .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow img {
+        display: inline-block;
+        vertical-align: middle;
+        transform: scaleX(-1); }
+        @media screen and (max-width: 40em) {
+          .nv-conditions .nv-conditions-descr .nv-conditions-descr--arrow img {
+            transform: scaleX(-1) rotateZ(-90deg); } }
+
+.nv-steps {
+  padding: 50px;
+  padding-left: 130px;
+  padding-bottom: 20px; }
+  @media screen and (max-width: 40em) {
+    .nv-steps {
+      padding-left: 50px; } }
+  .nv-steps ol {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto; }
+    .nv-steps ol::before, .nv-steps ol::after {
+      content: ' ';
+      display: table; }
+    .nv-steps ol::after {
+      clear: both; }
+    .nv-steps ol li {
+      width: 33.33333%;
+      float: left;
+      padding-bottom: 10px;
+      padding-right: 5rem !important;
+      padding-left: 0 !important;
+      color: #ee3638; }
+      .nv-steps ol li:last-child:not(:first-child) {
+        float: right; }
+      .nv-steps ol li span {
+        color: #777; }
+      @media screen and (max-width: 40em) {
+        .nv-steps ol li {
+          width: 100%;
+          float: left;
+          padding-left: 0.625rem;
+          padding-right: 0.625rem;
+          padding-right: 0 !important; } }
+  @media screen and (max-width: 40em) and (min-width: 40em) {
+    .nv-steps ol li {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+      @media screen and (max-width: 40em) {
+          .nv-steps ol li:last-child:not(:first-child) {
+            float: right; } }
 
 .nv-main__page-about {
-  height: 625px;
+  height: inherit;
   padding: 20px;
   background-color: #8cb1cc; }
-  @media screen and (max-width: 74.9375em) {
-    .nv-main__page-about {
-      height: 800px; } }
-  @media screen and (max-width: 63.9375em) {
-    .nv-main__page-about {
-      height: 1360px; } }
 
 .nv-about .nv-about-hands {
   width: 45%;

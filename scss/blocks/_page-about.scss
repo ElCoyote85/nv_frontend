@@ -1,15 +1,7 @@
 .nv-main__page-about {
-  height: 625px;
+  height: inherit;
   padding: 20px;
   background-color: #8cb1cc;
-
-  @include breakpoint(large down) {
-    height: 800px;
-  }
-
-  @include breakpoint(medium down) {
-    height: 1360px;
-  }
 }
 
 .nv-about {

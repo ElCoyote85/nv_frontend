@@ -1,0 +1,178 @@
+.nv-main__page-for-participants {
+  height: inherit;
+  padding: 50px 30px;
+  background-color: #8cb1cc;
+}
+
+
+.nv-for-participants-facilities {
+  .nv-for-participants-facilities-row {
+    @include grid-row(2);
+    .nv-for-participants-facilities--item {
+      @include grid-column(1 of 2);
+      @include breakpoint(medium down) {
+        @include grid-column(1 of 1);
+      }
+      img {
+        //float: left;
+        @include grid-column(4 of 10, $gutter: 0);
+        @include breakpoint(640px down) {
+          @include grid-column(1 of 1, $gutter: 0);
+        }
+      }
+      .nv-for-participants-facilities--item--descr {
+        @include grid-column(6 of 10, $gutter: 0);
+        text-align: right;
+
+        @include breakpoint(640px down) {
+          @include grid-column(1 of 1, $gutter: 0);
+          text-align: center;
+        }
+
+        position: relative;
+        h5 {
+          font-size: 1rem;
+          color: white;
+          position: absolute;
+          width: 150%;
+          right: 0;
+          top: 0;
+          @include breakpoint(640px down) {
+            @include grid-column(1 of 1, $gutter: 0);
+            text-align: center;
+            position: relative;
+            width: 100%;
+          }
+        }
+        ul {
+          margin-top: 30px;
+          li {
+            list-style: none;
+            color: white;
+            margin-right: 20px;
+            font-size: 0.9rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            position: relative;
+            margin-left: 0;
+
+            @include breakpoint(640px down) {
+              text-align: right;
+              margin-left: 0 !important;
+              float: none !important;
+              position: relative;
+              right: 30px;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              right: -35px;
+              top: 5%;
+              background-image: url("../imgs/icons/v.png");
+              width: 80px;
+              height: 60px;
+              background-size: 25px;
+              background-repeat: no-repeat ;
+              background-position-x: 55px ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.nv-for-participants-section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-color: #d9e0ea;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.nv-conditions {
+  background-color: #e6b942;
+  padding: 20px 5px;
+
+  .nv-conditions-descr {
+    @include grid-row(100);
+
+    .nv-conditions-descr--item {
+      text-align: center;
+
+      img {
+        @include breakpoint(medium down) {
+          height: 120px;
+        }
+        @include breakpoint(640px down) {
+          height: 200px;
+          margin-bottom: 20px;
+        }
+        height: 200px;
+
+      }
+      @include grid-column(28 of 100);
+      .nv-conditions-descr--item-text {
+        color: black;
+        font-size: 1.4rem;
+        //font-weight: 600;
+        text-transform: uppercase;
+        @include breakpoint(medium down) {
+          font-size: 1.2rem;
+        }
+      }
+      @include breakpoint(640px down) {
+        @include grid-column(1 of 1);
+      }
+    }
+    .nv-conditions-descr--arrow {
+      @include grid-column(8 of 100);
+      position: relative;
+      padding-top: 50px;
+      text-align: center;
+      @include breakpoint(640px down) {
+        @include grid-column(1 of 1);
+      }
+      img {
+        //@include absolute-center;
+        display: inline-block;
+        vertical-align: middle;
+        transform: scaleX(-1);
+        @include breakpoint(640px down) {
+          transform: scaleX(-1) rotateZ(-90deg);
+        }
+      }
+    }
+  }
+}
+
+.nv-steps {
+  padding: 50px;
+  padding-left: 130px;
+  @include breakpoint(640px down) {
+    padding-left: 50px;
+
+  }
+  padding-bottom: 20px;
+  ol{
+    @include grid-row(3);
+    li{
+      @include grid-column(1 of 3, $gutter: 0);
+
+      padding-bottom: 10px;
+      padding-right: 5rem !important ;
+      padding-left: 0 !important;
+      color: #ee3638;
+      span {
+        color: $secondary-color;
+      }
+      @include breakpoint(640px down) {
+        @include grid-column(1 of 1);
+        padding-right: 0 !important;
+      }
+    }
+  }
+}

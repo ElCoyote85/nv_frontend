@@ -13,6 +13,7 @@ require('foundation.core');
 require('foundation.util.triggers');
 require('foundation.util.mediaQuery');
 require('foundation.sticky');
+// require('foundation.equalizer');
 
 
 
