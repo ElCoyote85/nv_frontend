@@ -1,0 +1,101 @@
+.nv-main__page-contacts {
+  height: inherit;
+  padding: 0 20px 20px 20px;
+  background-color: #8cb1cc;
+}
+
+.nv-contacts-map {
+  width: 100%;
+  height: 610px;
+  margin-bottom: 50px;
+  padding: 0;
+  #map {
+    height: inherit;
+    margin: 0 -20px;
+  }
+  @include breakpoint(medium down) {
+    height: 300px;
+  }
+}
+
+.nv-contacts {
+  @include grid-row(10);
+}
+
+.nv-contacts--address {
+  @include grid-column(6 of 10);
+  @include breakpoint(medium down){
+    @include grid-column(10 of 10);
+  }
+}
+
+.nv-contacts--address-line {
+  @include grid-row(8);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.nv-contacts--address-line--image {
+  @include grid-column(1 of 8);
+  @include breakpoint(600px down) {
+
+    @include grid-column(2 of 8);
+  }
+  text-align: center;
+  @include vertical-center;
+
+  //position: relative;
+  //display: table-cell;
+  //img {
+  //  //@include absolute-center;
+  //}
+}
+
+.nv-contacts--address-line--text {
+  height: 100%;
+  font-size: 0.8rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  a {
+    color: white;
+    transition: 0.3s;
+    &:hover {
+      transition: 0.2s;
+      color: #881f0e;
+    }
+  }
+  @include grid-column(7 of 8);
+  @include breakpoint(600px down) {
+    @include grid-column(6 of 8);
+  }
+}
+
+.nv-contacts--feedback {
+  @include grid-column(4 of 10);
+  @include breakpoint(medium down){
+    @include grid-column(10 of 10);
+  }
+}
+
+.nv-contacts--feedback--text {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #667c95;
+  text-align: justify;
+  line-height: 0.95;
+  @include textAlignForLast;
+}
+
+.nv-contacts--feedback--input {
+
+}
+
+.nv-contacts--feedback--submit {
+  @include button(true);
+  background-color: #ddad46;
+  color: white;
+  color: black;
+  font-size: 1.3rem;
+}

@@ -11,7 +11,8 @@ module.exports = {
         common: './scripts/entry-foundation.js',
         scroll: './scripts/entry-scroll.js',
         calendar: './scripts/entry-calendar.js',
-        sponsors: './scripts/entry-sponsors.js'
+        sponsors: './scripts/entry-sponsors.js',
+        map: './scripts/entry-map.js'
     },
     output: {
         path: 'public',
