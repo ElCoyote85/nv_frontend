@@ -57,26 +57,93 @@
 
 
 
+.nv-sidebar-left-container {
+  z-index: 100;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  @include breakpoint(639px down) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 100px;
+      right: -100px;
+      width: 100px;
+      height: 100px;
+      background-color: #0c4d78;
+      opacity: 0.5;
+      z-index: 1111;
+    }
+  }
+  transition: 0.3s;
+  //@include breakpoint(639px down) {
+  //  left: -60px;
+  //
+  //}
+  //&:hover {
+  //  transition: 0.2s;
+  //  width: 210px;
+  //  @include breakpoint(639px down) {
+  //    left: 0px;
+  //  }
+  //}
+}
 
 
+
+
+/* LEFT SIDEBAR */
+
+@keyframes nav-toggle {
+  0% { width: 70px; }
+  5% { width: 210px; }
+  90% { width: 210px; }
+  100% { width: 70px; }
+}
 
 .nv-sidebar-left {
   position: fixed;
   height: 100%;
   width: 70px;
   padding-top: 50px;
-  //padding-left: 10px;
-  //padding-right: 5px;
-  //overflow: hidden;
   left: 0;
   top: 0;
-  //background-color: #b3b3b3;
   background-image: linear-gradient(to bottom, #b3b3b3 5%, #7c94a6);
   z-index: 100;
   transition: 0.3s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50px;
+    width: 70px;
+    height: 100%;
+    z-index: 11111;
+  }
+  &:hover:before {
+    left: -70px;
+    top: 50px;
+    animation: nav-toggle 0.5s forwards ease;
+  }
+
+  @include breakpoint(639px down) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 100px;
+      right: -100px;
+      width: 100px;
+      height: 100px;
+      background-color: #0c4d78;
+      opacity: 0.5;
+      z-index: 1111;
+    }
+  }
   @include breakpoint(639px down) {
     left: -60px;
-
   }
   &:hover {
     transition: 0.2s;
@@ -85,20 +152,9 @@
       left: 0px;
     }
   }
-
-  &:after {
-    position: absolute;
-    content: "";
-    top: 100px;
-    right: -100px;
-    width: 100px;
-    height: 100px;
-    background-color: #0c4d78;
-    opacity: 0.5;
-    z-index: 1111;
-
-  }
 }
+
+
 
 .nv-sidebar-left--avatar {
   width: 100%;

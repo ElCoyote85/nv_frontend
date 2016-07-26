@@ -38,7 +38,7 @@ module.exports = {
                 include: /scss/,
                 // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
-                loader: ExtractPlugin.extract('style', 'css?root=./css&sourceMap!sass?sourceMap')
+                loader: ExtractPlugin.extract('style', 'css?root=./css&sourceMap!autoprefixer?browsers=last 3 versions!sass?sourceMap')
             },
 
             {
