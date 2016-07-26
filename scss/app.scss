@@ -6,6 +6,8 @@
 @import "custom-scrollbar";
 
 @import "mixins/text";
+@import "variables";
+@import "aux";
 
 //@import 'foundation.scss';
 
@@ -25,6 +27,14 @@ body {
 .nv-container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: $topOffset;
+  @include breakpoint(639px up and 1269px down) {
+    margin-left: 70px;
+  }
+  @include breakpoint(1270px up) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .nv-container__shadow {
@@ -76,3 +86,4 @@ body {
 @import "blocks/page-about";
 @import "blocks/page-review";
 @import "blocks/page-contacts";
+@import "blocks/menu";

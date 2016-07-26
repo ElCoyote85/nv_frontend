@@ -3,9 +3,9 @@ $contentHeight: 610px;
 $sideBlocksColor: #8cb1cc;
 $centerBlockColor: #dde4ee;
 
-body {
-  height: 2000px;
-}
+//body {
+//  height: 2000px;
+//}
 
 .nv-main {
   height: 610px;
@@ -27,4 +27,5 @@ body {
   @include grid-column(1 of 5, $gutter: 0px);
   height: $contentHeight;
   background-color: $sideBlocksColor;
+  position: relative;
 }
