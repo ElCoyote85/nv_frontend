@@ -5156,7 +5156,7 @@ body {
   box-shadow: 0px 0px 25px 8px rgba(138, 138, 138, 0.3); }
 
 .nv-header {
-  height: 175px;
+  height: 125px;
   background-color: #8eb3ce;
   text-align: center; }
   @media screen and (max-width: 63.9375em) {
@@ -5282,7 +5282,7 @@ body {
 
 /* MAIN BLOCK */
 .nv-main {
-  height: 610px;
+  height: 625px;
   overflow: hidden;
   position: relative;
   max-width: 75rem;
@@ -5299,7 +5299,7 @@ body {
   float: left;
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  height: 610px;
+  height: 625px;
   background-color: #8cb1cc; }
   .nv-calendar:last-child:not(:first-child) {
     float: right; }
@@ -5309,7 +5309,7 @@ body {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
-  height: 610px;
+  height: 625px;
   background-color: #dde4ee; }
   @media screen and (min-width: 40em) {
     .nv-main-content {
@@ -5321,7 +5321,7 @@ body {
 .nv-participants {
   width: 20%;
   float: left;
-  height: 610px;
+  height: 625px;
   background-color: #8cb1cc;
   position: relative; }
   .nv-participants:last-child:not(:first-child) {
@@ -5727,7 +5727,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin: 10px;
-  margin-top: 0; }
+  margin-top: 0;
+  margin-bottom: 0; }
   .nv-visitors-list--people::before, .nv-visitors-list--people::after {
     content: ' ';
     display: table; }
@@ -6769,7 +6770,7 @@ body {
     font-size: 1.2rem;
     color: #5b7b94;
     text-transform: uppercase;
-    text-align: justify;
+    text-align: center;
     margin-bottom: -30px; }
     @media screen and (max-width: 63.9375em) {
       .nv-about .nv-about-descr .nv-about-descr--line1 {
@@ -6782,7 +6783,7 @@ body {
     font-size: 2.5rem;
     color: #436179;
     text-transform: uppercase;
-    text-align: justify;
+    text-align: center;
     margin-bottom: -50px; }
     @media screen and (max-width: 63.9375em) {
       .nv-about .nv-about-descr .nv-about-descr--line2 {
@@ -6792,7 +6793,8 @@ body {
       width: 100%;
       display: inline-block; }
   .nv-about .nv-about-descr .nv-about-descr--text {
-    color: white; }
+    color: white;
+    text-align: justify; }
     .nv-about .nv-about-descr .nv-about-descr--text p {
       line-height: 1.4; }
   .nv-about .nv-about-descr .nv-about-descr--line3 {
@@ -6800,7 +6802,7 @@ body {
     color: #5b7b94;
     margin-top: 3px;
     text-transform: uppercase;
-    text-align: justify;
+    text-align: center;
     margin-bottom: -30px; }
     @media screen and (max-width: 63.9375em) {
       .nv-about .nv-about-descr .nv-about-descr--line3 {

@@ -1,5 +1,5 @@
 /* MAIN BLOCK */
-$contentHeight: 610px;
+$contentHeight: 625px;
 $sideBlocksColor: #8cb1cc;
 $centerBlockColor: #dde4ee;
 
@@ -8,7 +8,7 @@ $centerBlockColor: #dde4ee;
 //}
 
 .nv-main {
-  height: 610px;
+  height: 625px;
   overflow: hidden;
   position: relative;
   @include grid-row(5);
