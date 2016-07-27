@@ -5267,9 +5267,16 @@ body {
   border: none; }
 
 .nv-nav--button__active {
-  background-color: #8cb1cc; }
-  .nv-nav--button__active:after {
-    content: ''; }
+  position: relative; }
+  .nv-nav--button__active:before {
+    position: absolute;
+    content: '';
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ededf7;
+    box-shadow: 0px 0px 30px 2px #b7bbc1; }
 
 .nv-nav-back-arrow {
   margin-top: -20px;
@@ -5590,7 +5597,7 @@ body {
   height: 75px; }
 
 .nv-visitors-list--top--desc {
-  background-image: linear-gradient(to bottom, #b1b1c5 7%, #f6f6ff 40%, #f6f6ff);
+  background-image: linear-gradient(to bottom, #c3c3c3 0%, #f8f9f9 26%, #ffffff);
   width: 42%;
   float: left;
   padding-left: 0.625rem;
@@ -6240,6 +6247,58 @@ body {
         padding-right: 0.78125rem; }
         .nv-expos .nv-expo:last-child:not(:first-child) {
           float: right; } }
+
+.nv-main__page-expo-info {
+  height: inherit; }
+
+.nv-expo-grid {
+  padding: 35px 140px;
+  background-color: #ebebf8; }
+
+.nv-expo-grid--row {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #c8d2dd; }
+  .nv-expo-grid--row::before, .nv-expo-grid--row::after {
+    content: ' ';
+    display: table; }
+  .nv-expo-grid--row::after {
+    clear: both; }
+  .nv-expo-grid--row:last-child {
+    border-bottom: 1px solid #c8d2dd; }
+
+.nv-expo-grid--cell {
+  display: block;
+  padding-top: 30px;
+  height: 190px;
+  text-align: center;
+  width: 33.33333%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  border-left: 1px solid #c8d2dd;
+  background-color: white;
+  transition: 0.2s; }
+  @media screen and (min-width: 40em) {
+    .nv-expo-grid--cell {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .nv-expo-grid--cell:last-child:not(:first-child) {
+    float: right; }
+  .nv-expo-grid--cell:last-child {
+    border-right: 1px solid  #c8d2dd; }
+  .nv-expo-grid--cell:hover {
+    background-color: white;
+    transition: 0.2s;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    box-shadow: 0px 0px 5px 5px rgba(166, 166, 175, 0.32); }
+
+.nv-expo-grid--cell-title {
+  font-size: 1.2rem;
+  color: grey; }
 
 .nv-main__page-for-visitors {
   background-color: #8cb1cc;

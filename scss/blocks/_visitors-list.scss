@@ -14,7 +14,8 @@ $transition: 0.2s;
   @mixin nv-visitors-list {
     $backColor: #f6f6ff;
     //background-color: $backColor;
-    background-image: linear-gradient(to bottom, desaturate(darken($backColor, 25%), 85%) 7%, $backColor 40%, $backColor);
+    //background-image: linear-gradient(to bottom, desaturate(darken($backColor, 25%), 85%) 7%, $backColor 40%, $backColor);
+    background-image: linear-gradient(to bottom, #c3c3c3 0%, #f8f9f9 26%, #ffffff);
   }
   @include nv-visitors-list;
 
