@@ -1,3 +1,5 @@
+/* TOP SIDEBAR */
+
 .nv-menu-top-container {
   position: fixed;
   height: $topOffset;
@@ -57,49 +59,13 @@
 
 
 
-.nv-sidebar-left-container {
-  z-index: 100;
-  position: fixed;
-  height: 100%;
-  left: 0;
-  top: 0;
-
-  @include breakpoint(639px down) {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 100px;
-      right: -100px;
-      width: 100px;
-      height: 100px;
-      background-color: #0c4d78;
-      opacity: 0.5;
-      z-index: 1111;
-    }
-  }
-  transition: 0.3s;
-  //@include breakpoint(639px down) {
-  //  left: -60px;
-  //
-  //}
-  //&:hover {
-  //  transition: 0.2s;
-  //  width: 210px;
-  //  @include breakpoint(639px down) {
-  //    left: 0px;
-  //  }
-  //}
-}
-
-
-
 
 /* LEFT SIDEBAR */
 
 @keyframes nav-toggle {
-  0% { width: 70px; }
-  5% { width: 210px; }
-  90% { width: 210px; }
+  //0% { width: 70px; }
+  0% { width: 300px; }
+  90% { width: 300px; }
   100% { width: 70px; }
 }
 
@@ -116,6 +82,8 @@
 
   &:before {
     position: absolute;
+    //background-color: #0c4d78;
+    //opacity: 0.5;
     content: "";
     left: 0;
     top: 50px;
@@ -134,10 +102,16 @@
       position: absolute;
       content: "";
       top: 100px;
-      right: -100px;
-      width: 100px;
+      right: -50px;
+      width: 50px;
       height: 100px;
-      background-color: #0c4d78;
+
+      //background-color: #0c4d78;
+      $brdColor: #0c4d78;
+      border-left: 50px solid $brdColor;
+      border-right: 0px solid transparent;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
       opacity: 0.5;
       z-index: 1111;
     }
