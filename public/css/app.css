@@ -6921,8 +6921,12 @@ body {
 
 .nv-main__page-review {
   height: inherit;
+  background-color: #d4dbe4; }
+
+.nv-page-reviews {
+  height: inherit;
   background-color: #d4dbe4;
-  height: 2450px; }
+  min-height: 4800px; }
 
 .nv-page-review {
   padding: 30px 10%; }
