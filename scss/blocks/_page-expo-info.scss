@@ -11,6 +11,9 @@
 
 .nv-expo-grid {
   padding: 35px 140px;
+  @include breakpoint(medium down) {
+    padding: 20px 50px;
+  }
   background-color: #ebebf8;
 }
 .nv-expo-grid--row {
@@ -26,18 +29,11 @@
   height: 190px;
   text-align: center;
   @include grid-column(1);
+  @include breakpoint(639px down){
+    @include grid-column(3);
+  }
   border-left: 1px solid #c8d2dd;
   background-color: white;
-  //position: relative;
-  //&:before {
-  //  position: absolute;
-  //  content:'';
-  //  width: 100%;
-  //  height: 100%;
-  //  top: 0;
-  //  left: 0;
-  //
-  //}
   &:last-child {
     border-right: 1px solid  #c8d2dd;
   }

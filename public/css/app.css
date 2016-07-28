@@ -5267,16 +5267,17 @@ body {
   border: none; }
 
 .nv-nav--button__active {
-  position: relative; }
+  z-index: 1;
+  position: relative;
+  background-color: #e9e9f5; }
   .nv-nav--button__active:before {
     position: absolute;
     content: '';
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #ededf7;
-    box-shadow: 0px 0px 30px 2px #b7bbc1; }
+    bottom: 0px;
+    left: -10px;
+    right: -10px;
+    height: 151px;
+    background-image: linear-gradient(to right, transparent, rgba(51, 51, 51, 0.3) 10px, transparent 10px, transparent 250px, rgba(51, 51, 51, 0.3) 250px, transparent 260px); }
 
 .nv-nav-back-arrow {
   margin-top: -20px;
@@ -6254,6 +6255,9 @@ body {
 .nv-expo-grid {
   padding: 35px 140px;
   background-color: #ebebf8; }
+  @media screen and (max-width: 63.9375em) {
+    .nv-expo-grid {
+      padding: 20px 50px; } }
 
 .nv-expo-grid--row {
   max-width: 75rem;
@@ -6286,6 +6290,19 @@ body {
       padding-right: 0.9375rem; } }
   .nv-expo-grid--cell:last-child:not(:first-child) {
     float: right; }
+  @media screen and (max-width: 39.9375em) {
+    .nv-expo-grid--cell {
+      width: 100%;
+      float: left;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem; } }
+  @media screen and (max-width: 39.9375em) and (min-width: 40em) {
+    .nv-expo-grid--cell {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  @media screen and (max-width: 39.9375em) {
+      .nv-expo-grid--cell:last-child:not(:first-child) {
+        float: right; } }
   .nv-expo-grid--cell:last-child {
     border-right: 1px solid  #c8d2dd; }
   .nv-expo-grid--cell:hover {
