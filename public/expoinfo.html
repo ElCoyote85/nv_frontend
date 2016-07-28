@@ -46,7 +46,38 @@
     </nav>
 
 
-    <main class="nv-main nv-main__page-expo-info">
+    <main class="nv-main nv-main__page-expo-info" data-sticky-container style="height: inherit;">
+
+        <section id="nv-expo-top-bar" data-sticky data-margin-anchor="200" style="width: 100%">
+            <section class="nv-expo-top-bar--search">
+                <div class="nv-expo-top-bar--search-title"><span>Участники виртуальной выставки</span></div>
+                <div class="nv-expo-top-bar--search-input">
+            <span>
+                <input type="text" placeholder="Поиск по названию" id="nv-expo-top-bar--search">
+                <label for="nv-expo-top-bar--search">&nbsp;</label>
+            </span>
+                </div>
+            </section>
+
+            <section class="nv-expo-top-bar--filters">
+                <div class="nv-expo-top-bar--filters-column"><a id="subject" href="#!">Раздел</a></div>
+                <div class="nv-expo-top-bar--filters-column"><a id="type" href="#!">Тип компании</a></div>
+                <div class="nv-expo-top-bar--filters-column"><a id="city" href="#!">Город</a></div>
+            </section>
+        </section>
+
+        <div class="nv-expo-filter-subjects">
+            <ul>
+                <li><a href="#!">Архитектура и проектирование</a></li>
+                <li><a href="#!">Архитектура и проектирование</a></li>
+                <li><a href="#!">Архитектура и проектирование</a></li>
+                <li><a href="#!">Архитектура и проектирование</a></li>
+                <li><a href="#!">Архитектура и проектирование</a></li>
+            </ul>
+        </div>
+        <!--<div class="nv-expo-filter-types"></div>-->
+        <!--<div class="nv-expo-filter-cities"></div>-->
+
         <div class="nv-expo-grid">
             <div class="nv-expo-grid--row">
                 <a href="#!" class="nv-expo-grid--cell">

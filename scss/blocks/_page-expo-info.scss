@@ -3,9 +3,89 @@
 }
 
 
+@mixin nvTopBarHeight {
+  height: 90px;
+  @include breakpoint(mini down) {
+    height: 60px;
+  }
+}
+
 .nv-expo-top-bar { }
+
+.nv-expo-top-bar--search {
+  background-color: #db9c24;
+  //padding: 23px 30px;
+  height: inherit;
+
+  @include grid-row(2);
+  .nv-expo-top-bar--search-title {
+    @include nvTopBarHeight;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.5rem ;
+    color: black;
+    text-align: center;
+    @include grid-column(1 of 2);
+    @include breakpoint(medium down) {
+      @include grid-column(1 of 1);
+    }
+    span {
+      width: 100%;
+      @include absolute-center;
+    }
+  }
+  .nv-expo-top-bar--search-input {
+    @include nvTopBarHeight;
+    @include grid-column(1 of 2);
+    @include breakpoint(medium down) {
+      @include grid-column(1 of 1);
+    }
+    position: relative;
+    text-align: center;
+
+    span {
+      margin: 0 auto;
+      padding: 0 5%;
+      display: inline-block;
+      width: 80%;
+      @include absolute-center;
+    }
+
+    input {
+      position: relative;
+      border-radius: 5px;
+      //padding-top:  6px;
+      font-size: 1.2rem;
+      border: none;
+      margin: 0;
+      vertical-align: middle;
+      display: inline-block;
+      width: 81%;
+      &::placeholder {
+        text-transform: uppercase;
+      }
+    }
+    input + label {
+      position: relative;
+      display: inline-block !important;
+      vertical-align: middle;
+    }
+    input + label::before {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: -8px;
+      width: 36px;
+      bottom: -8px;
+      background-image: url('../imgs/icons/search.png' );
+      /* background-size: 100%; */
+      background-repeat: no-repeat;
+      background-position: 0px 6px;
+    }
+  }
+}
+
 .nv-expo-top-bar--filters { }
-.nv-expo-top-bar--search { }
 
 
 
@@ -35,7 +115,7 @@
   border-left: 1px solid #c8d2dd;
   background-color: white;
   &:last-child {
-    border-right: 1px solid  #c8d2dd;
+    border-right: 1px solid #c8d2dd;
   }
   transition: 0.2s;
   &:hover {
@@ -47,12 +127,69 @@
   }
 }
 
+
+.nv-expo-top-bar--filters {
+  background-color: #7f91a7;
+  padding: 0 50px;
+  @include grid-row(3);
+}
+.nv-expo-top-bar--filters-column {
+  text-align: center;
+  position: relative;
+  @include nvTopBarHeight;
+  @include grid-column(1 of 3);
+  @include breakpoint(mini down){
+    @include grid-column(3 of 3 );
+    //a {
+    //  margin: 10px 6px;
+    //}
+  };
+  a {
+    @include absolute-center;
+    text-transform: uppercase ;
+    display: inline-block;
+    color: white;
+    background-color: #7f91a7;
+    padding: 5px 40px;
+    border: 1px solid white;
+    width: 90%;
+  }
+}
+
+
+%filter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background-color: #606c80;
+  color: white ;
+  padding: 20px 20px;
+  ul > li {
+    padding: 5px 0;
+    a {
+      color: white;
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+.nv-expo-filter-subjects {
+  @extend %filter;
+}
+.nv-expo-filter-types {
+  @extend %filter;
+}
+.nv-expo-filter-cities {
+  @extend %filter;
+}
+
+
+
 .nv-expo-grid--cell-title {
   font-size: 1.2rem;
   color: grey;
 }
 
-.nv-expo-filter-subjects {}
-.nv-expo-filter-types {}
-.nv-expo-filter-cities {}
 

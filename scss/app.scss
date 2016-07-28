@@ -1,5 +1,6 @@
 @import "theme/common";
 @import "modifiers";
+@import "settings";
 @import '~foundation-sites/scss/foundation';
 @import "~motion-ui/src/motion-ui";
 @import "~owl.carousel/dist/assets/owl.carousel.css";
@@ -12,9 +13,17 @@
 
 
 // TODO Оптимизировать стили
-@include foundation-everything(false);
-//@include foundation-grid;
-//@include foundation-typography;
+//@include foundation-everything(false);
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+
+@include foundation-sticky;
+@include foundation-float-classes;
+
 
 body {
   //background-color: red;

@@ -1,8 +1,8 @@
 // const NODE_ENV = 'production';
 var path = require("path"),
     webpack = require('webpack'),
-    precss = require('precss'),
-    autoprefixer = require('autoprefixer'),
+    // precss = require('precss'),
+    // autoprefixer = require('autoprefixer'),
     ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -12,21 +12,22 @@ module.exports = {
         scroll: './scripts/entry-scroll.js',
         calendar: './scripts/entry-calendar.js',
         sponsors: './scripts/entry-sponsors.js',
+        expoinfo: './scripts/entry-expoinfo.js',
         map: './scripts/entry-map.js'
     },
     output: {
         path: 'public',
         filename: 'js/[name].js',
         publicPath: 'http://static.navystavke.ru/newassets/',
-        sourceMapFilename: '[name].map'
+        // sourceMapFilename: '[name].map'
     },
-    devtool: 'eval',
+    // devtool: 'eval',
     resolve: {
         modulesDirectories: [
             'node_modules',
             'node_modules/foundation-sites/js',
             'node_modules/foundation-sites/scss',
-            // 'node_modules/jquery/dist',
+            'node_modules/jquery/dist',
             'scripts'
         ],
         extensions: [ '', '.js', '.jsx']
@@ -38,7 +39,8 @@ module.exports = {
                 include: /scss/,
                 // loader: ExtractPlugin.extract('style', 'resolve-url!css?root=./public/css!postcss?browsers=last 3 versions!sass?sourceMap')
                 // loader: ExtractPlugin.extract('style', 'css?root=public/css!postcss?browsers=last 3 versions!sass')
-                loader: ExtractPlugin.extract('style', 'css?root=./css&sourceMap!autoprefixer?browsers=last 3 versions!sass?sourceMap')
+                // loader: ExtractPlugin.extract('style', 'css?root=./css&sourceMap!autoprefixer?browsers=last 3 versions!sass?sourceMap')
+                loader: ExtractPlugin.extract('style', 'css?root=./css!autoprefixer?browsers=last 3 versions!sass')
             },
 
             {
@@ -78,9 +80,9 @@ module.exports = {
         new ExtractPlugin("./css/app.css"),
         // new webpack.optimize.UglifyJsPlugin()
     ],
-    postcss: function () {
-        return [precss, autoprefixer];
-    },
+    // postcss: function () {
+    //     return [precss, autoprefixer];
+    // },
     devServer: {
         port:3000,
         historyApiFallback: {
