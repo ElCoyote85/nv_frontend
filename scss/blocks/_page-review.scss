@@ -1,7 +1,12 @@
 .nv-main__page-review {
   height: inherit;
   background-color: #d4dbe4;
-  height: 2450px;
+}
+
+.nv-page-reviews {
+  height: inherit;
+  background-color: #d4dbe4;
+  min-height: 4800px;
 }
 
 .nv-page-review {
@@ -64,7 +69,7 @@
   background-color: #e99323;
   width: 100%;
   padding: 20px;
-  margin: 30px 0;
+  margin: 10px 0;
   color: #0a0a0a;
   font-size: 1.2rem;
   @include grid-row(10);
@@ -78,8 +83,8 @@
   }
 }
 
-//.rexpo_more_reviews { float: right; background: url(../imgs/rows/all_reviews.png) no-repeat; width: 89px; height: 16px; }
-//.rexpo_more_standalone a { float: right; background: url(../imgs/rows/review_read.png) no-repeat; width: 98px; height: 16px; }
+.rexpo_more_reviews { float: right; background: url(../imgs/rows/all_reviews.png) no-repeat; width: 89px; height: 16px; }
+.rexpo_more_standalone a { float: right; background: url(../imgs/rows/review_read.png) no-repeat; width: 98px; height: 16px; }
 
 .paging { margin-top: 15px; margin-bottom: 10px; }
 .paging ul { list-style-type: none; text-align: center; }
@@ -90,11 +95,11 @@
 .paging li.paging_currentpage { font-weight: bold; color: #000000 !important; }
 
 .paging_next { float: right; padding: 7px 10px; }
-//.paging_next a { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_back.gif) no-repeat; }
-//.paging_next strong { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_back_inactive.gif) no-repeat; }
+.paging_next a { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_back.gif) no-repeat; }
+.paging_next strong { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_back_inactive.gif) no-repeat; }
 .paging_next span { display: none; }
 
 .paging_previous { float: left; padding: 7px 10px; }
-//.paging_previous a { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_forward.gif) no-repeat; }
-//.paging_previous strong { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_forward_inactive.gif) no-repeat; }
+.paging_previous a { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_forward.gif) no-repeat; }
+.paging_previous strong { display: block; width: 7px; height: 7px; background: url(../imgs/rows/news_forward_inactive.gif) no-repeat; }
 .paging_previous span { display: none;   }
