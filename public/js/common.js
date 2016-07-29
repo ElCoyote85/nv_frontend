@@ -40,29 +40,31 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {'use strict';
 
-	__webpack_require__(319);
+	__webpack_require__(3);
+
+	__webpack_require__(4);
+
+	__webpack_require__(5);
 
 	// require('foundation.scss')
 
 	/*  STYLES  */
 
-	__webpack_require__(297);
+	__webpack_require__(6);
 
 	/*  SCRIPTS  */
 	var $ = __webpack_require__(2);
 	__webpack_provided_window_dot_jQuery = $;
-
-	__webpack_require__(313);
+	window.$ = $;
 	// require('foundation.util.triggers');
 	// require('foundation.util.motion');
-	__webpack_require__(314);
+
 	// require('foundation.toggler');
 	// require('foundation.sticky');
 
@@ -108,6 +110,7 @@
 	            $('#city').removeClass('active');
 	            $('#subject').toggleClass('active');
 	            $('.nv-expo-filter-subjects').slideToggle();
+	            $('#ul-stick-filters-subjects').sticky('update');
 	        });
 	    }
 	    /* TYPE BUTTON */
@@ -119,6 +122,7 @@
 	            $('#subject').removeClass('active');
 	            $('#type').toggleClass('active');
 	            $('.nv-expo-filter-types').slideToggle({ direction: 'right' });
+	            $('#ul-stick-filters-types').sticky('update');
 	        });
 	    }
 	    /* CITY BUTTON */
@@ -130,14 +134,15 @@
 	            $('#subject').removeClass('active');
 	            $('#city').toggleClass('active');
 	            $('.nv-expo-filter-cities').slideToggle();
+	            $('#ul-stick-filters-cities').sticky('update');
 	        });
 	    }
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-
-/***/ 2:
+/* 1 */,
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9957,15 +9962,7 @@
 
 
 /***/ },
-
-/***/ 297:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 313:
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {!function($) {
@@ -10350,8 +10347,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-
-/***/ 314:
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -10572,8 +10568,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-
-/***/ 319:
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Sticky Plugin v1.0.4 for jQuery
@@ -10852,6 +10847,11 @@
 	}));
 
 
-/***/ }
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
 
-/******/ });
+	// removed by extract-text-webpack-plugin
+
+/***/ }
+/******/ ]);

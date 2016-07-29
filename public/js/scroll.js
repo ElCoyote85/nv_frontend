@@ -47,9 +47,9 @@
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	__webpack_require__(315);
+	__webpack_require__(22);
 
-	var _malihuCustomScrollbarPlugin = __webpack_require__(316);
+	var _malihuCustomScrollbarPlugin = __webpack_require__(23);
 
 	var _malihuCustomScrollbarPlugin2 = _interopRequireDefault(_malihuCustomScrollbarPlugin);
 
@@ -9894,7 +9894,7 @@
 
 /***/ },
 
-/***/ 315:
+/***/ 22:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10122,7 +10122,7 @@
 
 /***/ },
 
-/***/ 316:
+/***/ 23:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -10173,13 +10173,13 @@
 		}
 	}(function($){
 	(function(init){
-		var _rjs="function"==="function" && __webpack_require__(317), /* RequireJS */
+		var _rjs="function"==="function" && __webpack_require__(24), /* RequireJS */
 			_njs=typeof module !== "undefined" && module.exports, /* NodeJS */
 			_dlp=("https:"==document.location.protocol) ? "https:" : "http:", /* location protocol */
 			_url="cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js";
 		if(!_rjs){
 			if(_njs){
-				__webpack_require__(315)($);
+				__webpack_require__(22)($);
 			}else{
 				/* load jquery-mousewheel plugin (via CDN) if it's not present or not loaded via RequireJS 
 				(works when mCustomScrollbar fn is called on window load) */
@@ -12586,7 +12586,7 @@
 
 /***/ },
 
-/***/ 317:
+/***/ 24:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;

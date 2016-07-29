@@ -44,11 +44,19 @@ module.exports = {
             },
 
             {
-                test: /\.jsx?$/,
+                test: /\.jsx$/,
                 include: /scripts/,
                 loader: 'babel',
                 query: {
-                    presets: ['react', 'es2015']
+                    presets: ['react']
+                }
+            },
+            {
+                test: /\.js$/,
+                include: /scripts/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
                 }
             },
             {

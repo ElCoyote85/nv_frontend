@@ -8,11 +8,12 @@ require('../scss/app.scss');
 /*  SCRIPTS  */
 var $ = require('jquery');
 window.jQuery = $;
+window.$ = $;
 
-require('foundation.core');
+import 'foundation.core';
 // require('foundation.util.triggers');
 // require('foundation.util.motion');
-require('foundation.util.mediaQuery');
+import 'foundation.util.mediaQuery';
 // require('foundation.toggler');
 // require('foundation.sticky');
 
@@ -61,6 +62,7 @@ $(function () {
             $('#city').removeClass('active');
             $('#subject').toggleClass('active');
             $('.nv-expo-filter-subjects').slideToggle();
+            $('#ul-stick-filters-subjects').sticky('update');
         });
     }
     /* TYPE BUTTON */
@@ -72,6 +74,7 @@ $(function () {
             $('#subject').removeClass('active');
             $('#type').toggleClass('active');
             $('.nv-expo-filter-types').slideToggle({direction: 'right'});
+            $('#ul-stick-filters-types').sticky('update');
         });
     }
     /* CITY BUTTON */
@@ -83,6 +86,7 @@ $(function () {
             $('#subject').removeClass('active');
             $('#city').toggleClass('active');
             $('.nv-expo-filter-cities').slideToggle();
+            $('#ul-stick-filters-cities').sticky('update');
         });
     }
 });
