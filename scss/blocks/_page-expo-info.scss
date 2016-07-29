@@ -10,11 +10,14 @@
   }
 }
 
-.nv-expo-top-bar { }
+#nv-expo-top-bar {
+  position: relative;
+  z-index: 10 ;
+}
 
 .nv-expo-top-bar--search {
   background-color: #db9c24;
-  //padding: 23px 30px;
+  //padding: 23px 30px ;
   height: inherit;
 
   @include grid-row(2);
@@ -85,9 +88,92 @@
   }
 }
 
-.nv-expo-top-bar--filters { }
 
 
+.nv-expo-top-bar--filters {
+  background-color: #7f91a7;
+  padding: 0 50px;
+  @include grid-row(3);
+}
+.nv-expo-top-bar--filters-column {
+  text-align: center;
+  position: relative;
+  @include nvTopBarHeight;
+  @include grid-column(1 of 3);
+  @include breakpoint(mini down){
+    @include grid-column(3 of 3 );
+    //a {
+    //  margin: 10px 6px;
+    //}
+  };
+  a {
+    @include absolute-center;
+    text-transform: uppercase ;
+    display: inline-block;
+    color: white;
+    background-color: #7f91a7;
+    padding: 5px 40px;
+    border: 1px solid white;
+    width: 90%;
+    &.active {
+      background-color: #566a83;
+    }
+  }
+}
+
+
+/*LEFT SIDEBAR FILTERS*/
+
+#nv-expo-filters {
+  //position: absolute;
+  padding-top:  180px;
+}
+%ul-stick-filters {
+  padding-top: 200px;
+  margin: 0;
+  padding-left: 20px;
+  margin-left: -20px;
+  background-color: #606c7f;
+  .is-sticky & {
+    //background-color: green;
+    //width: 360px !important;
+  }
+}
+
+#ul-stick-filters-subjects { @extend %ul-stick-filters; }
+#ul-stick-filters-types { @extend %ul-stick-filters; }
+#ul-stick-filters-cities { @extend %ul-stick-filters; }
+
+%filter {
+  position: absolute;
+  display: none ;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background-color: #606c80;
+  color: white ;
+  padding: 20px 20px;
+  ul > li {
+    padding: 5px 0;
+    a {
+      color: white;
+      letter-spacing: 0.8px;
+    }
+  }
+}
+.nv-expo-filter-subjects {
+  @extend %filter;
+}
+.nv-expo-filter-types {
+  @extend %filter;
+}
+.nv-expo-filter-cities {
+  @extend %filter;
+}
+
+
+/* LIST OF STANDS*/
 
 .nv-expo-grid {
   padding: 35px 140px;
@@ -127,69 +213,7 @@
   }
 }
 
-
-.nv-expo-top-bar--filters {
-  background-color: #7f91a7;
-  padding: 0 50px;
-  @include grid-row(3);
-}
-.nv-expo-top-bar--filters-column {
-  text-align: center;
-  position: relative;
-  @include nvTopBarHeight;
-  @include grid-column(1 of 3);
-  @include breakpoint(mini down){
-    @include grid-column(3 of 3 );
-    //a {
-    //  margin: 10px 6px;
-    //}
-  };
-  a {
-    @include absolute-center;
-    text-transform: uppercase ;
-    display: inline-block;
-    color: white;
-    background-color: #7f91a7;
-    padding: 5px 40px;
-    border: 1px solid white;
-    width: 90%;
-  }
-}
-
-
-%filter {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 30%;
-  background-color: #606c80;
-  color: white ;
-  padding: 20px 20px;
-  ul > li {
-    padding: 5px 0;
-    a {
-      color: white;
-      letter-spacing: 0.8px;
-    }
-  }
-}
-
-.nv-expo-filter-subjects {
-  @extend %filter;
-}
-.nv-expo-filter-types {
-  @extend %filter;
-}
-.nv-expo-filter-cities {
-  @extend %filter;
-}
-
-
-
 .nv-expo-grid--cell-title {
   font-size: 1.2rem;
   color: grey;
 }
-
-

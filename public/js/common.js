@@ -47,6 +47,8 @@
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {'use strict';
 
+	__webpack_require__(319);
+
 	// require('foundation.scss')
 
 	/*  STYLES  */
@@ -58,22 +60,78 @@
 	__webpack_provided_window_dot_jQuery = $;
 
 	__webpack_require__(313);
-	__webpack_require__(321);
+	// require('foundation.util.triggers');
 	// require('foundation.util.motion');
 	__webpack_require__(314);
-	__webpack_require__(315);
-	__webpack_require__(316);
+	// require('foundation.toggler');
+	// require('foundation.sticky');
 
 	// require('foundation.equalizer');
 
-
 	$(function () {
 	    $(document).foundation();
-	    if ($('#nv-expo-top-bar')) {}
-	});
+	    if ($('#nv-expo-top-bar')) {
+	        $('#nv-expo-top-bar').sticky({
+	            // topSpacing: '100px'
+	            zIndex: 10
+	        });
+	    }
 
-	$('#nv-expo-top-bar').load(function (e) {
-	    console.log(this);
+	    if ($('#ul-stick-filters-subjects')) {
+	        $('#ul-stick-filters-subjects').sticky({
+	            // getWidthFrom: 'nv-expo-filter-subjects',
+	            responsiveWidth: true,
+	            zIndex: 9
+	        });
+	    }
+	    if ($('#ul-stick-filters-types')) {
+	        $('#ul-stick-filters-types').sticky({
+	            // getWidthFrom: 'nv-expo-filter-subjects',
+	            responsiveWidth: true,
+	            zIndex: 9
+	        });
+	    }
+	    if ($('#ul-stick-filters-cities')) {
+	        $('#ul-stick-filters-cities').sticky({
+	            // getWidthFrom: 'nv-expo-filter-subjects',
+	            responsiveWidth: true,
+	            zIndex: 9
+	        });
+	    }
+
+	    /* SUBJECT BUTTON */
+	    if ($('#subject')) {
+	        $('#subject').click(function () {
+	            $('.nv-expo-filter-cities').hide();
+	            $('.nv-expo-filter-types').hide();
+	            $('#type').removeClass('active');
+	            $('#city').removeClass('active');
+	            $('#subject').toggleClass('active');
+	            $('.nv-expo-filter-subjects').slideToggle();
+	        });
+	    }
+	    /* TYPE BUTTON */
+	    if ($('#type')) {
+	        $('#type').click(function () {
+	            $('.nv-expo-filter-cities').hide();
+	            $('.nv-expo-filter-subjects').hide();
+	            $('#city').removeClass('active');
+	            $('#subject').removeClass('active');
+	            $('#type').toggleClass('active');
+	            $('.nv-expo-filter-types').slideToggle({ direction: 'right' });
+	        });
+	    }
+	    /* CITY BUTTON */
+	    if ($('#city')) {
+	        $('#city').click(function () {
+	            $('.nv-expo-filter-types').hide();
+	            $('.nv-expo-filter-subjects').hide();
+	            $('#type').removeClass('active');
+	            $('#subject').removeClass('active');
+	            $('#city').toggleClass('active');
+	            $('.nv-expo-filter-cities').slideToggle();
+	        });
+	    }
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -10515,860 +10573,284 @@
 
 /***/ },
 
-/***/ 315:
+/***/ 319:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Sticky Plugin v1.0.4 for jQuery
+	// =============
+	// Author: Anthony Garand
+	// Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
+	// Improvements by Leonardo C. Daronco (daronco)
+	// Created: 02/14/2011
+	// Date: 07/20/2015
+	// Website: http://stickyjs.com/
+	// Description: Makes an element on the page stick on the screen as you scroll
+	//              It will only set the 'top' and 'position' of your element, you
+	//              might need to adjust the width in some cases.
 
-	!function($) {
-
-	/**
-	 * Toggler module.
-	 * @module foundation.toggler
-	 * @requires foundation.util.motion
-	 * @requires foundation.util.triggers
-	 */
-
-	class Toggler {
-	  /**
-	   * Creates a new instance of Toggler.
-	   * @class
-	   * @fires Toggler#init
-	   * @param {Object} element - jQuery object to add the trigger to.
-	   * @param {Object} options - Overrides to the default plugin settings.
-	   */
-	  constructor(element, options) {
-	    this.$element = element;
-	    this.options = $.extend({}, Toggler.defaults, element.data(), options);
-	    this.className = '';
-
-	    this._init();
-	    this._events();
-
-	    Foundation.registerPlugin(this, 'Toggler');
-	  }
-
-	  /**
-	   * Initializes the Toggler plugin by parsing the toggle class from data-toggler, or animation classes from data-animate.
-	   * @function
-	   * @private
-	   */
-	  _init() {
-	    var input;
-	    // Parse animation classes if they were set
-	    if (this.options.animate) {
-	      input = this.options.animate.split(' ');
-
-	      this.animationIn = input[0];
-	      this.animationOut = input[1] || null;
+	(function (factory) {
+	    if (true) {
+	        // AMD. Register as an anonymous module.
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof module === 'object' && module.exports) {
+	        // Node/CommonJS
+	        module.exports = factory(require('jquery'));
+	    } else {
+	        // Browser globals
+	        factory(jQuery);
 	    }
-	    // Otherwise, parse toggle class
-	    else {
-	      input = this.$element.data('toggler');
-	      // Allow for a . at the beginning of the string
-	      this.className = input[0] === '.' ? input.slice(1) : input;
-	    }
+	}(function ($) {
+	    var slice = Array.prototype.slice; // save ref to original slice()
+	    var splice = Array.prototype.splice; // save ref to original slice()
 
-	    // Add ARIA attributes to triggers
-	    var id = this.$element[0].id;
-	    $(`[data-open="${id}"], [data-close="${id}"], [data-toggle="${id}"]`)
-	      .attr('aria-controls', id);
-	    // If the target is hidden, add aria-hidden
-	    this.$element.attr('aria-expanded', this.$element.is(':hidden') ? false : true);
-	  }
+	  var defaults = {
+	      topSpacing: 0,
+	      bottomSpacing: 0,
+	      className: 'is-sticky',
+	      wrapperClassName: 'sticky-wrapper',
+	      center: false,
+	      getWidthFrom: '',
+	      widthFromWrapper: true, // works only when .getWidthFrom is empty
+	      responsiveWidth: false,
+	      zIndex: 'auto'
+	    },
+	    $window = $(window),
+	    $document = $(document),
+	    sticked = [],
+	    windowHeight = $window.height(),
+	    scroller = function() {
+	      var scrollTop = $window.scrollTop(),
+	        documentHeight = $document.height(),
+	        dwh = documentHeight - windowHeight,
+	        extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
 
-	  /**
-	   * Initializes events for the toggle trigger.
-	   * @function
-	   * @private
-	   */
-	  _events() {
-	    this.$element.off('toggle.zf.trigger').on('toggle.zf.trigger', this.toggle.bind(this));
-	  }
+	      for (var i = 0, l = sticked.length; i < l; i++) {
+	        var s = sticked[i],
+	          elementTop = s.stickyWrapper.offset().top,
+	          etse = elementTop - s.topSpacing - extra;
 
-	  /**
-	   * Toggles the target class on the target element. An event is fired from the original trigger depending on if the resultant state was "on" or "off".
-	   * @function
-	   * @fires Toggler#on
-	   * @fires Toggler#off
-	   */
-	  toggle() {
-	    this[ this.options.animate ? '_toggleAnimate' : '_toggleClass']();
-	  }
+	        //update height in case of dynamic content
+	        s.stickyWrapper.css('height', s.stickyElement.outerHeight());
 
-	  _toggleClass() {
-	    this.$element.toggleClass(this.className);
-
-	    var isOn = this.$element.hasClass(this.className);
-	    if (isOn) {
-	      /**
-	       * Fires if the target element has the class after a toggle.
-	       * @event Toggler#on
-	       */
-	      this.$element.trigger('on.zf.toggler');
-	    }
-	    else {
-	      /**
-	       * Fires if the target element does not have the class after a toggle.
-	       * @event Toggler#off
-	       */
-	      this.$element.trigger('off.zf.toggler');
-	    }
-
-	    this._updateARIA(isOn);
-	  }
-
-	  _toggleAnimate() {
-	    var _this = this;
-
-	    if (this.$element.is(':hidden')) {
-	      Foundation.Motion.animateIn(this.$element, this.animationIn, function() {
-	        _this._updateARIA(true);
-	        this.trigger('on.zf.toggler');
-	      });
-	    }
-	    else {
-	      Foundation.Motion.animateOut(this.$element, this.animationOut, function() {
-	        _this._updateARIA(false);
-	        this.trigger('off.zf.toggler');
-	      });
-	    }
-	  }
-
-	  _updateARIA(isOn) {
-	    this.$element.attr('aria-expanded', isOn ? true : false);
-	  }
-
-	  /**
-	   * Destroys the instance of Toggler on the element.
-	   * @function
-	   */
-	  destroy() {
-	    this.$element.off('.zf.toggler');
-	    Foundation.unregisterPlugin(this);
-	  }
-	}
-
-	Toggler.defaults = {
-	  /**
-	   * Tells the plugin if the element should animated when toggled.
-	   * @option
-	   * @example false
-	   */
-	  animate: false
-	};
-
-	// Window exports
-	Foundation.plugin(Toggler, 'Toggler');
-
-	}(jQuery);
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-
-/***/ 316:
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
-
-	!function($) {
-
-	/**
-	 * Sticky module.
-	 * @module foundation.sticky
-	 * @requires foundation.util.triggers
-	 * @requires foundation.util.mediaQuery
-	 */
-
-	class Sticky {
-	  /**
-	   * Creates a new instance of a sticky thing.
-	   * @class
-	   * @param {jQuery} element - jQuery object to make sticky.
-	   * @param {Object} options - options object passed when creating the element programmatically.
-	   */
-	  constructor(element, options) {
-	    this.$element = element;
-	    this.options = $.extend({}, Sticky.defaults, this.$element.data(), options);
-
-	    this._init();
-
-	    Foundation.registerPlugin(this, 'Sticky');
-	  }
-
-	  /**
-	   * Initializes the sticky element by adding classes, getting/setting dimensions, breakpoints and attributes
-	   * @function
-	   * @private
-	   */
-	  _init() {
-	    var $parent = this.$element.parent('[data-sticky-container]'),
-	        id = this.$element[0].id || Foundation.GetYoDigits(6, 'sticky'),
-	        _this = this;
-
-	    if (!$parent.length) {
-	      this.wasWrapped = true;
-	    }
-	    this.$container = $parent.length ? $parent : $(this.options.container).wrapInner(this.$element);
-	    this.$container.addClass(this.options.containerClass);
-
-	    this.$element.addClass(this.options.stickyClass)
-	                 .attr({'data-resize': id});
-
-	    this.scrollCount = this.options.checkEvery;
-	    this.isStuck = false;
-	    $(window).one('load.zf.sticky', function(){
-	      if(_this.options.anchor !== ''){
-	        _this.$anchor = $('#' + _this.options.anchor);
-	      }else{
-	        _this._parsePoints();
-	      }
-
-	      _this._setSizes(function(){
-	        _this._calc(false);
-	      });
-	      _this._events(id.split('-').reverse().join('-'));
-	    });
-	  }
-
-	  /**
-	   * If using multiple elements as anchors, calculates the top and bottom pixel values the sticky thing should stick and unstick on.
-	   * @function
-	   * @private
-	   */
-	  _parsePoints() {
-	    var top = this.options.topAnchor == "" ? 1 : this.options.topAnchor,
-	        btm = this.options.btmAnchor== "" ? document.documentElement.scrollHeight : this.options.btmAnchor,
-	        pts = [top, btm],
-	        breaks = {};
-	    for (var i = 0, len = pts.length; i < len && pts[i]; i++) {
-	      var pt;
-	      if (typeof pts[i] === 'number') {
-	        pt = pts[i];
-	      } else {
-	        var place = pts[i].split(':'),
-	            anchor = $(`#${place[0]}`);
-
-	        pt = anchor.offset().top;
-	        if (place[1] && place[1].toLowerCase() === 'bottom') {
-	          pt += anchor[0].getBoundingClientRect().height;
-	        }
-	      }
-	      breaks[i] = pt;
-	    }
-
-
-	    this.points = breaks;
-	    return;
-	  }
-
-	  /**
-	   * Adds event handlers for the scrolling element.
-	   * @private
-	   * @param {String} id - psuedo-random id for unique scroll event listener.
-	   */
-	  _events(id) {
-	    var _this = this,
-	        scrollListener = this.scrollListener = `scroll.zf.${id}`;
-	    if (this.isOn) { return; }
-	    if (this.canStick) {
-	      this.isOn = true;
-	      $(window).off(scrollListener)
-	               .on(scrollListener, function(e) {
-	                 if (_this.scrollCount === 0) {
-	                   _this.scrollCount = _this.options.checkEvery;
-	                   _this._setSizes(function() {
-	                     _this._calc(false, window.pageYOffset);
-	                   });
-	                 } else {
-	                   _this.scrollCount--;
-	                   _this._calc(false, window.pageYOffset);
-	                 }
+	        if (scrollTop <= etse) {
+	          if (s.currentTop !== null) {
+	            s.stickyElement
+	              .css({
+	                'width': '',
+	                'position': '',
+	                'top': '',
+	                'z-index': ''
 	              });
-	    }
-
-	    this.$element.off('resizeme.zf.trigger')
-	                 .on('resizeme.zf.trigger', function(e, el) {
-	                     _this._setSizes(function() {
-	                       _this._calc(false);
-	                       if (_this.canStick) {
-	                         if (!_this.isOn) {
-	                           _this._events(id);
-	                         }
-	                       } else if (_this.isOn) {
-	                         _this._pauseListeners(scrollListener);
-	                       }
-	                     });
-	    });
-	  }
-
-	  /**
-	   * Removes event handlers for scroll and change events on anchor.
-	   * @fires Sticky#pause
-	   * @param {String} scrollListener - unique, namespaced scroll listener attached to `window`
-	   */
-	  _pauseListeners(scrollListener) {
-	    this.isOn = false;
-	    $(window).off(scrollListener);
-
-	    /**
-	     * Fires when the plugin is paused due to resize event shrinking the view.
-	     * @event Sticky#pause
-	     * @private
-	     */
-	     this.$element.trigger('pause.zf.sticky');
-	  }
-
-	  /**
-	   * Called on every `scroll` event and on `_init`
-	   * fires functions based on booleans and cached values
-	   * @param {Boolean} checkSizes - true if plugin should recalculate sizes and breakpoints.
-	   * @param {Number} scroll - current scroll position passed from scroll event cb function. If not passed, defaults to `window.pageYOffset`.
-	   */
-	  _calc(checkSizes, scroll) {
-	    if (checkSizes) { this._setSizes(); }
-
-	    if (!this.canStick) {
-	      if (this.isStuck) {
-	        this._removeSticky(true);
-	      }
-	      return false;
-	    }
-
-	    if (!scroll) { scroll = window.pageYOffset; }
-
-	    if (scroll >= this.topPoint) {
-	      if (scroll <= this.bottomPoint) {
-	        if (!this.isStuck) {
-	          this._setSticky();
+	            s.stickyElement.parent().removeClass(s.className);
+	            s.stickyElement.trigger('sticky-end', [s]);
+	            s.currentTop = null;
+	          }
 	        }
-	      } else {
-	        if (this.isStuck) {
-	          this._removeSticky(false);
+	        else {
+	          var newTop = documentHeight - s.stickyElement.outerHeight()
+	            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+	          if (newTop < 0) {
+	            newTop = newTop + s.topSpacing;
+	          } else {
+	            newTop = s.topSpacing;
+	          }
+	          if (s.currentTop !== newTop) {
+	            var newWidth;
+	            if (s.getWidthFrom) {
+	                newWidth = $(s.getWidthFrom).width() || null;
+	            } else if (s.widthFromWrapper) {
+	                newWidth = s.stickyWrapper.width();
+	            }
+	            if (newWidth == null) {
+	                newWidth = s.stickyElement.width();
+	            }
+	            s.stickyElement
+	              .css('width', newWidth)
+	              .css('position', 'fixed')
+	              .css('top', newTop)
+	              .css('z-index', s.zIndex);
+
+	            s.stickyElement.parent().addClass(s.className);
+
+	            if (s.currentTop === null) {
+	              s.stickyElement.trigger('sticky-start', [s]);
+	            } else {
+	              // sticky is started but it have to be repositioned
+	              s.stickyElement.trigger('sticky-update', [s]);
+	            }
+
+	            if (s.currentTop === s.topSpacing && s.currentTop > newTop || s.currentTop === null && newTop < s.topSpacing) {
+	              // just reached bottom || just started to stick but bottom is already reached
+	              s.stickyElement.trigger('sticky-bottom-reached', [s]);
+	            } else if(s.currentTop !== null && newTop === s.topSpacing && s.currentTop < newTop) {
+	              // sticky is started && sticked at topSpacing && overflowing from top just finished
+	              s.stickyElement.trigger('sticky-bottom-unreached', [s]);
+	            }
+
+	            s.currentTop = newTop;
+	          }
+
+	          // Check if sticky has reached end of container and stop sticking
+	          var stickyWrapperContainer = s.stickyWrapper.parent();
+	          var unstick = (s.stickyElement.offset().top + s.stickyElement.outerHeight() >= stickyWrapperContainer.offset().top + stickyWrapperContainer.outerHeight()) && (s.stickyElement.offset().top <= s.topSpacing);
+
+	          if( unstick ) {
+	            s.stickyElement
+	              .css('position', 'absolute')
+	              .css('top', '')
+	              .css('bottom', 0)
+	              .css('z-index', '');
+	          } else {
+	            s.stickyElement
+	              .css('position', 'fixed')
+	              .css('top', newTop)
+	              .css('bottom', '')
+	              .css('z-index', s.zIndex);
+	          }
 	        }
 	      }
-	    } else {
-	      if (this.isStuck) {
-	        this._removeSticky(true);
+	    },
+	    resizer = function() {
+	      windowHeight = $window.height();
+
+	      for (var i = 0, l = sticked.length; i < l; i++) {
+	        var s = sticked[i];
+	        var newWidth = null;
+	        if (s.getWidthFrom) {
+	            if (s.responsiveWidth) {
+	                newWidth = $(s.getWidthFrom).width();
+	            }
+	        } else if(s.widthFromWrapper) {
+	            newWidth = s.stickyWrapper.width();
+	        }
+	        if (newWidth != null) {
+	            s.stickyElement.css('width', newWidth);
+	        }
 	      }
-	    }
+	    },
+	    methods = {
+	      init: function(options) {
+	        var o = $.extend({}, defaults, options);
+	        return this.each(function() {
+	          var stickyElement = $(this);
+
+	          var stickyId = stickyElement.attr('id');
+	          var wrapperId = stickyId ? stickyId + '-' + defaults.wrapperClassName : defaults.wrapperClassName;
+	          var wrapper = $('<div></div>')
+	            .attr('id', wrapperId)
+	            .addClass(o.wrapperClassName);
+
+	          stickyElement.wrapAll(wrapper);
+
+	          var stickyWrapper = stickyElement.parent();
+
+	          if (o.center) {
+	            stickyWrapper.css({width:stickyElement.outerWidth(),marginLeft:"auto",marginRight:"auto"});
+	          }
+
+	          if (stickyElement.css("float") === "right") {
+	            stickyElement.css({"float":"none"}).parent().css({"float":"right"});
+	          }
+
+	          o.stickyElement = stickyElement;
+	          o.stickyWrapper = stickyWrapper;
+	          o.currentTop    = null;
+
+	          sticked.push(o);
+
+	          methods.setWrapperHeight(this);
+	          methods.setupChangeListeners(this);
+	        });
+	      },
+
+	      setWrapperHeight: function(stickyElement) {
+	        var element = $(stickyElement);
+	        var stickyWrapper = element.parent();
+	        if (stickyWrapper) {
+	          stickyWrapper.css('height', element.outerHeight());
+	        }
+	      },
+
+	      setupChangeListeners: function(stickyElement) {
+	        if (window.MutationObserver) {
+	          var mutationObserver = new window.MutationObserver(function(mutations) {
+	            if (mutations[0].addedNodes.length || mutations[0].removedNodes.length) {
+	              methods.setWrapperHeight(stickyElement);
+	            }
+	          });
+	          mutationObserver.observe(stickyElement, {subtree: true, childList: true});
+	        } else {
+	          stickyElement.addEventListener('DOMNodeInserted', function() {
+	            methods.setWrapperHeight(stickyElement);
+	          }, false);
+	          stickyElement.addEventListener('DOMNodeRemoved', function() {
+	            methods.setWrapperHeight(stickyElement);
+	          }, false);
+	        }
+	      },
+	      update: scroller,
+	      unstick: function(options) {
+	        return this.each(function() {
+	          var that = this;
+	          var unstickyElement = $(that);
+
+	          var removeIdx = -1;
+	          var i = sticked.length;
+	          while (i-- > 0) {
+	            if (sticked[i].stickyElement.get(0) === that) {
+	                splice.call(sticked,i,1);
+	                removeIdx = i;
+	            }
+	          }
+	          if(removeIdx !== -1) {
+	            unstickyElement.unwrap();
+	            unstickyElement
+	              .css({
+	                'width': '',
+	                'position': '',
+	                'top': '',
+	                'float': '',
+	                'z-index': ''
+	              })
+	            ;
+	          }
+	        });
+	      }
+	    };
+
+	  // should be more efficient than using $window.scroll(scroller) and $window.resize(resizer):
+	  if (window.addEventListener) {
+	    window.addEventListener('scroll', scroller, false);
+	    window.addEventListener('resize', resizer, false);
+	  } else if (window.attachEvent) {
+	    window.attachEvent('onscroll', scroller);
+	    window.attachEvent('onresize', resizer);
 	  }
 
-	  /**
-	   * Causes the $element to become stuck.
-	   * Adds `position: fixed;`, and helper classes.
-	   * @fires Sticky#stuckto
-	   * @function
-	   * @private
-	   */
-	  _setSticky() {
-	    var _this = this,
-	        stickTo = this.options.stickTo,
-	        mrgn = stickTo === 'top' ? 'marginTop' : 'marginBottom',
-	        notStuckTo = stickTo === 'top' ? 'bottom' : 'top',
-	        css = {};
-
-	    css[mrgn] = `${this.options[mrgn]}em`;
-	    css[stickTo] = 0;
-	    css[notStuckTo] = 'auto';
-	    css['left'] = this.$container.offset().left + parseInt(window.getComputedStyle(this.$container[0])["padding-left"], 10);
-	    this.isStuck = true;
-	    this.$element.removeClass(`is-anchored is-at-${notStuckTo}`)
-	                 .addClass(`is-stuck is-at-${stickTo}`)
-	                 .css(css)
-	                 /**
-	                  * Fires when the $element has become `position: fixed;`
-	                  * Namespaced to `top` or `bottom`, e.g. `sticky.zf.stuckto:top`
-	                  * @event Sticky#stuckto
-	                  */
-	                 .trigger(`sticky.zf.stuckto:${stickTo}`);
-	    this.$element.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function() {
-	      _this._setSizes();
-	    });
-	  }
-
-	  /**
-	   * Causes the $element to become unstuck.
-	   * Removes `position: fixed;`, and helper classes.
-	   * Adds other helper classes.
-	   * @param {Boolean} isTop - tells the function if the $element should anchor to the top or bottom of its $anchor element.
-	   * @fires Sticky#unstuckfrom
-	   * @private
-	   */
-	  _removeSticky(isTop) {
-	    var stickTo = this.options.stickTo,
-	        stickToTop = stickTo === 'top',
-	        css = {},
-	        anchorPt = (this.points ? this.points[1] - this.points[0] : this.anchorHeight) - this.elemHeight,
-	        mrgn = stickToTop ? 'marginTop' : 'marginBottom',
-	        notStuckTo = stickToTop ? 'bottom' : 'top',
-	        topOrBottom = isTop ? 'top' : 'bottom';
-
-	    css[mrgn] = 0;
-
-	    css['bottom'] = 'auto';
-	    if(isTop) {
-	      css['top'] = 0;
+	  $.fn.sticky = function(method) {
+	    if (methods[method]) {
+	      return methods[method].apply(this, slice.call(arguments, 1));
+	    } else if (typeof method === 'object' || !method ) {
+	      return methods.init.apply( this, arguments );
 	    } else {
-	      css['top'] = anchorPt;
+	      $.error('Method ' + method + ' does not exist on jQuery.sticky');
 	    }
+	  };
 
-	    css['left'] = '';
-	    this.isStuck = false;
-	    this.$element.removeClass(`is-stuck is-at-${stickTo}`)
-	                 .addClass(`is-anchored is-at-${topOrBottom}`)
-	                 .css(css)
-	                 /**
-	                  * Fires when the $element has become anchored.
-	                  * Namespaced to `top` or `bottom`, e.g. `sticky.zf.unstuckfrom:bottom`
-	                  * @event Sticky#unstuckfrom
-	                  */
-	                 .trigger(`sticky.zf.unstuckfrom:${topOrBottom}`);
-	  }
-
-	  /**
-	   * Sets the $element and $container sizes for plugin.
-	   * Calls `_setBreakPoints`.
-	   * @param {Function} cb - optional callback function to fire on completion of `_setBreakPoints`.
-	   * @private
-	   */
-	  _setSizes(cb) {
-	    this.canStick = Foundation.MediaQuery.atLeast(this.options.stickyOn);
-	    if (!this.canStick) { cb(); }
-	    var _this = this,
-	        newElemWidth = this.$container[0].getBoundingClientRect().width,
-	        comp = window.getComputedStyle(this.$container[0]),
-	        pdng = parseInt(comp['padding-right'], 10);
-
-	    if (this.$anchor && this.$anchor.length) {
-	      this.anchorHeight = this.$anchor[0].getBoundingClientRect().height;
+	  $.fn.unstick = function(method) {
+	    if (methods[method]) {
+	      return methods[method].apply(this, slice.call(arguments, 1));
+	    } else if (typeof method === 'object' || !method ) {
+	      return methods.unstick.apply( this, arguments );
 	    } else {
-	      this._parsePoints();
+	      $.error('Method ' + method + ' does not exist on jQuery.sticky');
 	    }
-
-	    this.$element.css({
-	      'max-width': `${newElemWidth - pdng}px`
-	    });
-
-	    var newContainerHeight = this.$element[0].getBoundingClientRect().height || this.containerHeight;
-	    if (this.$element.css("display") == "none") {
-	      newContainerHeight = 0;
-	    }
-	    this.containerHeight = newContainerHeight;
-	    this.$container.css({
-	      height: newContainerHeight
-	    });
-	    this.elemHeight = newContainerHeight;
-
-	  	if (this.isStuck) {
-	  		this.$element.css({"left":this.$container.offset().left + parseInt(comp['padding-left'], 10)});
-	  	}
-
-	    this._setBreakPoints(newContainerHeight, function() {
-	      if (cb) { cb(); }
-	    });
-	  }
-
-	  /**
-	   * Sets the upper and lower breakpoints for the element to become sticky/unsticky.
-	   * @param {Number} elemHeight - px value for sticky.$element height, calculated by `_setSizes`.
-	   * @param {Function} cb - optional callback function to be called on completion.
-	   * @private
-	   */
-	  _setBreakPoints(elemHeight, cb) {
-	    if (!this.canStick) {
-	      if (cb) { cb(); }
-	      else { return false; }
-	    }
-	    var mTop = emCalc(this.options.marginTop),
-	        mBtm = emCalc(this.options.marginBottom),
-	        topPoint = this.points ? this.points[0] : this.$anchor.offset().top,
-	        bottomPoint = this.points ? this.points[1] : topPoint + this.anchorHeight,
-	        // topPoint = this.$anchor.offset().top || this.points[0],
-	        // bottomPoint = topPoint + this.anchorHeight || this.points[1],
-	        winHeight = window.innerHeight;
-
-	    if (this.options.stickTo === 'top') {
-	      topPoint -= mTop;
-	      bottomPoint -= (elemHeight + mTop);
-	    } else if (this.options.stickTo === 'bottom') {
-	      topPoint -= (winHeight - (elemHeight + mBtm));
-	      bottomPoint -= (winHeight - mBtm);
-	    } else {
-	      //this would be the stickTo: both option... tricky
-	    }
-
-	    this.topPoint = topPoint;
-	    this.bottomPoint = bottomPoint;
-
-	    if (cb) { cb(); }
-	  }
-
-	  /**
-	   * Destroys the current sticky element.
-	   * Resets the element to the top position first.
-	   * Removes event listeners, JS-added css properties and classes, and unwraps the $element if the JS added the $container.
-	   * @function
-	   */
-	  destroy() {
-	    this._removeSticky(true);
-
-	    this.$element.removeClass(`${this.options.stickyClass} is-anchored is-at-top`)
-	                 .css({
-	                   height: '',
-	                   top: '',
-	                   bottom: '',
-	                   'max-width': ''
-	                 })
-	                 .off('resizeme.zf.trigger');
-	    if (this.$anchor && this.$anchor.length) {
-	      this.$anchor.off('change.zf.sticky');
-	    }
-	    $(window).off(this.scrollListener);
-
-	    if (this.wasWrapped) {
-	      this.$element.unwrap();
-	    } else {
-	      this.$container.removeClass(this.options.containerClass)
-	                     .css({
-	                       height: ''
-	                     });
-	    }
-	    Foundation.unregisterPlugin(this);
-	  }
-	}
-
-	Sticky.defaults = {
-	  /**
-	   * Customizable container template. Add your own classes for styling and sizing.
-	   * @option
-	   * @example '&lt;div data-sticky-container class="small-6 columns"&gt;&lt;/div&gt;'
-	   */
-	  container: '<div data-sticky-container></div>',
-	  /**
-	   * Location in the view the element sticks to.
-	   * @option
-	   * @example 'top'
-	   */
-	  stickTo: 'top',
-	  /**
-	   * If anchored to a single element, the id of that element.
-	   * @option
-	   * @example 'exampleId'
-	   */
-	  anchor: '',
-	  /**
-	   * If using more than one element as anchor points, the id of the top anchor.
-	   * @option
-	   * @example 'exampleId:top'
-	   */
-	  topAnchor: '',
-	  /**
-	   * If using more than one element as anchor points, the id of the bottom anchor.
-	   * @option
-	   * @example 'exampleId:bottom'
-	   */
-	  btmAnchor: '',
-	  /**
-	   * Margin, in `em`'s to apply to the top of the element when it becomes sticky.
-	   * @option
-	   * @example 1
-	   */
-	  marginTop: 1,
-	  /**
-	   * Margin, in `em`'s to apply to the bottom of the element when it becomes sticky.
-	   * @option
-	   * @example 1
-	   */
-	  marginBottom: 1,
-	  /**
-	   * Breakpoint string that is the minimum screen size an element should become sticky.
-	   * @option
-	   * @example 'medium'
-	   */
-	  stickyOn: 'medium',
-	  /**
-	   * Class applied to sticky element, and removed on destruction. Foundation defaults to `sticky`.
-	   * @option
-	   * @example 'sticky'
-	   */
-	  stickyClass: 'sticky',
-	  /**
-	   * Class applied to sticky container. Foundation defaults to `sticky-container`.
-	   * @option
-	   * @example 'sticky-container'
-	   */
-	  containerClass: 'sticky-container',
-	  /**
-	   * Number of scroll events between the plugin's recalculating sticky points. Setting it to `0` will cause it to recalc every scroll event, setting it to `-1` will prevent recalc on scroll.
-	   * @option
-	   * @example 50
-	   */
-	  checkEvery: -1
-	};
-
-	/**
-	 * Helper function to calculate em values
-	 * @param Number {em} - number of em's to calculate into pixels
-	 */
-	function emCalc(em) {
-	  return parseInt(window.getComputedStyle(document.body, null).fontSize, 10) * em;
-	}
-
-	// Window exports
-	Foundation.plugin(Sticky, 'Sticky');
-
-	}(jQuery);
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-
-/***/ 321:
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
-
-	!function($) {
-
-	const MutationObserver = (function () {
-	  var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
-	  for (var i=0; i < prefixes.length; i++) {
-	    if (`${prefixes[i]}MutationObserver` in window) {
-	      return window[`${prefixes[i]}MutationObserver`];
-	    }
-	  }
-	  return false;
-	}());
-
-	const triggers = (el, type) => {
-	  el.data(type).split(' ').forEach(id => {
-	    $(`#${id}`)[ type === 'close' ? 'trigger' : 'triggerHandler'](`${type}.zf.trigger`, [el]);
+	  };
+	  $(function() {
+	    setTimeout(scroller, 0);
 	  });
-	};
-	// Elements with [data-open] will reveal a plugin that supports it when clicked.
-	$(document).on('click.zf.trigger', '[data-open]', function() {
-	  triggers($(this), 'open');
-	});
+	}));
 
-	// Elements with [data-close] will close a plugin that supports it when clicked.
-	// If used without a value on [data-close], the event will bubble, allowing it to close a parent component.
-	$(document).on('click.zf.trigger', '[data-close]', function() {
-	  let id = $(this).data('close');
-	  if (id) {
-	    triggers($(this), 'close');
-	  }
-	  else {
-	    $(this).trigger('close.zf.trigger');
-	  }
-	});
-
-	// Elements with [data-toggle] will toggle a plugin that supports it when clicked.
-	$(document).on('click.zf.trigger', '[data-toggle]', function() {
-	  triggers($(this), 'toggle');
-	});
-
-	// Elements with [data-closable] will respond to close.zf.trigger events.
-	$(document).on('close.zf.trigger', '[data-closable]', function(e){
-	  e.stopPropagation();
-	  let animation = $(this).data('closable');
-
-	  if(animation !== ''){
-	    Foundation.Motion.animateOut($(this), animation, function() {
-	      $(this).trigger('closed.zf');
-	    });
-	  }else{
-	    $(this).fadeOut().trigger('closed.zf');
-	  }
-	});
-
-	$(document).on('focus.zf.trigger blur.zf.trigger', '[data-toggle-focus]', function() {
-	  let id = $(this).data('toggle-focus');
-	  $(`#${id}`).triggerHandler('toggle.zf.trigger', [$(this)]);
-	});
-
-	/**
-	* Fires once after all other scripts have loaded
-	* @function
-	* @private
-	*/
-	$(window).load(() => {
-	  checkListeners();
-	});
-
-	function checkListeners() {
-	  eventsListener();
-	  resizeListener();
-	  scrollListener();
-	  closemeListener();
-	}
-
-	//******** only fires this function once on load, if there's something to watch ********
-	function closemeListener(pluginName) {
-	  var yetiBoxes = $('[data-yeti-box]'),
-	      plugNames = ['dropdown', 'tooltip', 'reveal'];
-
-	  if(pluginName){
-	    if(typeof pluginName === 'string'){
-	      plugNames.push(pluginName);
-	    }else if(typeof pluginName === 'object' && typeof pluginName[0] === 'string'){
-	      plugNames.concat(pluginName);
-	    }else{
-	      console.error('Plugin names must be strings');
-	    }
-	  }
-	  if(yetiBoxes.length){
-	    let listeners = plugNames.map((name) => {
-	      return `closeme.zf.${name}`;
-	    }).join(' ');
-
-	    $(window).off(listeners).on(listeners, function(e, pluginId){
-	      let plugin = e.namespace.split('.')[0];
-	      let plugins = $(`[data-${plugin}]`).not(`[data-yeti-box="${pluginId}"]`);
-
-	      plugins.each(function(){
-	        let _this = $(this);
-
-	        _this.triggerHandler('close.zf.trigger', [_this]);
-	      });
-	    });
-	  }
-	}
-
-	function resizeListener(debounce){
-	  let timer,
-	      $nodes = $('[data-resize]');
-	  if($nodes.length){
-	    $(window).off('resize.zf.trigger')
-	    .on('resize.zf.trigger', function(e) {
-	      if (timer) { clearTimeout(timer); }
-
-	      timer = setTimeout(function(){
-
-	        if(!MutationObserver){//fallback for IE 9
-	          $nodes.each(function(){
-	            $(this).triggerHandler('resizeme.zf.trigger');
-	          });
-	        }
-	        //trigger all listening elements and signal a resize event
-	        $nodes.attr('data-events', "resize");
-	      }, debounce || 10);//default time to emit resize event
-	    });
-	  }
-	}
-
-	function scrollListener(debounce){
-	  let timer,
-	      $nodes = $('[data-scroll]');
-	  if($nodes.length){
-	    $(window).off('scroll.zf.trigger')
-	    .on('scroll.zf.trigger', function(e){
-	      if(timer){ clearTimeout(timer); }
-
-	      timer = setTimeout(function(){
-
-	        if(!MutationObserver){//fallback for IE 9
-	          $nodes.each(function(){
-	            $(this).triggerHandler('scrollme.zf.trigger');
-	          });
-	        }
-	        //trigger all listening elements and signal a scroll event
-	        $nodes.attr('data-events', "scroll");
-	      }, debounce || 10);//default time to emit scroll event
-	    });
-	  }
-	}
-
-	function eventsListener() {
-	  if(!MutationObserver){ return false; }
-	  let nodes = document.querySelectorAll('[data-resize], [data-scroll], [data-mutate]');
-
-	  //element callback
-	  var listeningElementsMutation = function(mutationRecordsList) {
-	    var $target = $(mutationRecordsList[0].target);
-	    //trigger the event handler for the element depending on type
-	    switch ($target.attr("data-events")) {
-
-	      case "resize" :
-	      $target.triggerHandler('resizeme.zf.trigger', [$target]);
-	      break;
-
-	      case "scroll" :
-	      $target.triggerHandler('scrollme.zf.trigger', [$target, window.pageYOffset]);
-	      break;
-
-	      // case "mutate" :
-	      // console.log('mutate', $target);
-	      // $target.triggerHandler('mutate.zf.trigger');
-	      //
-	      // //make sure we don't get stuck in an infinite loop from sloppy codeing
-	      // if ($target.index('[data-mutate]') == $("[data-mutate]").length-1) {
-	      //   domMutationObserver();
-	      // }
-	      // break;
-
-	      default :
-	      return false;
-	      //nothing
-	    }
-	  }
-
-	  if(nodes.length){
-	    //for each element that needs to listen for resizing, scrolling, (or coming soon mutation) add a single observer
-	    for (var i = 0; i <= nodes.length-1; i++) {
-	      let elementObserver = new MutationObserver(listeningElementsMutation);
-	      elementObserver.observe(nodes[i], { attributes: true, childList: false, characterData: false, subtree:false, attributeFilter:["data-events"]});
-	    }
-	  }
-	}
-
-	// ------------------------------------
-
-	// [PH]
-	// Foundation.CheckWatchers = checkWatchers;
-	Foundation.IHearYou = checkListeners;
-	// Foundation.ISeeYou = scrollListener;
-	// Foundation.IFeelYou = closemeListener;
-
-	}(jQuery);
-
-	// function domMutationObserver(debounce) {
-	//   // !!! This is coming soon and needs more work; not active  !!! //
-	//   var timer,
-	//   nodes = document.querySelectorAll('[data-mutate]');
-	//   //
-	//   if (nodes.length) {
-	//     // var MutationObserver = (function () {
-	//     //   var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
-	//     //   for (var i=0; i < prefixes.length; i++) {
-	//     //     if (prefixes[i] + 'MutationObserver' in window) {
-	//     //       return window[prefixes[i] + 'MutationObserver'];
-	//     //     }
-	//     //   }
-	//     //   return false;
-	//     // }());
-	//
-	//
-	//     //for the body, we need to listen for all changes effecting the style and class attributes
-	//     var bodyObserver = new MutationObserver(bodyMutation);
-	//     bodyObserver.observe(document.body, { attributes: true, childList: true, characterData: false, subtree:true, attributeFilter:["style", "class"]});
-	//
-	//
-	//     //body callback
-	//     function bodyMutation(mutate) {
-	//       //trigger all listening elements and signal a mutation event
-	//       if (timer) { clearTimeout(timer); }
-	//
-	//       timer = setTimeout(function() {
-	//         bodyObserver.disconnect();
-	//         $('[data-mutate]').attr('data-events',"mutate");
-	//       }, debounce || 150);
-	//     }
-	//   }
-	// }
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }
 
