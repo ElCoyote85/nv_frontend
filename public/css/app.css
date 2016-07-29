@@ -6974,7 +6974,7 @@ body {
   background-color: #e99323;
   width: 100%;
   padding: 20px;
-  margin: 30px 0;
+  margin: 10px 0;
   color: #0a0a0a;
   font-size: 1.2rem;
   max-width: 75rem;
@@ -7011,15 +7011,17 @@ body {
 
 .rexpo_more_reviews {
   float: right;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/all_reviews.png) no-repeat;
-  width: 89px;
-  height: 16px; }
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/all_reviews.png) no-repeat;
+  width: 174px;
+  height: 35px;
+  margin-right: 10px; }
 
 .rexpo_more_standalone a {
   float: right;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/review_read.png) no-repeat;
-  width: 98px;
-  height: 16px; }
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/review_read.png) no-repeat;
+  width: 174px;
+  height: 35px;
+  margin-right: 10px; }
 
 .paging {
   margin-top: 15px;
@@ -7056,15 +7058,15 @@ body {
 
 .paging_next a {
   display: block;
-  width: 7px;
-  height: 7px;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/news_back.gif) no-repeat; }
+  width: 16px;
+  height: 32px;
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/news_back.png) no-repeat; }
 
 .paging_next strong {
   display: block;
   width: 7px;
   height: 7px;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/news_back_inactive.gif) no-repeat; }
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/news_back_inactive.png) no-repeat; }
 
 .paging_next span {
   display: none; }
@@ -7075,15 +7077,15 @@ body {
 
 .paging_previous a {
   display: block;
-  width: 7px;
-  height: 7px;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/news_forward.gif) no-repeat; }
+  width: 16px;
+  height: 32px;
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/news_forward.png) no-repeat; }
 
 .paging_previous strong {
   display: block;
   width: 7px;
   height: 7px;
-  background: url(http://static.navystavke.ru/newassets/imgs/rows/news_forward_inactive.gif) no-repeat; }
+  background: url(http://static.navystavke.ru/newassets/imgs/nav/news_forward_inactive.png) no-repeat; }
 
 .paging_previous span {
   display: none; }
