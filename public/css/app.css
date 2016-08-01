@@ -5943,7 +5943,7 @@ body {
       left: -60px; } }
   .nv-sidebar-left:hover {
     transition: 0.2s;
-    width: 210px; }
+    width: 230px; }
     @media screen and (max-width: 39.9375em) {
       .nv-sidebar-left:hover {
         left: 0px; } }

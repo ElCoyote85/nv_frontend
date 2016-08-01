@@ -121,7 +121,7 @@
   }
   &:hover {
     transition: 0.2s;
-    width: 210px;
+    width: 230px;
     @include breakpoint(639px down) {
       left: 0px;
     }
