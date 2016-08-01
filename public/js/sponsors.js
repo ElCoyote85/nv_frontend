@@ -47,7 +47,7 @@
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	__webpack_require__(25);
+	__webpack_require__(31);
 
 	$(function () {
 	    var owl = $('.owl-carousel').owlCarousel({
@@ -9911,7 +9911,7 @@
 
 /***/ },
 
-/***/ 25:
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, jQuery) {/**
