@@ -4,6 +4,9 @@ $buttonHeight: 215px;
 
 .nv-nav {
   height: $buttonHeight;
+  &.nv-nav__expo-info {
+    margin-top: -70px;
+  }
 }
 
 .nv-nav--button {
@@ -64,6 +67,41 @@ $buttonHeight: 215px;
 
 .nv-nav--button-picture {
 
+}
+
+.nv-nav--mini-header {
+  //margin-bottom: -20px;
+  height: 45px;
+  background-color: #566a83;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  border-top: 2px solid white;
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  font-size: 1.8rem;
+  letter-spacing: 0.7rem;
+  position: relative;
+  z-index: 2;
+  span {
+    width: 100%;
+    @include absolute-center;
+  }
+  @include breakpoint(medium down) {
+    //@include absolute-center
+    vertical-align: middle;
+    font-size: 0.9rem;
+    //letter-spacing: 0.7rem;
+  }
+}
+
+.nv-nav--button__no-picture {
+  &:nth-child(1) { background-color: #ededf7; }
+  &:nth-child(2) { background-color: #f0f0f8; }
+  &:nth-child(3) { background-color: #f3f3fb; }
+  &:nth-child(4) { background-color: #f7f6fc; }
+  &:nth-child(5) { background-color: #f7f6fc; }
 }
 
 .nv-nav--button__with-picture-1 {
