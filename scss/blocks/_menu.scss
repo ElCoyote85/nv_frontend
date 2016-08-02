@@ -121,7 +121,7 @@
   }
   &:hover {
     transition: 0.2s;
-    width: 210px;
+    width: 230px;
     @include breakpoint(639px down) {
       left: 0px;
     }
@@ -206,7 +206,7 @@
   display: inline-block;
   white-space: nowrap;
   text-transform: lowercase;
-  color: #777777;
+  color: #afbbc3;
   font-size: 0.92rem;
   letter-spacing: 0.2rem;
   cursor: not-allowed;
