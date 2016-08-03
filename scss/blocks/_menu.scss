@@ -32,6 +32,9 @@
       background-color: #e0e0e0;
       border: none;
       text-align: center;
+      background-image: url('../imgs/icons/search.png');
+      background-repeat: no-repeat;
+      background-position: 0px 6px;
     }
     @include breakpoint(639px down) {
       @include grid-column(1, $gutter: 15px);
