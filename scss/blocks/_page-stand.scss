@@ -1,0 +1,326 @@
+.nv-main__page-stand {
+  height: inherit;
+}
+
+.nv-stand {
+  min-height: 600px;
+  position: relative;
+  background-color: #d18e36;
+  //padding-top: 30px;
+  padding: 30px 20px;
+  @include grid-row(12);
+  box-shadow: 0 5px 25px 5px #b1b1b1;
+  /* margin-bottom: 20px; */
+  z-index: 10;
+}
+
+.nv-stand-container {
+  display: inline-block;
+  width: 100%;
+}
+
+
+/* STAND INFO*/
+.nv-stand--info {
+  position: relative;
+  z-index: 10;
+  @include grid-column(4);
+  @include breakpoint(medium down) {
+    @include grid-column(6);
+  }
+  @include breakpoint(mini down) {
+    @include grid-column(12);
+  }
+  color: white;
+}
+.nv-stand--info-title {
+  letter-spacing: 2.5px;
+}
+.nv-stand--info-descr {
+  letter-spacing: 1px;
+}
+.nv-stand--info-contacts {
+  margin-top: 30px;
+  letter-spacing: 1.5px;
+  color: white;
+  //* {
+  //
+  //}
+  strong {
+    color: black;
+  }
+}
+.nv-stand--info-contacts--phone {
+  margin: 5px 0;
+  @include breakpoint(mini down) {
+    font-size: 0.8rem;
+  }
+}
+.nv-stand--info-contacts--email {
+  margin-top: 20px;
+  color: white;
+  display: inline-block;
+  padding-right: 50px;
+  font-size: 0.9rem;
+  @include breakpoint(mini down) {
+    font-size: 0.8rem;
+  }
+}
+.nv-stand--info-contacts--web {
+  color: white;
+  display: inline-block;
+}
+.nv-stand--info-contacts--address {
+  margin-top: 30px;
+  padding-right: 50px;
+  font-size: 0.9rem;
+}
+
+
+/* USER PROFILE */
+.nv-stand--user {
+  position: relative;
+  z-index: 10;
+  @include grid-column(2);
+  @include breakpoint(medium down){
+    @include grid-column(4);
+  }
+  @include breakpoint(mini down) {
+    @include grid-column(12);
+  }
+  //@include grid-column-position(right);
+}
+.nv-stand--user-status {
+  color: white;
+  text-align: center;
+}
+.nv-stand--user-pic {
+  display: block;
+  text-align: center;
+}
+.nv-stand--user-name {
+  letter-spacing: 1.5px;
+  color: white;
+  text-align: center;
+}
+.nv-stand--user-position {
+  margin-top: 10px;
+  text-align: center;
+  strong {
+    color: black;
+  }
+  color: white;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+.nv-stand--user-icons {
+  margin-top: 20px;
+}
+.nv-stand--user-icons--icon {
+  @include grid-column(1 of 2);
+  text-align: center;
+  height: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  a {
+    @include absolute-center;
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+  }
+}
+
+
+
+
+/* MAIN STAND BLOCK*/
+.nv-stand--main {
+  margin: -400px auto 50px 7%;
+  @include breakpoint(medium down) {
+    margin: 80px auto 50px auto;
+  }
+  @include breakpoint(mini down) {
+    margin: 10px auto 50px auto;
+  }
+  position: relative;
+  height: 500px;
+}
+.nv-stand--main-container {
+  //height: 500px;
+  @include absolute-center;
+  @include breakpoint(medium down) {
+    //width: 100%;
+  }
+  @include breakpoint(medium down) {
+    width: 100%;
+  }
+  img {
+    max-width: none;
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to bottom, transparent, #d18e36);
+  }
+}
+
+
+.nv-stand--main__stand-1 {
+  //background-image: url(../images/stand/stand1.png);
+
+}
+.nv-stand--main__stand-2 {}
+.nv-stand--main__stand-3 {}
+.nv-stand--main-logo {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  .nv-stand--main__stand-1 & {
+    left: 26.3%;
+    top: 1%;
+    height: 27.5%;
+    width: 44%;
+  }
+  .nv-stand--main__stand-2 & {
+    left: 26.7%;
+    top: 1.2%;
+    height: 27.2%;
+    width: 45.3%;
+  }
+  .nv-stand--main__stand-3 & {
+    left: 27.8%;
+    top: 1.2%;
+    height: 27.2%;
+    width: 45.8%;
+  }
+}
+.nv-stand--main-users {
+  text-align: center;
+  margin-top: -30%;
+  a {
+    display: inline-block;
+    border: 2px solid white;
+    margin: 0 2px;
+    width: 110px;
+    height: 110px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+.nv-stand--main-users--user {
+  a {}
+}
+
+.nv-stand--arrows {
+  position: relative;
+  z-index: 1;
+  .nv-stand--arrows-left { float: left; }
+  .nv-stand--arrows-right { float: right; }
+}
+
+.nv-stand--bottom {
+  position: absolute;
+  bottom: -70px;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+
+.nv-stand-description {
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  .nv-stand-description--tabs {
+    text-align: center;
+    @include tabs-container;
+    li.nv-stand-description--tabs-tab {
+      @include tabs-title;
+      text-transform: uppercase;
+      display: inline-block;
+      float: none;
+      clear: both;
+      a {
+        color: #0a0a0a;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .nv-stand-description--tabs-content {
+    @include tabs-content;
+    .nv-stand-description--tabs-panel {
+      @include tabs-panel;
+    }
+  }
+}
+
+.nv-stand-description--tabs-panel#standOffers {
+  padding: 50px 150px;
+  @include breakpoint(medium down) {
+    padding: 50px 45px;
+  }
+  @include breakpoint(mini down) {
+    padding: 50px 15px;
+  }
+  .nv-stand-offer {
+    display: inline-block;
+    padding: 20px 0;
+    .nv-stand-offer--image {
+      @include grid-column(2 of 10);
+      @include breakpoint(medium down) {
+        @include grid-column(3 of 10);
+      }
+      @include breakpoint(mini down) {
+        @include grid-column(1 of 1);
+        text-align: center;
+      }
+      a {
+        display: inline-block;
+      }
+    }
+    .nv-stand-offer--info {
+      @include grid-column(8 of 10);
+      @include breakpoint(medium down) {
+        @include grid-column(7 of 10);
+      }
+      @include breakpoint(mini down) {
+        @include grid-column(1 of 1);
+      }
+      a.nv-stand-offer--info-title {
+        color: orange;
+        text-decoration: underline;
+      }
+      p {}
+      a.nv-stand-offer--info-order {
+        display: inline-block;
+        margin-right: 30px;
+        color: white;
+        background-color: #b63c34;
+        padding: 4px 7px;
+        font-size: 0.9rem;
+      }
+      a.nv-stand-offer--info-link {
+        text-transform: lowercase;
+        display: inline-block;
+        font-size: 0.7rem;
+        color: #a9a9a9;
+        text-decoration: underline;
+      }
+      .nv-stand-offer--info-price {
+        margin-top: 10px;
+        color: #1d6f96;
+      }
+    }
+  }
+}

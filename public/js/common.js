@@ -40,13 +40,20 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {'use strict';
 
 	__webpack_require__(3);
+
+	__webpack_require__(34);
+
+	__webpack_require__(35);
+
+	__webpack_require__(33);
 
 	__webpack_require__(4);
 
@@ -137,12 +144,22 @@
 	            $('#ul-stick-filters-cities').sticky('update');
 	        });
 	    }
+
+	    /* STAND TABS INIT*/
+	    var standTabs;
+	    // if(standTabs = $('.nv-stand-description')){
+	    if (standTabs = $('#nv-stand-tabs')) {
+	        var stand_tabs = new Foundation.Tabs(standTabs, {
+	            linkClass: 'nv-stand-description--tabs-tab',
+	            panelClass: 'nv-stand-description--tabs-panel'
+	        });
+	    }
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 1 */,
-/* 2 */
+
+/***/ 2:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9962,7 +9979,8 @@
 
 
 /***/ },
-/* 3 */
+
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {!function($) {
@@ -10347,7 +10365,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 4 */
+
+/***/ 4:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -10568,7 +10587,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 5 */
+
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Sticky Plugin v1.0.4 for jQuery
@@ -10848,10 +10868,570 @@
 
 
 /***/ },
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
+/***/ },
+
+/***/ 33:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
+
+	!function($) {
+
+	/**
+	 * Tabs module.
+	 * @module foundation.tabs
+	 * @requires foundation.util.keyboard
+	 * @requires foundation.util.timerAndImageLoader if tabs contain images
+	 */
+
+	class Tabs {
+	  /**
+	   * Creates a new instance of tabs.
+	   * @class
+	   * @fires Tabs#init
+	   * @param {jQuery} element - jQuery object to make into tabs.
+	   * @param {Object} options - Overrides to the default plugin settings.
+	   */
+	  constructor(element, options) {
+	    this.$element = element;
+	    this.options = $.extend({}, Tabs.defaults, this.$element.data(), options);
+
+	    this._init();
+	    Foundation.registerPlugin(this, 'Tabs');
+	    Foundation.Keyboard.register('Tabs', {
+	      'ENTER': 'open',
+	      'SPACE': 'open',
+	      'ARROW_RIGHT': 'next',
+	      'ARROW_UP': 'previous',
+	      'ARROW_DOWN': 'next',
+	      'ARROW_LEFT': 'previous'
+	      // 'TAB': 'next',
+	      // 'SHIFT_TAB': 'previous'
+	    });
+	  }
+
+	  /**
+	   * Initializes the tabs by showing and focusing (if autoFocus=true) the preset active tab.
+	   * @private
+	   */
+	  _init() {
+	    var _this = this;
+
+	    this.$tabTitles = this.$element.find(`.${this.options.linkClass}`);
+	    this.$tabContent = $(`[data-tabs-content="${this.$element[0].id}"]`);
+
+	    this.$tabTitles.each(function(){
+	      var $elem = $(this),
+	          $link = $elem.find('a'),
+	          isActive = $elem.hasClass('is-active'),
+	          hash = $link[0].hash.slice(1),
+	          linkId = $link[0].id ? $link[0].id : `${hash}-label`,
+	          $tabContent = $(`#${hash}`);
+
+	      $elem.attr({'role': 'presentation'});
+
+	      $link.attr({
+	        'role': 'tab',
+	        'aria-controls': hash,
+	        'aria-selected': isActive,
+	        'id': linkId
+	      });
+
+	      $tabContent.attr({
+	        'role': 'tabpanel',
+	        'aria-hidden': !isActive,
+	        'aria-labelledby': linkId
+	      });
+
+	      if(isActive && _this.options.autoFocus){
+	        $link.focus();
+	      }
+	    });
+
+	    if(this.options.matchHeight) {
+	      var $images = this.$tabContent.find('img');
+
+	      if ($images.length) {
+	        Foundation.onImagesLoaded($images, this._setHeight.bind(this));
+	      } else {
+	        this._setHeight();
+	      }
+	    }
+
+	    this._events();
+	  }
+
+	  /**
+	   * Adds event handlers for items within the tabs.
+	   * @private
+	   */
+	  _events() {
+	    this._addKeyHandler();
+	    this._addClickHandler();
+	    this._setHeightMqHandler = null;
+	    
+	    if (this.options.matchHeight) {
+	      this._setHeightMqHandler = this._setHeight.bind(this);
+	      
+	      $(window).on('changed.zf.mediaquery', this._setHeightMqHandler);
+	    }
+	  }
+
+	  /**
+	   * Adds click handlers for items within the tabs.
+	   * @private
+	   */
+	  _addClickHandler() {
+	    var _this = this;
+
+	    this.$element
+	      .off('click.zf.tabs')
+	      .on('click.zf.tabs', `.${this.options.linkClass}`, function(e){
+	        e.preventDefault();
+	        e.stopPropagation();
+	        if ($(this).hasClass('is-active')) {
+	          return;
+	        }
+	        _this._handleTabChange($(this));
+	      });
+	  }
+
+	  /**
+	   * Adds keyboard event handlers for items within the tabs.
+	   * @private
+	   */
+	  _addKeyHandler() {
+	    var _this = this;
+	    var $firstTab = _this.$element.find('li:first-of-type');
+	    var $lastTab = _this.$element.find('li:last-of-type');
+
+	    this.$tabTitles.off('keydown.zf.tabs').on('keydown.zf.tabs', function(e){
+	      if (e.which === 9) return;
+	      
+
+	      var $element = $(this),
+	        $elements = $element.parent('ul').children('li'),
+	        $prevElement,
+	        $nextElement;
+
+	      $elements.each(function(i) {
+	        if ($(this).is($element)) {
+	          if (_this.options.wrapOnKeys) {
+	            $prevElement = i === 0 ? $elements.last() : $elements.eq(i-1);
+	            $nextElement = i === $elements.length -1 ? $elements.first() : $elements.eq(i+1);
+	          } else {
+	            $prevElement = $elements.eq(Math.max(0, i-1));
+	            $nextElement = $elements.eq(Math.min(i+1, $elements.length-1));
+	          }
+	          return;
+	        }
+	      });
+
+	      // handle keyboard event with keyboard util
+	      Foundation.Keyboard.handleKey(e, 'Tabs', {
+	        open: function() {
+	          $element.find('[role="tab"]').focus();
+	          _this._handleTabChange($element);
+	        },
+	        previous: function() {
+	          $prevElement.find('[role="tab"]').focus();
+	          _this._handleTabChange($prevElement);
+	        },
+	        next: function() {
+	          $nextElement.find('[role="tab"]').focus();
+	          _this._handleTabChange($nextElement);
+	        },
+	        handled: function() {
+	          e.stopPropagation();
+	          e.preventDefault();
+	        }
+	      });
+	    });
+	  }
+
+	  /**
+	   * Opens the tab `$targetContent` defined by `$target`.
+	   * @param {jQuery} $target - Tab to open.
+	   * @fires Tabs#change
+	   * @function
+	   */
+	  _handleTabChange($target) {
+	    var $tabLink = $target.find('[role="tab"]'),
+	        hash = $tabLink[0].hash,
+	        $targetContent = this.$tabContent.find(hash),
+	        $oldTab = this.$element.
+	          find(`.${this.options.linkClass}.is-active`)
+	          .removeClass('is-active')
+	          .find('[role="tab"]')
+	          .attr({ 'aria-selected': 'false' });
+
+	    $(`#${$oldTab.attr('aria-controls')}`)
+	      .removeClass('is-active')
+	      .attr({ 'aria-hidden': 'true' });
+
+	    $target.addClass('is-active');
+
+	    $tabLink.attr({'aria-selected': 'true'});
+
+	    $targetContent
+	      .addClass('is-active')
+	      .attr({'aria-hidden': 'false'});
+
+	    /**
+	     * Fires when the plugin has successfully changed tabs.
+	     * @event Tabs#change
+	     */
+	    this.$element.trigger('change.zf.tabs', [$target]);
+	  }
+
+	  /**
+	   * Public method for selecting a content pane to display.
+	   * @param {jQuery | String} elem - jQuery object or string of the id of the pane to display.
+	   * @function
+	   */
+	  selectTab(elem) {
+	    var idStr;
+
+	    if (typeof elem === 'object') {
+	      idStr = elem[0].id;
+	    } else {
+	      idStr = elem;
+	    }
+
+	    if (idStr.indexOf('#') < 0) {
+	      idStr = `#${idStr}`;
+	    }
+
+	    var $target = this.$tabTitles.find(`[href="${idStr}"]`).parent(`.${this.options.linkClass}`);
+
+	    this._handleTabChange($target);
+	  };
+	  /**
+	   * Sets the height of each panel to the height of the tallest panel.
+	   * If enabled in options, gets called on media query change.
+	   * If loading content via external source, can be called directly or with _reflow.
+	   * @function
+	   * @private
+	   */
+	  _setHeight() {
+	    var max = 0;
+	    this.$tabContent
+	      .find(`.${this.options.panelClass}`)
+	      .css('height', '')
+	      .each(function() {
+	        var panel = $(this),
+	            isActive = panel.hasClass('is-active');
+
+	        if (!isActive) {
+	          panel.css({'visibility': 'hidden', 'display': 'block'});
+	        }
+
+	        var temp = this.getBoundingClientRect().height;
+
+	        if (!isActive) {
+	          panel.css({
+	            'visibility': '',
+	            'display': ''
+	          });
+	        }
+
+	        max = temp > max ? temp : max;
+	      })
+	      .css('height', `${max}px`);
+	  }
+
+	  /**
+	   * Destroys an instance of an tabs.
+	   * @fires Tabs#destroyed
+	   */
+	  destroy() {
+	    this.$element
+	      .find(`.${this.options.linkClass}`)
+	      .off('.zf.tabs').hide().end()
+	      .find(`.${this.options.panelClass}`)
+	      .hide();
+
+	    if (this.options.matchHeight) {
+	      if (this._setHeightMqHandler != null) {
+	         $(window).off('changed.zf.mediaquery', this._setHeightMqHandler);
+	      }
+	    }
+
+	    Foundation.unregisterPlugin(this);
+	  }
+	}
+
+	Tabs.defaults = {
+	  /**
+	   * Allows the window to scroll to content of active pane on load if set to true.
+	   * @option
+	   * @example false
+	   */
+	  autoFocus: false,
+
+	  /**
+	   * Allows keyboard input to 'wrap' around the tab links.
+	   * @option
+	   * @example true
+	   */
+	  wrapOnKeys: true,
+
+	  /**
+	   * Allows the tab content panes to match heights if set to true.
+	   * @option
+	   * @example false
+	   */
+	  matchHeight: false,
+
+	  /**
+	   * Class applied to `li`'s in tab link list.
+	   * @option
+	   * @example 'tabs-title'
+	   */
+	  linkClass: 'tabs-title',
+
+	  /**
+	   * Class applied to the content containers.
+	   * @option
+	   * @example 'tabs-panel'
+	   */
+	  panelClass: 'tabs-panel'
+	};
+
+	function checkClass($elem){
+	  return $elem.hasClass('is-active');
+	}
+
+	// Window exports
+	Foundation.plugin(Tabs, 'Tabs');
+
+	}(jQuery);
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+
+/***/ 34:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(jQuery) {/*******************************************
+	 *                                         *
+	 * This util was created by Marius Olbertz *
+	 * Please thank Marius on GitHub /owlbertz *
+	 * or the web http://www.mariusolbertz.de/ *
+	 *                                         *
+	 ******************************************/
+
+	'use strict';
+
+	!function($) {
+
+	const keyCodes = {
+	  9: 'TAB',
+	  13: 'ENTER',
+	  27: 'ESCAPE',
+	  32: 'SPACE',
+	  37: 'ARROW_LEFT',
+	  38: 'ARROW_UP',
+	  39: 'ARROW_RIGHT',
+	  40: 'ARROW_DOWN'
+	}
+
+	var commands = {}
+
+	var Keyboard = {
+	  keys: getKeyCodes(keyCodes),
+
+	  /**
+	   * Parses the (keyboard) event and returns a String that represents its key
+	   * Can be used like Foundation.parseKey(event) === Foundation.keys.SPACE
+	   * @param {Event} event - the event generated by the event handler
+	   * @return String key - String that represents the key pressed
+	   */
+	  parseKey(event) {
+	    var key = keyCodes[event.which || event.keyCode] || String.fromCharCode(event.which).toUpperCase();
+	    if (event.shiftKey) key = `SHIFT_${key}`;
+	    if (event.ctrlKey) key = `CTRL_${key}`;
+	    if (event.altKey) key = `ALT_${key}`;
+	    return key;
+	  },
+
+	  /**
+	   * Handles the given (keyboard) event
+	   * @param {Event} event - the event generated by the event handler
+	   * @param {String} component - Foundation component's name, e.g. Slider or Reveal
+	   * @param {Objects} functions - collection of functions that are to be executed
+	   */
+	  handleKey(event, component, functions) {
+	    var commandList = commands[component],
+	      keyCode = this.parseKey(event),
+	      cmds,
+	      command,
+	      fn;
+
+	    if (!commandList) return console.warn('Component not defined!');
+
+	    if (typeof commandList.ltr === 'undefined') { // this component does not differentiate between ltr and rtl
+	        cmds = commandList; // use plain list
+	    } else { // merge ltr and rtl: if document is rtl, rtl overwrites ltr and vice versa
+	        if (Foundation.rtl()) cmds = $.extend({}, commandList.ltr, commandList.rtl);
+
+	        else cmds = $.extend({}, commandList.rtl, commandList.ltr);
+	    }
+	    command = cmds[keyCode];
+
+	    fn = functions[command];
+	    if (fn && typeof fn === 'function') { // execute function  if exists
+	      var returnValue = fn.apply();
+	      if (functions.handled || typeof functions.handled === 'function') { // execute function when event was handled
+	          functions.handled(returnValue);
+	      }
+	    } else {
+	      if (functions.unhandled || typeof functions.unhandled === 'function') { // execute function when event was not handled
+	          functions.unhandled();
+	      }
+	    }
+	  },
+
+	  /**
+	   * Finds all focusable elements within the given `$element`
+	   * @param {jQuery} $element - jQuery object to search within
+	   * @return {jQuery} $focusable - all focusable elements within `$element`
+	   */
+	  findFocusable($element) {
+	    return $element.find('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]').filter(function() {
+	      if (!$(this).is(':visible') || $(this).attr('tabindex') < 0) { return false; } //only have visible elements and those that have a tabindex greater or equal 0
+	      return true;
+	    });
+	  },
+
+	  /**
+	   * Returns the component name name
+	   * @param {Object} component - Foundation component, e.g. Slider or Reveal
+	   * @return String componentName
+	   */
+
+	  register(componentName, cmds) {
+	    commands[componentName] = cmds;
+	  }
+	}
+
+	/*
+	 * Constants for easier comparing.
+	 * Can be used like Foundation.parseKey(event) === Foundation.keys.SPACE
+	 */
+	function getKeyCodes(kcs) {
+	  var k = {};
+	  for (var kc in kcs) k[kcs[kc]] = kcs[kc];
+	  return k;
+	}
+
+	Foundation.Keyboard = Keyboard;
+
+	}(jQuery);
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+
+/***/ 35:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
+
+	!function($) {
+
+	function Timer(elem, options, cb) {
+	  var _this = this,
+	      duration = options.duration,//options is an object for easily adding features later.
+	      nameSpace = Object.keys(elem.data())[0] || 'timer',
+	      remain = -1,
+	      start,
+	      timer;
+
+	  this.isPaused = false;
+
+	  this.restart = function() {
+	    remain = -1;
+	    clearTimeout(timer);
+	    this.start();
+	  }
+
+	  this.start = function() {
+	    this.isPaused = false;
+	    // if(!elem.data('paused')){ return false; }//maybe implement this sanity check if used for other things.
+	    clearTimeout(timer);
+	    remain = remain <= 0 ? duration : remain;
+	    elem.data('paused', false);
+	    start = Date.now();
+	    timer = setTimeout(function(){
+	      if(options.infinite){
+	        _this.restart();//rerun the timer.
+	      }
+	      cb();
+	    }, remain);
+	    elem.trigger(`timerstart.zf.${nameSpace}`);
+	  }
+
+	  this.pause = function() {
+	    this.isPaused = true;
+	    //if(elem.data('paused')){ return false; }//maybe implement this sanity check if used for other things.
+	    clearTimeout(timer);
+	    elem.data('paused', true);
+	    var end = Date.now();
+	    remain = remain - (end - start);
+	    elem.trigger(`timerpaused.zf.${nameSpace}`);
+	  }
+	}
+
+	/**
+	 * Runs a callback function when images are fully loaded.
+	 * @param {Object} images - Image(s) to check if loaded.
+	 * @param {Func} callback - Function to execute when image is fully loaded.
+	 */
+	function onImagesLoaded(images, callback){
+	  var self = this,
+	      unloaded = images.length;
+
+	  if (unloaded === 0) {
+	    callback();
+	  }
+
+	  images.each(function() {
+	    if (this.complete) {
+	      singleImageLoaded();
+	    }
+	    else if (typeof this.naturalWidth !== 'undefined' && this.naturalWidth > 0) {
+	      singleImageLoaded();
+	    }
+	    else {
+	      $(this).one('load', function() {
+	        singleImageLoaded();
+	      });
+	    }
+	  });
+
+	  function singleImageLoaded() {
+	    unloaded--;
+	    if (unloaded === 0) {
+	      callback();
+	    }
+	  }
+	}
+
+	Foundation.Timer = Timer;
+	Foundation.onImagesLoaded = onImagesLoaded;
+
+	}(jQuery);
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
 /***/ }
-/******/ ]);
+
+/******/ });

@@ -20,7 +20,7 @@
 @include foundation-typography;
 @include foundation-forms;
 @include foundation-button;
-
+@include foundation-tabs;
 @include foundation-sticky;
 @include foundation-float-classes;
 
@@ -100,4 +100,5 @@ body {
 @import "blocks/page-about";
 @import "blocks/page-review";
 @import "blocks/page-contacts";
+@import "blocks/page-stand";
 @import "blocks/menu";

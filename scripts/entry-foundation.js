@@ -11,6 +11,10 @@ window.jQuery = $;
 window.$ = $;
 
 import 'foundation.core';
+
+import 'foundation.util.keyboard';
+import 'foundation.util.timerAndImageLoader';
+import 'foundation.tabs';
 // require('foundation.util.triggers');
 // require('foundation.util.motion');
 import 'foundation.util.mediaQuery';
@@ -87,6 +91,16 @@ $(function () {
             $('#city').toggleClass('active');
             $('.nv-expo-filter-cities').slideToggle();
             $('#ul-stick-filters-cities').sticky('update');
+        });
+    }
+
+    /* STAND TABS INIT*/
+    var standTabs;
+    // if(standTabs = $('.nv-stand-description')){
+    if(standTabs = $('#nv-stand-tabs')){
+        var stand_tabs = new Foundation.Tabs(standTabs, {
+            linkClass: 'nv-stand-description--tabs-tab',
+            panelClass: 'nv-stand-description--tabs-panel'
         });
     }
 });
