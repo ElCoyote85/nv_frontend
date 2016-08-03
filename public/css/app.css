@@ -5952,7 +5952,10 @@ body {
     .nv-menu-top .nv-menu-top--search input {
       background-color: #e0e0e0;
       border: none;
-      text-align: center; }
+      text-align: center;
+      background-image: url(http://static.navystavke.ru/newassets/imgs/icons/search.png);
+      background-repeat: no-repeat;
+      background-position: 0px 6px; }
     @media screen and (max-width: 39.9375em) {
       .nv-menu-top .nv-menu-top--search {
         width: 33.33333%;
