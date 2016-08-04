@@ -4562,9 +4562,9 @@ body {
   margin-top: 15px; }
 
 .nv-main__page-expos {
-  background-color: #8cb1cc;
+  background-color: #dce8f1;
   height: inherit;
-  padding-bottom: 30px; }
+  padding-bottom: 20px; }
 
 .nv-expos {
   margin-top: 30px;
@@ -4586,7 +4586,7 @@ body {
     .nv-expos .nv-expo .nv-expo-item {
       display: block;
       height: 170px;
-      background-color: #6d94b1;
+      background-color: #dce8f1;
       border-radius: 10px 10px 20px 20px;
       position: relative;
       transition: 0.2s; }
@@ -4597,18 +4597,58 @@ body {
         -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
-        bottom: 9px;
-        color: white;
+        bottom: 55px;
+        color: black;
         white-space: nowrap;
         font-size: 0.95rem; }
         @media screen and (max-width: 63.9375em) {
           .nv-expos .nv-expo .nv-expo-item .title {
             text-align: center;
             font-size: 0.8rem;
-            bottom: 1px;
+            bottom: 2px;
             white-space: normal; } }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(1) {
+        color: #2370c1; }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(2) {
+        color: #E33B21; }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(3) {
+        color: #E6B500; }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(4) {
+        color: #4BCE54; }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(5) {
+        color: #e018e3; }
+      .nv-expos .nv-expo .nv-expo-item .title span:nth-child(6) {
+        color: black;
+        /* font-style: italic;*/ }
+      .nv-expos .nv-expo .nv-expo-item .title_enter {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        bottom: 9px;
+        color: white;
+        background-color: #8ebbd4;
+        padding: 5px;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        border-radius: 10px 10px 10px 10px; }
+      .nv-expos .nv-expo .nv-expo-item .title_enter_all {
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        bottom: 3px;
+        width: 97%;
+        color: white;
+        background-color: darkred;
+        padding: 5px;
+        white-space: nowrap;
+        border-radius: 20px 20px 20px 20px; }
       .nv-expos .nv-expo .nv-expo-item img {
-        margin-top: -8%;
+        margin-top: -15%;
         position: relative;
         position: absolute;
         top: 50%;
@@ -4624,7 +4664,7 @@ body {
         top: 0;
         left: 0;
         pointer-events: none;
-        background-color: #a2c0da;
+        background-color: #dce8f1;
         border-radius: 10px; }
       .nv-expos .nv-expo .nv-expo-item:hover {
         transition: 0.3s;
