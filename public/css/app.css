@@ -6426,7 +6426,7 @@ body {
   min-height: 600px;
   position: relative;
   background-color: #d18e36;
-  padding: 30px 20px;
+  padding: 30px 20px 60px 20px;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -6618,7 +6618,7 @@ body {
 
 /* MAIN STAND BLOCK*/
 .nv-stand--main {
-  margin: -400px auto 50px 7%;
+  margin: -400px auto 50px 0;
   position: relative;
   height: 500px; }
   @media screen and (max-width: 63.9375em) {
@@ -6627,6 +6627,9 @@ body {
   @media screen and (max-width: 39.9375em) {
     .nv-stand--main {
       margin: 10px auto 50px auto; } }
+  @media screen and (max-width: 63.9375em) {
+    .nv-stand--main {
+      height: 1250px; } }
 
 .nv-stand--main-container {
   position: absolute;
@@ -6658,20 +6661,20 @@ body {
   background-position: 50% 50%;
   background-size: contain; }
   .nv-stand--main__stand-1 .nv-stand--main-logo {
-    left: 26.3%;
+    left: 27.2%;
     top: 1%;
     height: 27.5%;
-    width: 44%; }
+    width: 44.2%; }
+  .nv-stand--main__stand-0 .nv-stand--main-logo {
+    left: 28.1%;
+    top: 1.2%;
+    height: 27.2%;
+    width: 45.5%; }
   .nv-stand--main__stand-2 .nv-stand--main-logo {
-    left: 26.7%;
+    left: 26.9%;
     top: 1.2%;
     height: 27.2%;
-    width: 45.3%; }
-  .nv-stand--main__stand-3 .nv-stand--main-logo {
-    left: 27.8%;
-    top: 1.2%;
-    height: 27.2%;
-    width: 45.8%; }
+    width: 42.9%; }
 
 .nv-stand--main-users {
   text-align: center;
@@ -6689,18 +6692,26 @@ body {
   position: relative;
   z-index: 1; }
   .nv-stand--arrows .nv-stand--arrows-left {
-    float: left; }
+    float: left;
+    width: 30%;
+    text-align: left; }
   .nv-stand--arrows .nv-stand--arrows-right {
-    float: right; }
+    float: right;
+    width: 30%;
+    text-align: right; }
 
 .nv-stand--bottom {
   position: absolute;
-  bottom: -70px;
+  bottom: -100px;
   width: 80%;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
+  @media screen and (max-width: 63.9375em) {
+    .nv-stand--bottom {
+      bottom: -60px;
+      bottom: 80px; } }
 
 .nv-stand-description {
   position: relative;
@@ -6742,117 +6753,117 @@ body {
     border-top: 0; }
     .nv-stand-description .nv-stand-description--tabs-content .nv-stand-description--tabs-panel {
       display: none;
-      padding: 1rem; }
+      padding: 1rem;
+      padding: 50px 150px !important; }
       .nv-stand-description .nv-stand-description--tabs-content .nv-stand-description--tabs-panel.is-active {
         display: block; }
+      @media screen and (max-width: 63.9375em) {
+        .nv-stand-description .nv-stand-description--tabs-content .nv-stand-description--tabs-panel {
+          padding: 50px 45px !important; } }
+      @media screen and (max-width: 39.9375em) {
+        .nv-stand-description .nv-stand-description--tabs-content .nv-stand-description--tabs-panel {
+          padding: 50px 15px !important; } }
 
-.nv-stand-description--tabs-panel#standOffers {
-  padding: 50px 150px; }
-  @media screen and (max-width: 63.9375em) {
-    .nv-stand-description--tabs-panel#standOffers {
-      padding: 50px 45px; } }
-  @media screen and (max-width: 39.9375em) {
-    .nv-stand-description--tabs-panel#standOffers {
-      padding: 50px 15px; } }
-  .nv-stand-description--tabs-panel#standOffers .nv-stand-offer {
-    display: inline-block;
-    padding: 20px 0; }
-    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
-      width: 20%;
-      float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; }
-      @media screen and (min-width: 40em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
-          padding-left: 0.9375rem;
-          padding-right: 0.9375rem; } }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
-        float: right; }
-      @media screen and (max-width: 63.9375em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
-          width: 30%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem; } }
+.nv-stand-description--tabs-panel#standOffers .nv-stand-offer {
+  display: inline-block;
+  padding: 20px 0;
+  width: 100%; }
+  .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
+    width: 20%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 40em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
+      float: right; }
+    @media screen and (max-width: 63.9375em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
+        width: 30%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
   @media screen and (max-width: 63.9375em) and (min-width: 40em) {
     .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-      @media screen and (max-width: 63.9375em) {
-          .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
-            float: right; } }
-      @media screen and (max-width: 39.9375em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
-          width: 100%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem;
-          text-align: center; } }
+    @media screen and (max-width: 63.9375em) {
+        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
+          float: right; } }
+    @media screen and (max-width: 39.9375em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
+        width: 100%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        text-align: center; } }
   @media screen and (max-width: 39.9375em) and (min-width: 40em) {
     .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-      @media screen and (max-width: 39.9375em) {
-          .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
-            float: right; } }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image a {
-        display: inline-block; }
-    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
-      width: 80%;
-      float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem; }
-      @media screen and (min-width: 40em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
-          padding-left: 0.9375rem;
-          padding-right: 0.9375rem; } }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
-        float: right; }
-      @media screen and (max-width: 63.9375em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
-          width: 70%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem; } }
+    @media screen and (max-width: 39.9375em) {
+        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image:last-child:not(:first-child) {
+          float: right; } }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--image a {
+      display: inline-block; }
+  .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
+    width: 80%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 40em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
+      float: right; }
+    @media screen and (max-width: 63.9375em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
+        width: 70%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
   @media screen and (max-width: 63.9375em) and (min-width: 40em) {
     .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-      @media screen and (max-width: 63.9375em) {
-          .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
-            float: right; } }
-      @media screen and (max-width: 39.9375em) {
-        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
-          width: 100%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem; } }
+    @media screen and (max-width: 63.9375em) {
+        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
+          float: right; } }
+    @media screen and (max-width: 39.9375em) {
+      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
+        width: 100%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
   @media screen and (max-width: 39.9375em) and (min-width: 40em) {
     .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-      @media screen and (max-width: 39.9375em) {
-          .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
-            float: right; } }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-title {
-        color: orange;
-        text-decoration: underline; }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-order {
-        display: inline-block;
-        margin-right: 30px;
-        color: white;
-        background-color: #b63c34;
-        padding: 4px 7px;
-        font-size: 0.9rem; }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-link {
-        text-transform: lowercase;
-        display: inline-block;
-        font-size: 0.7rem;
-        color: #a9a9a9;
-        text-decoration: underline; }
-      .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info .nv-stand-offer--info-price {
-        margin-top: 10px;
-        color: #1d6f96; }
+    @media screen and (max-width: 39.9375em) {
+        .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info:last-child:not(:first-child) {
+          float: right; } }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-title {
+      color: orange;
+      text-decoration: underline; }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-order {
+      display: inline-block;
+      margin-right: 30px;
+      color: white;
+      background-color: #b63c34;
+      padding: 4px 7px;
+      font-size: 0.9rem; }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info a.nv-stand-offer--info-link {
+      text-transform: lowercase;
+      display: inline-block;
+      font-size: 0.7rem;
+      color: #a9a9a9;
+      text-decoration: underline; }
+    .nv-stand-description--tabs-panel#standOffers .nv-stand-offer .nv-stand-offer--info .nv-stand-offer--info-price {
+      margin-top: 10px;
+      color: #1d6f96; }
 
 /* TOP SIDEBAR */
 .nv-menu-top-container {

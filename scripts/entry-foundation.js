@@ -25,6 +25,7 @@ import 'foundation.util.mediaQuery';
 
 import 'jquery-sticky';
 
+var testvar = `some ${10+20}`;
 
 $(function () {
     $(document).foundation();
@@ -95,9 +96,9 @@ $(function () {
     }
 
     /* STAND TABS INIT*/
-    var standTabs;
+    var standTabs = $('#nv-stand-tabs');
     // if(standTabs = $('.nv-stand-description')){
-    if(standTabs = $('#nv-stand-tabs')){
+    if(standTabs.length != 0){
         var stand_tabs = new Foundation.Tabs(standTabs, {
             linkClass: 'nv-stand-description--tabs-tab',
             panelClass: 'nv-stand-description--tabs-panel'

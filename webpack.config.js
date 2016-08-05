@@ -44,21 +44,39 @@ module.exports = {
             },
 
             {
-                test: /\.jsx$/,
-                include: /scripts/,
-                loader: 'babel',
+                test: /\.jsx?$/,
+                // include: [/scripts/, /node_modules\/foundation-sites\/js/],
+                include: [
+                    path.resolve(__dirname, 'scripts'),
+                    path.resolve(__dirname, 'node_modules', 'foundation-sites'),
+                ],
+                loader: 'babel-loader',
                 query: {
-                    presets: ['react']
+                    presets: ['react', 'es2015']
                 }
+                // loaders: [
+                //     'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
+                // ]
             },
-            {
-                test: /\.js$/,
-                include: /scripts/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
-                }
-            },
+
+            // {
+            //     test: /\.jsx?$/,
+            //     include: /(scripts|node_modules\/foundation-sites\/js)/,
+            //     // exclude: /node_modules/,
+            //     loader: 'babel',
+            //     query: {
+            //         presets: ['es2015']
+            //     }
+            // },
+            // {
+            //     test: /\.jsx$/,
+            //     include: /scripts/,
+            //     loader: 'babel',
+            //     query: {
+            //         presets: ['react']
+            //     }
+            // },
+
             {
                 test: /\.(jpg|png|gif)$/,
                 loader: 'file?emitFile=false&name=[path][name].[ext]'
@@ -70,7 +88,7 @@ module.exports = {
         // new CleanPlugin('public'),
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: false,
-        //     mangle: false,
+        //     mangle: true,
         //     compress: {
         //         warnings: false
         //     },
