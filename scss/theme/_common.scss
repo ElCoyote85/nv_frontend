@@ -9,6 +9,9 @@ $body-font-family: Tahoma, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-seri
   background-color: $bckgColor;
   display: inline-block !important;
 }
+
+.newforms_errors ul { margin-left: 0em; }
+
 /* Dialog */
 
 .dialog-center { width: inherit; margin: 0px auto 20px auto; }
@@ -25,6 +28,97 @@ $body-font-family: Tahoma, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-seri
 .dialog-column-left label { float: left; margin-top: 3px; margin-right: 30px; padding-left: 3px; }
 .dialog-column-left a { float: left; margin-right: 75px; margin-top: 2px; }
 .dialog-column-left .button { float: left; margin-top: 1px; }
+
+.discounts { margin-left: -36px; }
+.discount { float: left; width: 94%; padding-left: 36px; padding-top: 0px; padding-bottom: 30px;  }
+.discount h1 { font-size: 24px; line-height: 26px; padding-bottom: 15px; color: #1d68ba; }
+.discount h1 a em { color: #f79800; text-decoration: underline; }
+.discount>div { width: 364px; height: 218px; -moz-border-bottom-left-radius: 15px; -khtml-border-bottom-left-radius: 15px; -webkit-border-bottom-left-radius: 15px; border-bottom-left-radius: 15px; -moz-border-bottom-right-radius: 15px; -khtml-border-bottom-right-radius: 15px; -webkit-border-bottom-right-radius: 15px; border-bottom-right-radius: 15px; -moz-border-top-right-radius: 15px; -khtml-border-top-right-radius: 15px; -webkit-border-top-right-radius: 15px; border-top-right-radius: 15px; }
+.discount>div>div { float: left; background-color: #f77c00; -moz-border-bottom-right-radius: 10px; -khtml-border-bottom-right-radius: 10px; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; padding-bottom: 14px; padding-left: 16px; padding-right: 16px; width: 115px; }
+.discount>div>div>div { background-color: #fff; text-align: center; padding: 2px 0 2px 0; margin-bottom: 10px; margin-left: -16px; width: 146px; border-left: 1px solid #d4d4d4; border-top: 1px solid #d4d4d4; }
+.discount h2 { color: #fff; font-size: 18px; padding-bottom: 10px; background: none; }
+.discount h2 em { font-size: 24px;}
+
+.discount_one { width: auto; padding-top: 0em;  }
+.discount_one h1 { font-size: 24px; line-height: 26px; padding-bottom: 25px; color: #1d68ba; }
+.discount_one h1 em { color: #f79800; }
+
+.form br { clear: left; }
+.form fieldset { padding: 10px; }
+.form h2 { padding: 0.7em 0 0.6em 0; }
+.form_select_or_input_input { padding-top: 7px; padding-left: 20px; }
+.form input, .form textarea { float: left; font-size: 12px; margin-bottom: 8px; width: 300px; }
+.form_fullwidth input, .form_fullwidth textarea { width: 370px; }
+.form_fullwidth .wysiwyg { float: left; }
+.form_fullerwidth input, .form_fullerwidth textarea { width: 680px; }
+.form_fullwidth #newforms_image_2_container, #newforms_image_3_container, #newforms_image_4_container { padding-left: 210px; }
+.form_fullwidth #newforms_image_4_container .form_comment { padding-left: 0;}
+.form_fullwidth #newforms_file_2_container, #newforms_file_3_container, #newforms_file_4_container { padding-left: 210px; }
+.form_fullwidth #newforms_file_4_container .form_comment { padding-left: 0;}
+
+
+.form_compact_fullwidth input, .form_compact_fullwidth textarea { width: 500px; }
+.form_fullwidth_addstand input, .form_fullwidth_addstand textarea { width: 430px; }
+.form_add_col2 input, .form_add_col2 textarea, .form_add_col2 select { width: 206px; margin-bottom: 12px; }
+.form_add_col2 input[type="text"], .form_add_col2 input[type="password"], .form_add_col2 textarea { border: 1px solid #969696; }
+
+.form label { float: left; padding-right: 10px; padding-top: 5px; text-align: left; /*width: 200px;*/ line-height: 130%; }
+.form_fullwidth_addstand label { width: 140px; }
+.form_fullwidth_addstand .form_select_or_input_input { padding-left: 150px; }
+.form_fullerwidth label { width: 100px; }
+.form_add_col2 label { width: 170px; padding-top: 2px; }
+.form_add_col2 .form_select_or_input_input { padding-left: 180px; }
+
+.form label em { color: #f27500; font-weight: bold; padding-left: 3px; }
+.form textarea { height: 75px; min-height: 75px; }
+
+.form_compact .form_select_or_input_input { padding-left: 100px; }
+.form_longlabels label { width: 350px; }
+.form_longlabels .form_select_or_input_input { padding-left: 360px; }
+
+.form_compact label { width: 90px; }
+.form_compact_fullwidth label { width: 90px; }
+.form_errors ul { background: url(../imgs/error_bg.png) no-repeat; clear: left; margin-left: 5px; width: 85%; height: 40px; overflow: hidden; }
+.form_compact .form_errors ul { margin-left: 60px; }
+.form_fullwidth .form_errors ul { margin-left: 170px; }
+.form_compact_fullwidth .form_errors ul { margin-left: 60px; }
+.form_fullwidth_addstand .form_errors ul { margin-left: 110px; }
+.form_errors ul li { background: none !important; color: #ff8400; font-weight: normal; font-size: small; padding: 10px 5px 5px 33px; }
+.form_add_col2 .form_errors ul { margin-left: 145px; }
+.form_login label { width: 70px; }
+.form_login_div { margin-bottom: 15px; margin-left: 80px; margin-top: 15px; }
+.form_comment { color: #929292; font-size: 80%; position: relative; top: -4px; padding-left: 10px; clear: left; }
+.form_add_col2 .form_comment { text-align: center; top: -21px; height: 1px; padding-bottom: 0; }
+.form_fullwidth .form_comment { padding-left: 210px; padding-bottom: 0 !important; font-size: 90%; position: static !important; top: 0 !important; padding-top: 0 !important; }
+.form_fullwidth_addstand .form_comment { padding-left: 150px; padding-bottom: 0 !important; font-size: 90%; position: static !important; top: 0 !important; padding-top: 0 !important; }
+
+.form .form_checkboxset_container { float: left; width: 300px; margin-top: 4px; margin-bottom: 4px; }
+.form_compact .form_checkboxset_container { width: 400px; }
+.form_add_col2 .form_checkboxset_container { width: 206px; }
+
+.form .form_checkboxset { float: left; white-space: nowrap; }
+.form .form_checkboxset label { float: none; padding-left: 2px; position: relative; top: 3px; width: auto !important; }
+.form .form_checkboxset input { width: auto !important; }
+
+.form_captcha img { float: left; }
+.form_captcha input { margin-left: 20px; width: 200px !important; float: left; margin-top: 28px; }
+
+.form_next_step_container { padding: 1.1em 0 0.9em 0; }
+.form_next_step_container button.button { margin-right: 45px !important; }
+.form_next_step_container p { float: left; width: 400px; margin-top: -3px; font-size: 11px; color: #666; }
+
+.form_quiz_question_left { width: 140px; float: left; }
+.form_quiz_question_left .comment { text-align: right; }
+.form_quiz_question_center { padding-left: 10px; float: left; width: 430px; margin-top: 2px; }
+.form_quiz_question label { width: 140px; }
+.form_quiz_question input[type="text"] { border: 1px solid #b5b5b5; margin: 2px; width: 393px; }
+.form_quiz_question input[type="radio"] { width: auto !important; margin-top: 5px; }
+.form_quiz_answer_selected { border: 3px solid #f27500 !important; margin: 0 !important; }
+
+.form_long_textareas textarea { height: 150px; }
+.form_fullerwidth textarea { height: 250px; }
+
+.form_centered { margin: 0 auto; width: 670px; }
 
 .twibutton {
   -moz-border-radius: 14px;
