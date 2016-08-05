@@ -1426,6 +1426,94 @@ yx-axis
 	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
 	
 	/* ---------------------------------------- */
+/* Dialog */
+.dialog-center {
+  width: inherit;
+  margin: 0px auto 20px auto; }
+
+.dialog-bigger-center {
+  width: 960px;
+  margin: 70px auto 20px auto; }
+
+.dialog-bigger-center p {
+  padding: 0.5em 0; }
+
+.dialog-column-left {
+  width: 50%;
+  padding-right: 20px;
+  float: left; }
+
+.dialog-column-right {
+  width: 50%;
+  padding-left: 20px;
+  float: left; }
+
+.dialog-center h1 {
+  font-size: 20px;
+  color: #767676;
+  padding-bottom: 0.2em; }
+
+.dialog-column-left form {
+  padding-top: 15px; }
+
+.dialog-column-left input {
+  font-size: 20px;
+  margin-bottom: 11px;
+  float: left;
+  clear: left;
+  width: 90%; }
+
+.dialog-column-left input[type="checkbox"] {
+  width: auto; }
+
+.dialog-column-left label {
+  float: left;
+  margin-top: 3px;
+  margin-right: 30px;
+  padding-left: 3px; }
+
+.dialog-column-left a {
+  float: left;
+  margin-right: 75px;
+  margin-top: 2px; }
+
+.dialog-column-left .button {
+  float: left;
+  margin-top: 1px; }
+
+.twibutton {
+  -moz-border-radius: 14px;
+  -khtml-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -wekbit-box-shadow: 0 1px 0 #F8F8F8;
+  box-shadow: 0 1px 0 #F8F8F8;
+  background: url(http://static.navystavke.ru/newassets/images/btnbg.gif) repeat-x scroll 0 0 #ddb554;
+  border-color: #BBBBBB #BBBBBB #999999;
+  border-style: solid;
+  border-width: 1px;
+  color: #333333 !important;
+  cursor: pointer;
+  display: inline-block;
+  font: 12px/15px Helvetica Neue, Arial, "Lucida Grande", Sans-serif;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px 29px;
+  text-shadow: 0 1px #F0F0F0; }
+
+.twibutton strong {
+  font-weight: 700; }
+
+.twibutton:active {
+  background-image: none;
+  outline: medium none;
+  text-shadow: none; }
+
+.twibutton:hover, .button:focus {
+  background-position: 0 -6px;
+  border-color: #999999 #999999 #666666;
+  color: #000000;
+  text-decoration: none; }
+
 .__nv-text-blue {
   color: #89c1ec; }
 
