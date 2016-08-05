@@ -7,7 +7,7 @@
   position: relative;
   background-color: #d18e36;
   //padding-top: 30px;
-  padding: 30px 20px;
+  padding: 30px 20px 60px 20px;
   @include grid-row(12);
   box-shadow: 0 5px 25px 5px #b1b1b1;
   /* margin-bottom: 20px; */
@@ -135,7 +135,7 @@
 
 /* MAIN STAND BLOCK*/
 .nv-stand--main {
-  margin: -400px auto 50px 7%;
+  margin: -400px auto 50px 0;
   @include breakpoint(medium down) {
     margin: 80px auto 50px auto;
   }
@@ -144,6 +144,9 @@
   }
   position: relative;
   height: 500px;
+  @include breakpoint(medium down) {
+    height: 1250px;
+  }
 }
 .nv-stand--main-container {
   //height: 500px;
@@ -184,22 +187,37 @@
   background-position: 50% 50%;
   background-size: contain;
   .nv-stand--main__stand-1 & {
-    left: 26.3%;
+    //left: 26.3%;
+    //top: 1%;
+    //height: 27.5%;
+    //width: 44%;
+    left: 27.2%;
     top: 1%;
     height: 27.5%;
-    width: 44%;
+    width: 44.2%;
+  }
+  .nv-stand--main__stand-0 & {
+    //left: 26.7%;
+    //top: 1.2%;
+    //height: 27.2%;
+    ////width: 45.3%;
+    //width: 44.9%;
+
+    left: 28.1%;
+    top: 1.2%;
+    height: 27.2%;
+    width: 45.5%;
   }
   .nv-stand--main__stand-2 & {
-    left: 26.7%;
+    //left: 27.8%;
+    //top: 1.2%;
+    //height: 27.2%;
+    //width: 45.8%;
+
+    left: 26.9%;
     top: 1.2%;
     height: 27.2%;
-    width: 45.3%;
-  }
-  .nv-stand--main__stand-3 & {
-    left: 27.8%;
-    top: 1.2%;
-    height: 27.2%;
-    width: 45.8%;
+    width: 42.9%;
   }
 }
 .nv-stand--main-users {
@@ -223,13 +241,18 @@
 .nv-stand--arrows {
   position: relative;
   z-index: 1;
-  .nv-stand--arrows-left { float: left; }
-  .nv-stand--arrows-right { float: right; }
+  .nv-stand--arrows-left { float: left;  width: 30%; text-align: left; }
+  .nv-stand--arrows-right { float: right; width: 30%; text-align: right; }
 }
 
 .nv-stand--bottom {
   position: absolute;
-  bottom: -70px;
+  //bottom: -70px;
+  bottom: -100px;
+  @include breakpoint(medium down) {
+    bottom: -60px;
+    bottom: 80px;
+  }
   width: 80%;
   left: 50%;
   transform: translateX(-50%);
@@ -261,21 +284,27 @@
     @include tabs-content;
     .nv-stand-description--tabs-panel {
       @include tabs-panel;
+      padding: 50px 150px !important;
+      @include breakpoint(medium down) {
+        padding: 50px 45px !important;
+      }
+      @include breakpoint(mini down) {
+        padding: 50px 15px !important;
+      }
     }
   }
 }
 
+.nv-stand-description--tabs-panel {
+
+}
+
 .nv-stand-description--tabs-panel#standOffers {
-  padding: 50px 150px;
-  @include breakpoint(medium down) {
-    padding: 50px 45px;
-  }
-  @include breakpoint(mini down) {
-    padding: 50px 15px;
-  }
+
   .nv-stand-offer {
     display: inline-block;
     padding: 20px 0;
+    width: 100%;
     .nv-stand-offer--image {
       @include grid-column(2 of 10);
       @include breakpoint(medium down) {
