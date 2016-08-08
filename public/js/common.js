@@ -69,8 +69,15 @@
 	var $ = __webpack_require__(2);
 	__webpack_provided_window_dot_jQuery = $;
 	window.$ = $;
+
+	// import 'foundation.util.box';
+	// import 'foundation.util.triggers';
+	// import 'foundation.util.motion';
+	// import 'foundation.reveal';
+
 	// require('foundation.util.triggers');
 	// require('foundation.util.motion');
+
 
 	// require('foundation.toggler');
 	// require('foundation.sticky');

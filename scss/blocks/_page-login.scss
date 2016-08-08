@@ -1,0 +1,82 @@
+.nv-main__page-login {
+  background-color: #f0f0f9;
+  padding: 50px 100px;
+  height: inherit;
+}
+
+
+.nv-login {
+  @include grid-row(2);
+  //margin: 20px 100px;
+  label {
+    font-size: 1.25rem;
+    color: #7a8ca1;
+    text-align: center;
+  }
+  input {
+    border: 1px solid #97b1ca;
+  }
+}
+
+.nv-login-left {
+  @include grid-column(1 of 2);
+  @include breakpoint(medium down) {
+    @include grid-column(2 of 2);
+    margin-bottom: 100px;
+  }
+  color: #7a8ca1;
+  a {
+    color: #7a8ca1;
+    font-size: 1.25rem;
+    &:hover {
+      color: lighten(#7a8ca1, 10%);
+    }
+  }
+}
+
+.nv-login-right {
+  @include grid-column(1 of 2);
+  @include breakpoint(medium down) {
+    @include grid-column(2 of 2);
+  }
+  color: #7a8ca1;
+  a {
+    color: #7a8ca1;
+    font-size: 1.1rem;
+    &:hover {
+      color: lighten(#7a8ca1, 10%);
+    }
+  }
+}
+
+.nv-login-welcome {
+  margin-bottom: 50px;
+}
+
+.nv-login--remember-me {
+  margin-left: 15px;
+  display: inline-block;
+  input[type=checkbox] {
+    width: 1.1rem;
+    height: 1.1rem;
+    &:checked {
+    }
+  }
+}
+
+.nv-login--enter {
+  @include nv-link-button(#d0ae4d, #d0ae4d, white !important);
+  text-transform: uppercase;
+  padding: 10px 50px;
+}
+
+.nv-login-icons {
+  text-align: center;
+  margin: 10px;
+  a {
+    img {
+      width: 35px;
+      //height: 40px;
+    }
+  }
+}

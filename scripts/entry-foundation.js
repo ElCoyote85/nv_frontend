@@ -14,10 +14,17 @@ import 'foundation.core';
 
 import 'foundation.util.keyboard';
 import 'foundation.util.timerAndImageLoader';
+
+// import 'foundation.util.box';
+// import 'foundation.util.triggers';
+// import 'foundation.util.motion';
+// import 'foundation.reveal';
+
 import 'foundation.tabs';
 // require('foundation.util.triggers');
 // require('foundation.util.motion');
 import 'foundation.util.mediaQuery';
+
 // require('foundation.toggler');
 // require('foundation.sticky');
 

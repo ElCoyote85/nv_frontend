@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Test MockUp | Navystavke</title>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="nv-container nv-container__shadow" data-sticky-container>
+    <header class="nv-header">
+        <a href="#" class="nv-header--logo-link"><img class="nv-header--logo" src="imgs/logo-navystavke.png" alt=""></a>
+    </header>
+    <nav class="nv-nav" >
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-1">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Выставки</div>
+                <div class="nv-nav--button-info">Online</div>
+            </div>
+        </a>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-1 nv-nav--button__active" title="На главную">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <img class="nv-nav-back-arrow" src="http://static.navystavke.ru/newassets/imgs/nav/arrow-left.png">
+            </div>
+        </a>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-3">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Участникам</div>
+                <div class="nv-nav--button-info">Компании и услуги</div>
+            </div>
+        </a>
+        <a href="#" class="nv-nav--button nv-nav--button__with-picture-4">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Посетителям</div>
+                <div class="nv-nav--button-info">Возможности</div>
+            </div>
+        </a>
+        <div class="nv-nav--button nv-nav--button__with-picture-5">
+            <div class="nv-nav--button-text nv-nav--button-text__top-offset">
+                <div class="nv-nav--button-title">Поиск </div>
+                <input type="text" class="nv-nav--button__search" placeholder="">
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="nv-main nv-main__page-register">
+        <h4 class="__nv-text-brand-blue">Регистрация «<span class="__nv-text-red">НА</span><span class="__nv-text-black">ВЫСТАВКЕ</span>»</h4>
+        <p class="__nv-text-brand-blue">Указава полные данные о себе вы сможете находить новых партнеров, поставщиков и клиентов на виртуальной выставке. </p>
+        <br>
+        <form class="nv-register" method="post" action="" enctype="multipart/form-data">
+            <div class="nv-register-left">
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-email-id" class="">E-mail<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input name="email" id="nv-email-id" type="email" placeholder="info@mail.ru"></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-password-id" class="">Пароль<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input name="password" id="nv-password-id" type="password" ></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-confirmation-id" class="">Пароль<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input name="password_confirm" id="nv-confirmation-id" type="password" placeholder="Повторите пароль"></div>
+                </div>
+                <br><br>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-company-name-id" class="">Компания<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input name="company_id" id="nv-company-name-id" type="text" ></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-occupation-id" class="">Должность<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input name="post" id="nv-occupation-id" type="text" ></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-4 columns text-left">
+                        <label for="nv-direction-id" class="text-left">Направление деятельности</label>
+                    </div>
+                    <div class="small-12 large-8 columns">
+                        <!--<input id="nv-direction-id" type="text">-->
+                        <select name="company_specialty" id="nv-direction-id">
+                            <option value="1">1111</option>
+                            <option value="2">2222</option>
+                            <option value="3">3333</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="nv-register-right row">
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-firstname-id" class="">Имя<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input id="nv-firstname-id" type="text" name="first_name"></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-lastname-id" class="">Фамилия<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns"><input id="nv-lastname-id" type="email" name="last_name"></div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-country-id" class="">Город<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns">
+                        <select name="country_id" id="nv-country-id" >
+                            <option value="1">111</option>
+                            <option value="2">222</option>
+                            <option value="3">333</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label for="nv-city-id" class="">Город<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns">
+                        <select name="city_personal[select]" id="nv-city-id" >
+                            <option value="1">111</option>
+                            <option value="2">222</option>
+                            <option value="3">333</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 large-3 columns">
+                        <label  class="">Вы<span style="color: red">*</span></label>
+                    </div>
+                    <div class="small-12 large-9 columns">
+                        <input id="nv-male-id" type="radio" name="nv-gender-radio" checked><label for="nv-male-id">Мужчина</label>
+                        <input id="nv-female-id" type="radio" name="nv-gender-radio"><label for="nv-female-id">Женщина</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nv-submit-block">
+                <br>
+                <div class="text-center">
+                    <button class="nv-register-submit">Зарегистрироваться</button>
+                </div>
+                <br>
+                <p class="text-center">
+                    Регистрируясь, я подтверждаю, что я ознакомлен(а) и согласен(на) с
+                    <a href="http://www.navystavke.ru/about/eula/">пользовательским соглашением</a> НаВыставке.ru.
+                </p>
+            </div>
+        </form>
+
+
+    </main>
+
+
+
+
+
+    <footer class="nv-footer">
+        <div class="nv-footer--icons-div">
+            <div class="nv-footer--icons">
+                <div class="nv-footer--icons-icon">
+                    <a href="#!"><img src="imgs/icons/phone.png" alt=""></a>
+                </div>
+                <div class="nv-footer--icons-icon">
+                    <a href="#!"><img src="imgs/icons/mail.png" alt=""></a>
+                </div>
+                <div class="nv-footer--icons-icon">
+                    <a href="#!"><img src="imgs/icons/location.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="nv-footer--contacts">
+            <div class="nv-footer--contacts--logo">
+                <a class="nv-footer-logo" href="#!"><img src="imgs/logos/navystavke.png" alt=""></a>
+            </div>
+            <div class="nv-footer--contacts--address">
+                115114, Москва, ул. Дербеневская, д. 20, стр. 16 <br>
+                Бизнес Парк «Кожевники» <br>
+                <span class="__nv-text-white __nv-text-size-12rem">+7 (495) 540-52-10</span>
+            </div>
+            <div class="nv-footer--contacts--brb-logo">
+                <a class="nv-footer-logo" href="#!"><img src="imgs/logos/brb.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>

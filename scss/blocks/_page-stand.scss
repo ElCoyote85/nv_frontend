@@ -353,3 +353,26 @@
     }
   }
 }
+
+.nv-business-card {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 28%;
+  width: 30%;
+  @include breakpoint(medium down) {
+    height: 35%;
+    width: 60%;
+  }
+  @include breakpoint(mini down) {
+    height: 35%;
+    width: 90%;
+  }
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  border-radius: 10px;
+  padding: 30px;
+  opacity: 0.95;
+  background-color: rgb(2, 2, 1);
+}

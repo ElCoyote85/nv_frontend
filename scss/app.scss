@@ -24,6 +24,8 @@
 @include foundation-sticky;
 @include foundation-float-classes;
 
+//@include foundation-reveal;
+
 
 body {
   //background-color: red;
@@ -101,4 +103,6 @@ body {
 @import "blocks/page-review";
 @import "blocks/page-contacts";
 @import "blocks/page-stand";
+@import "blocks/page-login";
+@import "blocks/page-register";
 @import "blocks/menu";

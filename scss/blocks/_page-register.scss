@@ -1,0 +1,77 @@
+.nv-main__page-register {
+  background-color: #f0f0f9;
+  padding: 50px 100px;
+  @include breakpoint(mini down) {
+    padding: 50px 15px;
+  }
+
+  height: inherit;
+}
+
+.nv-register {
+  @include grid-row(2);
+  //margin: 20px 100px;
+  label {
+    font-size: 1.25rem;
+    color: #7a8ca1;
+    text-align: left;
+    line-height: 1.3;
+  }
+  input, select {
+    border: 1px solid #97b1ca;
+  }
+}
+
+.nv-register-left {
+  @include grid-column(1 of 2);
+  @include breakpoint(medium down) {
+    @include grid-column(2 of 2);
+    margin-bottom: 100px;
+  }
+  color: #7a8ca1;
+  a {
+    color: #7a8ca1;
+    font-size: 1.25rem;
+    &:hover {
+      color: lighten(#7a8ca1, 10%);
+    }
+  }
+}
+
+.nv-register-right {
+  @include grid-column(1 of 2);
+  @include breakpoint(medium down) {
+    @include grid-column(2 of 2);
+  }
+  color: #7a8ca1;
+  a {
+    color: #7a8ca1;
+    font-size: 1.1rem;
+    &:hover {
+      color: lighten(#7a8ca1, 10%);
+    }
+  }
+}
+
+.nv-submit-block {
+  clear: both;
+}
+
+.nv-register-submit {
+  @include nv-link-button(#d0ae4d, #d0ae4d, white !important);
+  padding: 10px 50px;
+  text-transform: uppercase;
+}
+
+.form_errors {
+  color: indianred;
+}
+#newforms_sex_container {
+  & > label {
+    float: left;
+    margin-right: 30px;
+  }
+  & > .form_checkboxset_container > .newforms_optionset {
+    float: left;
+  }
+}
