@@ -5009,6 +5009,10 @@ body {
       border-radius: 10px 10px 20px 20px;
       position: relative;
       transition: 0.2s; }
+      .nv-expos .nv-expo .nv-expo-item.__nv-all-expos-button {
+        border-radius: 25px; }
+        .nv-expos .nv-expo .nv-expo-item.__nv-all-expos-button::before {
+          display: none; }
       .nv-expos .nv-expo .nv-expo-item .title {
         text-transform: uppercase;
         text-align: center;
