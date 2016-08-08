@@ -29,15 +29,17 @@
       position: relative;
       .title {
         text-transform: uppercase;
+        text-align: center;
         @include horizontal-center;
-        bottom: 55px;
+        bottom: -95px;
         color: black;
         white-space: nowrap;
         font-size: 0.95rem;
+        position: relative;
         @include breakpoint(medium down) {
           text-align: center;
           font-size: 0.8rem;
-          bottom: 2px;
+         /* bottom: 2px;*/
           white-space: normal;
         }
       }

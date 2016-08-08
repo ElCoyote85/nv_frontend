@@ -5011,20 +5011,22 @@ body {
       transition: 0.2s; }
       .nv-expos .nv-expo .nv-expo-item .title {
         text-transform: uppercase;
+        text-align: center;
         position: absolute;
         left: 50%;
         -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
-        bottom: 55px;
+        bottom: -95px;
         color: black;
         white-space: nowrap;
-        font-size: 0.95rem; }
+        font-size: 0.95rem;
+        position: relative; }
         @media screen and (max-width: 63.9375em) {
           .nv-expos .nv-expo .nv-expo-item .title {
             text-align: center;
             font-size: 0.8rem;
-            bottom: 2px;
+            /* bottom: 2px;*/
             white-space: normal; } }
       .nv-expos .nv-expo .nv-expo-item .title span:nth-child(1) {
         color: #2370c1; }
