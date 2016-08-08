@@ -6788,6 +6788,11 @@ body {
 #newforms_sex_container > .form_checkboxset_container > .newforms_optionset {
   float: left; }
 
+label > em {
+  font-size: 1.4rem;
+  color: red;
+  font-style: normal; }
+
 /* TOP SIDEBAR */
 .nv-menu-top-container {
   position: fixed;
