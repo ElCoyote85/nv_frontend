@@ -10,7 +10,6 @@
 
 @import "mixins/text";
 @import "variables";
-@import "aux";
 
 // TODO Оптимизировать стили
 //@include foundation-everything(false);
@@ -23,9 +22,12 @@
 @include foundation-tabs;
 @include foundation-sticky;
 @include foundation-float-classes;
+@include foundation-menu;
+@include foundation-switch;
 
 //@include foundation-reveal;
 
+@import "aux";
 
 body {
   //background-color: red;
@@ -105,4 +107,5 @@ body {
 @import "blocks/page-stand";
 @import "blocks/page-login";
 @import "blocks/page-register";
+@import "blocks/page-profile";
 @import "blocks/menu";

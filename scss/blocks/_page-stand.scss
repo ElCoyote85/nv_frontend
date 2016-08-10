@@ -376,3 +376,14 @@
   opacity: 0.95;
   background-color: rgb(2, 2, 1);
 }
+
+.nv-stand-settings-links {
+  background-color: #e4aa5d;
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: -10px;
+  margin-right: 80px;
+  @include breakpoint(mini down) {
+    margin: 0;
+  }
+}

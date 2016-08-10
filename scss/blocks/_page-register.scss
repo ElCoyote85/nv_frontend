@@ -55,6 +55,13 @@
 
 .nv-submit-block {
   clear: both;
+
+  .form_next_step_container {
+    height: 80px;
+    .g-recaptcha {
+      @include horizontal-center;
+    }
+  }
 }
 
 .nv-register-submit {
@@ -80,4 +87,9 @@ label > em {
   font-size: 1.4rem;
   color: red;
   font-style: normal;
+}
+
+.form_errors ul {
+  overflow: hidden;
+  background-size: 100% 100%;
 }

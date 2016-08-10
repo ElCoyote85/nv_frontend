@@ -1,0 +1,41 @@
+.nv-main__page-profile {
+  height: inherit;
+  background-color: #f1f0fa;
+  padding: 50px 100px;
+  @include breakpoint(mini down) {
+    padding: 50px 40px;
+  }
+}
+
+.nv-profile {
+
+}
+
+
+.nv-profile--top-header {
+  text-transform: uppercase;
+}
+
+.nv-profile--top-menu {
+  margin-left: 0;
+  text-transform: uppercase;
+  li {
+    display: inline-block;
+    margin-right: 2rem;
+    //@include grid-column(1 of 5);
+    &:first-child {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.form_select_or_input_input {
+  padding-left: 0;
+}
+
+.nv-profile--top-menu--active {
+  color: black;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
