@@ -24,6 +24,8 @@
 @include foundation-float-classes;
 @include foundation-menu;
 @include foundation-switch;
+@include foundation-visibility-classes;
+//@include foundation-table;
 
 //@include foundation-reveal;
 
@@ -108,4 +110,5 @@ body {
 @import "blocks/page-login";
 @import "blocks/page-register";
 @import "blocks/page-profile";
+@import "blocks/page-favorite-stands";
 @import "blocks/menu";

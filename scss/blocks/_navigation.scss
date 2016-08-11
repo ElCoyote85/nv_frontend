@@ -48,6 +48,7 @@ $buttonHeight: 215px;
   }
   @include breakpoint(small down) {
     font-size: 0.75rem;
+    transform: rotate3d(0,0,1,-64deg);
   }
 }
 
@@ -62,6 +63,8 @@ $buttonHeight: 215px;
   }
   @include breakpoint(small down) {
     font-size: 0.55rem;
+    transform: rotate3d(0,0,1,-64deg);
+    font-size: 0.5rem;
   }
 }
 

@@ -1,0 +1,96 @@
+%nvFavStand {
+  $nvFavStandHeight: 140px;
+  height: $nvFavStandHeight;
+  @include breakpoint(mini down) {
+    $nvFavStandHeight: 80px;
+    height: $nvFavStandHeight;
+  }
+}
+
+.nv-profile--stand-favs--subject {
+
+}
+
+.nv-profile--stand-favs--stand {
+  border-top: 2px solid #b6bfce;
+  padding: 10px 0;
+  height: inherit;
+  & > span {
+    vertical-align: middle;
+  }
+  &:last-child {
+    border-bottom: 2px solid #b6bfce;
+  }
+}
+
+
+.nv-profile--stand-favs--subject {
+  .nv-profile--stand-favs--subject-header {
+    padding-top: 30px;
+    padding-bottom: 12px;
+    position: relative;
+    margin-bottom: 13px;
+    border-bottom: 4px solid;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+    border-color: #e6e4f5;
+  }
+}
+//
+//.nv-profile--stand-favs--stand {
+//  @include grid-row(100)
+//}
+//
+.nv-profile--stand-favs--stand-logo {
+  position: relative;
+  @extend %nvFavStand;
+  & > a {
+    display: block;
+    @include vertical-center;
+  }
+}
+//
+.nv-profile--stand-favs--stand-title {
+  position: relative;
+  @extend %nvFavStand;
+  & > h5 {
+    @include absolute-center;
+    width: 100%;
+  }
+}
+//
+.nv-profile--stand-favs--stand-type {
+  position: relative;
+  @extend %nvFavStand;
+  & > h6 {
+    @include absolute-center;
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
+//
+//
+.nv-profile--stand-favs--stand-city {
+  position: relative;
+  @extend %nvFavStand;
+  & > h6 {
+    @include absolute-center;
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
+//
+//.nv-profile--stand-favs--header {
+//  @include grid-row(100);
+//  .nv-profile--stand-favs--head:nth-child(1) {
+//    @include grid-col-pos(50);
+//    @include grid-col(35 of 100);
+//  }
+//  .nv-profile--stand-favs--head:nth-child(2) {
+//    @include grid-col(15 of 100);
+//  }
+//}
+//
+//.nv-profile--stand-favs--head {
+//}
