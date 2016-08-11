@@ -57,6 +57,9 @@
   & > h5 {
     @include absolute-center;
     width: 100%;
+    & > a {
+      color: black;
+    }
   }
 }
 //

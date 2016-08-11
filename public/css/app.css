@@ -7558,6 +7558,8 @@ label > em {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     width: 100%; }
+    .nv-profile--stand-favs--stand-title > h5 > a {
+      color: black; }
 
 .nv-profile--stand-favs--stand-type {
   position: relative; }
