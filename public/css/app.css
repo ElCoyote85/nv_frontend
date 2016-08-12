@@ -1426,6 +1426,126 @@ yx-axis
 	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
 	
 	/* ---------------------------------------- */
+.__nv-text-black {
+  color: #0a0a0a; }
+
+.__nv-text-red {
+  color: red; }
+
+.__nv-text-blue {
+  color: #89c1ec; }
+
+.__nv-text-brand-blue {
+  color: #576c81; }
+
+.__nv-text-another-blue {
+  color: #1379c3; }
+
+.__nv-text-white {
+  color: #fff; }
+
+.__nv-text-size-5rem {
+  font-size: 0.5rem; }
+
+.__nv-text-size-6rem {
+  font-size: 0.6rem; }
+
+.__nv-text-size-7rem {
+  font-size: 0.7rem; }
+
+.__nv-text-size-8rem {
+  font-size: 0.8rem; }
+
+.__nv-text-size-9rem {
+  font-size: 0.9rem; }
+
+.__nv-text-size-10rem {
+  font-size: 1rem; }
+
+.__nv-text-size-11rem {
+  font-size: 1.1rem; }
+
+.__nv-text-size-12rem {
+  font-size: 1.2rem; }
+
+.__nv-text-size-13rem {
+  font-size: 1.3rem; }
+
+.__nv-text-size-14rem {
+  font-size: 1.4rem; }
+
+.__nv-text-size-15rem {
+  font-size: 1.5rem; }
+
+.__nv-text-size-16rem {
+  font-size: 1.6rem; }
+
+.__nv-text-size-17rem {
+  font-size: 1.7rem; }
+
+.__nv-text-size-18rem {
+  font-size: 1.8rem; }
+
+.__nv-text-size-19rem {
+  font-size: 1.9rem; }
+
+.__nv-text-size-20rem {
+  font-size: 2rem; }
+
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.2.3
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.nv-delimiter-left {
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap; }
+  .nv-delimiter-left:after, .nv-delimiter-left:before {
+    position: relative;
+    content: '';
+    height: 1px;
+    background-color: #0a0a0a;
+    vertical-align: middle;
+    display: inline-block; }
+  .nv-delimiter-left:after {
+    width: 100%;
+    left: 1rem; }
+
+.nv-delimiter-right {
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: right;
+  white-space: nowrap; }
+  .nv-delimiter-right:after, .nv-delimiter-right:before {
+    position: relative;
+    content: '';
+    height: 1px;
+    background-color: #0a0a0a;
+    vertical-align: middle;
+    display: inline-block; }
+  .nv-delimiter-right:before {
+    width: 100%;
+    right: 1rem; }
+
+.nv-delimiter {
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap; }
+  .nv-delimiter:after, .nv-delimiter:before {
+    position: relative;
+    content: '';
+    height: 1px;
+    background-color: #0a0a0a;
+    vertical-align: middle;
+    display: inline-block; }
+  .nv-delimiter:after {
+    width: 100%;
+    left: 1rem; }
+
 .newforms_errors ul {
   margin-left: 0em; }
 
@@ -1845,78 +1965,6 @@ yx-axis
   color: #000000;
   text-decoration: none; }
 
-.__nv-text-black {
-  color: #0a0a0a; }
-
-.__nv-text-red {
-  color: red; }
-
-.__nv-text-blue {
-  color: #89c1ec; }
-
-.__nv-text-brand-blue {
-  color: #576c81; }
-
-.__nv-text-another-blue {
-  color: #1379c3; }
-
-.__nv-text-white {
-  color: #fff; }
-
-.__nv-text-size-5rem {
-  font-size: 0.5rem; }
-
-.__nv-text-size-6rem {
-  font-size: 0.6rem; }
-
-.__nv-text-size-7rem {
-  font-size: 0.7rem; }
-
-.__nv-text-size-8rem {
-  font-size: 0.8rem; }
-
-.__nv-text-size-9rem {
-  font-size: 0.9rem; }
-
-.__nv-text-size-10rem {
-  font-size: 1rem; }
-
-.__nv-text-size-11rem {
-  font-size: 1.1rem; }
-
-.__nv-text-size-12rem {
-  font-size: 1.2rem; }
-
-.__nv-text-size-13rem {
-  font-size: 1.3rem; }
-
-.__nv-text-size-14rem {
-  font-size: 1.4rem; }
-
-.__nv-text-size-15rem {
-  font-size: 1.5rem; }
-
-.__nv-text-size-16rem {
-  font-size: 1.6rem; }
-
-.__nv-text-size-17rem {
-  font-size: 1.7rem; }
-
-.__nv-text-size-18rem {
-  font-size: 1.8rem; }
-
-.__nv-text-size-19rem {
-  font-size: 1.9rem; }
-
-.__nv-text-size-20rem {
-  font-size: 2rem; }
-
-/**
- * Foundation for Sites by ZURB
- * Version 6.2.3
- * foundation.zurb.com
- * Licensed under MIT Open Source
- */
 .mCSB_scrollTools {
   /* contains scrollbar markup (draggable element, dragger rail, buttons etc.) */
   position: absolute;
@@ -4447,7 +4495,8 @@ body {
   position: relative;
   max-width: 75rem;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  clear: both; }
   .nv-main::before, .nv-main::after {
     content: ' ';
     display: table; }

@@ -59,24 +59,6 @@ module.exports = {
                 // ]
             },
 
-            // {
-            //     test: /\.jsx?$/,
-            //     include: /(scripts|node_modules\/foundation-sites\/js)/,
-            //     // exclude: /node_modules/,
-            //     loader: 'babel',
-            //     query: {
-            //         presets: ['es2015']
-            //     }
-            // },
-            // {
-            //     test: /\.jsx$/,
-            //     include: /scripts/,
-            //     loader: 'babel',
-            //     query: {
-            //         presets: ['react']
-            //     }
-            // },
-
             {
                 test: /\.(jpg|png|gif)$/,
                 loader: 'file?emitFile=false&name=[path][name].[ext]'
@@ -87,7 +69,7 @@ module.exports = {
     plugins: [
         // new CleanPlugin('public'),
         // new webpack.optimize.UglifyJsPlugin({
-        //     sourceMap: false,
+        //     sourceMap: true,
         //     mangle: true,
         //     compress: {
         //         warnings: false

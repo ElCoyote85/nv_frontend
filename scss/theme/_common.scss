@@ -10,6 +10,75 @@ $body-font-family: Tahoma, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-seri
   display: inline-block !important;
 }
 
+@mixin text-delimiter($position: left) {
+  overflow: hidden;
+  text-align: $position;
+  white-space: nowrap;
+  &:after, &:before {
+    position: relative;
+    content: '';
+    height: 1px;
+    background-color: #0a0a0a;
+    vertical-align: middle;
+    display: inline-block;
+    //@include vertical-center;
+  }
+  @if $position == left {
+    &:after {
+      width: 100%;
+      left: 1rem;
+    }
+  }
+  @if $position == right {
+    &:before {
+      width: 100%;
+      right: 1rem;
+    }
+  }
+  @if $position == center {
+
+  }
+}
+
+.nv-delimiter-left {
+  text-transform: uppercase;
+  @include text-delimiter();
+}
+
+.nv-delimiter-right {
+  text-transform: uppercase;
+  @include text-delimiter(right);
+}
+
+.nv-delimiter {
+  text-transform: uppercase;
+  @include text-delimiter();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .newforms_errors ul { margin-left: 0em; }
 
 /* Dialog */

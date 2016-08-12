@@ -65,6 +65,12 @@ $(function () {
         });
     }
 
+    // $('.nv-nav').sticky({
+    //     responsiveWidth: true,
+    //     zIndex: 9,
+    //     topSpacing: -10
+    // });
+
     /* SUBJECT BUTTON */
     if($('#subject')) {
         $('#subject').click(function () {
