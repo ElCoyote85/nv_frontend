@@ -4440,6 +4440,50 @@ body {
         -ms-transform: translateX(-10px);
             transform: translateX(-10px); }
 
+.coworkers {
+  padding: 10px 0 0 0; }
+
+.coworkers li {
+  border: 1px solid #cacaca;
+  float: left;
+  margin-left: 12px;
+  padding: 7px 11px;
+  width: 126px;
+  margin-bottom: 15px;
+  text-align: center;
+  list-style-type: none; }
+
+.coworkers li h2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 0.3em;
+  padding-top: 0.3em; }
+
+.coworkers li h2 a {
+  color: black; }
+
+.coworkers li h3 {
+  color: #4d4d4d;
+  font-size: 10px;
+  padding-bottom: 0.5em;
+  padding-top: 0.3em; }
+
+.coworkers li h3 a {
+  color: #4d4d4d;
+  text-decoration: none; }
+
+.coworkers li h3 a:hover {
+  text-decoration: underline; }
+
+.coworkers li img {
+  border: 1px solid #7a7a7a; }
+
+.coworkers_noborder .coworkers {
+  margin-left: -12px; }
+
+.coworkers_noborder .coworkers li {
+  border: 0; }
+
 /* MAIN BLOCK */
 .nv-main {
   height: 625px;
