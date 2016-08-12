@@ -11,7 +11,7 @@ $centerBlockColor: #dde4ee;
   height: 625px;
   overflow: hidden;
   position: relative;
-  @include grid-row(5);
+  @include grid-row(5, $cf: true);
 }
 .nv-calendar {
   @include grid-column(1 of 5, $gutter: 50px);
