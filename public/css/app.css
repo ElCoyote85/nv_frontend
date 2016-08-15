@@ -5928,13 +5928,16 @@ body {
       .for-visitors--descr:last-child:not(:first-child) {
         float: right; } }
   .for-visitors--descr .for-visitors--descr-title {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #42627b;
+    letter-spacing: 1.1px; }
   .for-visitors--descr .for-visitors--descr-text {
-    margin-top: 20px;
-    font-size: 1.1rem;
+    margin-top: 5px;
+    font-size: 1rem;
     line-height: 1.1;
     color: #fff;
-    font-weight: 600; }
+    font-weight: 500;
+    letter-spacing: 1.1px; }
 
 .for-visitors--main-image {
   width: 100%;
@@ -6161,7 +6164,7 @@ body {
             float: right; } }
       .nv-for-participants-facilities .nv-for-participants-facilities-row .nv-for-participants-facilities--item .nv-for-participants-facilities--item--descr h5 {
         font-size: 1rem;
-        color: white;
+        color: #42627b;
         position: absolute;
         width: 150%;
         right: 0;
@@ -6214,7 +6217,8 @@ body {
 
 .nv-conditions {
   background-color: #e6b942;
-  padding: 20px 5px; }
+  padding: 20px 5px;
+  background-image: linear-gradient(to bottom, #b2984e 0%, #dfb348 7%, #e6b942); }
   .nv-conditions .nv-conditions-descr {
     max-width: 75rem;
     margin-left: auto;
@@ -6247,11 +6251,13 @@ body {
         float: right; }
       .nv-conditions .nv-conditions-descr .nv-conditions-descr--item .nv-conditions-descr--item-text {
         color: black;
-        font-size: 1.4rem;
-        text-transform: uppercase; }
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        margin-top: 15px;
+        letter-spacing: 1px; }
         @media screen and (max-width: 63.9375em) {
           .nv-conditions .nv-conditions-descr .nv-conditions-descr--item .nv-conditions-descr--item-text {
-            font-size: 1.2rem; } }
+            font-size: 1.1rem; } }
       @media screen and (max-width: 40em) {
         .nv-conditions .nv-conditions-descr .nv-conditions-descr--item {
           width: 100%;
@@ -6325,7 +6331,7 @@ body {
       float: left;
       padding-bottom: 10px;
       padding-right: 5rem !important;
-      padding-left: 0 !important;
+      padding-left: 0px !important;
       color: #ee3638; }
       .nv-steps ol li:last-child:not(:first-child) {
         float: right; }
@@ -6397,7 +6403,7 @@ body {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 50px; }
   @media screen and (min-width: 40em) {
     .nv-about .nv-about-descr {
@@ -6432,14 +6438,16 @@ body {
       width: 100%;
       display: inline-block; }
   .nv-about .nv-about-descr .nv-about-descr--line2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: #436179;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: -50px; }
+    margin-bottom: -50px;
+    letter-spacing: 3px; }
     @media screen and (max-width: 63.9375em) {
       .nv-about .nv-about-descr .nv-about-descr--line2 {
-        text-align: center; } }
+        text-align: center;
+        font-size: 2rem; } }
     .nv-about .nv-about-descr .nv-about-descr--line2:after {
       content: "";
       width: 100%;
@@ -7682,6 +7690,56 @@ label > em {
             transform: translate(-50%, -50%);
     width: 100%;
     text-transform: uppercase; }
+
+.webinar {
+  padding-top: 25px;
+  padding-bottom: 20px; }
+
+.webinar-logo {
+  float: left;
+  width: 10%;
+  text-align: center; }
+
+.webinar-text {
+  float: left;
+  border-left: 1px dashed #7d7d7d;
+  padding-left: 50px;
+  width: 85%; }
+
+.webinar h3 {
+  color: #216798;
+  font-size: 14px;
+  padding-bottom: 10px; }
+
+.webinar-text img {
+  float: left;
+  margin: 0 10px 10px 0px; }
+
+.webinar-text .l-name, .webinar-text .l-post {
+  font-style: italic;
+  padding-bottom: 3px;
+  color: #898989; }
+
+.webinar-text strong {
+  float: left;
+  font-weight: bold;
+  padding-top: 8px;
+  clear: left; }
+
+.webinar-text .button {
+  /*float: left;*/
+  margin-top: 6px;
+  margin-left: 1em; }
+
+.webinar-views {
+  float: left;
+  font-size: 10px;
+  /*margin-left: 10px;*/
+  color: #666;
+  /*margin-top: 7px;*/ }
+
+.webinar-views-0 {
+  display: none; }
 
 /* TOP SIDEBAR */
 .nv-menu-top-container {

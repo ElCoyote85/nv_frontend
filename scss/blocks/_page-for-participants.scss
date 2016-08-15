@@ -32,7 +32,7 @@
         position: relative;
         h5 {
           font-size: 1rem;
-          color: white;
+          color: #42627b;
           position: absolute;
           width: 150%;
           right: 0;
@@ -95,6 +95,7 @@
 .nv-conditions {
   background-color: #e6b942;
   padding: 20px 5px;
+  background-image: linear-gradient(to bottom, #b2984e 0%, #dfb348 7%, #e6b942);
 
   .nv-conditions-descr {
     @include grid-row(100);
@@ -116,11 +117,13 @@
       @include grid-column(28 of 100);
       .nv-conditions-descr--item-text {
         color: black;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         //font-weight: 600;
         text-transform: uppercase;
+        margin-top: 15px;
+        letter-spacing: 1px;
         @include breakpoint(medium down) {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
       }
       @include breakpoint(640px down) {
@@ -162,8 +165,8 @@
       @include grid-column(1 of 3, $gutter: 0);
 
       padding-bottom: 10px;
-      padding-right: 5rem !important ;
-      padding-left: 0 !important;
+      padding-right: 5rem !important;
+      padding-left: 0px !important;
       color: #ee3638;
       span {
         color: $secondary-color;
